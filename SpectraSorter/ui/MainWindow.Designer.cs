@@ -1479,7 +1479,7 @@ namespace spectra.ui
             this.tabPageStatic.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageStatic.Size = new System.Drawing.Size(294, 336);
             this.tabPageStatic.TabIndex = 1;
-            this.tabPageStatic.Text = "Static";
+            this.tabPageStatic.Text = "Accumulated";
             // 
             // buttonClearReferenceFromStatic
             // 
