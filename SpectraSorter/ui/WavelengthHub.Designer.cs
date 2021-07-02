@@ -43,12 +43,12 @@ namespace spectra.ui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAddWavelength = new System.Windows.Forms.Button();
             this.buttonRemoveWavelength = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
@@ -57,24 +57,24 @@ namespace spectra.ui
             this.buttonSaveWavelengthRange = new System.Windows.Forms.Button();
             this.checkBoxSaveWavelengthRange = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.seriesColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.wavelengthsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.removeToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.addToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxSaving = new System.Windows.Forms.GroupBox();
+            this.groupBoxtriggering = new System.Windows.Forms.GroupBox();
+            this.checkBoxTrigeringAllAboveEnabled = new System.Windows.Forms.CheckBox();
+            this.checkBoxTriggeringEnable = new System.Windows.Forms.CheckBox();
+            this.labelTriggeringInfo2 = new System.Windows.Forms.Label();
             this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thresholdValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isForThresholdingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.thresholdAboveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isToBePlottedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isToBeSavedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.thresholdAboveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.wavelengthsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBoxtriggering = new System.Windows.Forms.GroupBox();
-            this.checkBoxTrigeringAllAboveEnabled = new System.Windows.Forms.CheckBox();
-            this.labelTriggeringInfo2 = new System.Windows.Forms.Label();
-            this.checkBoxTriggeringEnable = new System.Windows.Forms.CheckBox();
+            this.seriesColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBoxSaving.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wavelengthsBindingSource)).BeginInit();
+            this.groupBoxSaving.SuspendLayout();
             this.groupBoxtriggering.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,9 +149,9 @@ namespace spectra.ui
             this.valueDataGridViewTextBoxColumn,
             this.thresholdValueDataGridViewTextBoxColumn,
             this.isForThresholdingDataGridViewCheckBoxColumn,
+            this.thresholdAboveDataGridViewCheckBoxColumn,
             this.isToBePlottedDataGridViewCheckBoxColumn,
             this.isToBeSavedDataGridViewCheckBoxColumn,
-            this.thresholdAboveDataGridViewCheckBoxColumn,
             this.seriesColorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.wavelengthsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 7);
@@ -169,14 +169,10 @@ namespace spectra.ui
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // seriesColorDataGridViewTextBoxColumn
+            // wavelengthsBindingSource
             // 
-            this.seriesColorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.seriesColorDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seriesColorDataGridViewTextBoxColumn.HeaderText = "Color";
-            this.seriesColorDataGridViewTextBoxColumn.Name = "seriesColorDataGridViewTextBoxColumn";
-            this.seriesColorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.seriesColorDataGridViewTextBoxColumn.ToolTipText = "Color of the line in the plot.";
+            this.wavelengthsBindingSource.DataMember = "Wavelengths";
+            this.wavelengthsBindingSource.DataSource = typeof(spectra.processing.WavelengthManager);
             // 
             // groupBoxSaving
             // 
@@ -190,84 +186,6 @@ namespace spectra.ui
             this.groupBoxSaving.TabIndex = 223;
             this.groupBoxSaving.TabStop = false;
             this.groupBoxSaving.Text = "Saving";
-            // 
-            // valueDataGridViewTextBoxColumn
-            // 
-            this.valueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            dataGridViewCellStyle25.NullValue = null;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.valueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Wavelength";
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
-            this.valueDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.valueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valueDataGridViewTextBoxColumn.ToolTipText = "Wavelength in nm.";
-            // 
-            // thresholdValueDataGridViewTextBoxColumn
-            // 
-            this.thresholdValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thresholdValueDataGridViewTextBoxColumn.DataPropertyName = "ThresholdValue";
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.thresholdValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
-            this.thresholdValueDataGridViewTextBoxColumn.HeaderText = "Threshold";
-            this.thresholdValueDataGridViewTextBoxColumn.Name = "thresholdValueDataGridViewTextBoxColumn";
-            this.thresholdValueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thresholdValueDataGridViewTextBoxColumn.ToolTipText = "Intiensity threshold for triggering.";
-            // 
-            // isForThresholdingDataGridViewCheckBoxColumn
-            // 
-            this.isForThresholdingDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isForThresholdingDataGridViewCheckBoxColumn.DataPropertyName = "IsForThresholding";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.NullValue = false;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.isForThresholdingDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
-            this.isForThresholdingDataGridViewCheckBoxColumn.HeaderText = "Trigger";
-            this.isForThresholdingDataGridViewCheckBoxColumn.Name = "isForThresholdingDataGridViewCheckBoxColumn";
-            this.isForThresholdingDataGridViewCheckBoxColumn.ToolTipText = "Use this wavelength to trigger.";
-            // 
-            // isToBePlottedDataGridViewCheckBoxColumn
-            // 
-            this.isToBePlottedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isToBePlottedDataGridViewCheckBoxColumn.DataPropertyName = "IsToBePlotted";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.NullValue = false;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.isToBePlottedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
-            this.isToBePlottedDataGridViewCheckBoxColumn.HeaderText = "Time series";
-            this.isToBePlottedDataGridViewCheckBoxColumn.Name = "isToBePlottedDataGridViewCheckBoxColumn";
-            this.isToBePlottedDataGridViewCheckBoxColumn.ToolTipText = "Plot this wavelength in time series view.";
-            // 
-            // isToBeSavedDataGridViewCheckBoxColumn
-            // 
-            this.isToBeSavedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.isToBeSavedDataGridViewCheckBoxColumn.DataPropertyName = "IsToBeSaved";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.NullValue = false;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.isToBeSavedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
-            this.isToBeSavedDataGridViewCheckBoxColumn.HeaderText = "Save";
-            this.isToBeSavedDataGridViewCheckBoxColumn.Name = "isToBeSavedDataGridViewCheckBoxColumn";
-            this.isToBeSavedDataGridViewCheckBoxColumn.ToolTipText = "Save this wavelength\'s intensity value to disk.";
-            // 
-            // thresholdAboveDataGridViewCheckBoxColumn
-            // 
-            this.thresholdAboveDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.thresholdAboveDataGridViewCheckBoxColumn.DataPropertyName = "IsThresholdAbove";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.NullValue = false;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.thresholdAboveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
-            this.thresholdAboveDataGridViewCheckBoxColumn.HeaderText = "Above";
-            this.thresholdAboveDataGridViewCheckBoxColumn.Name = "thresholdAboveDataGridViewCheckBoxColumn";
-            this.thresholdAboveDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.thresholdAboveDataGridViewCheckBoxColumn.ToolTipText = "Intensity must be above (or below if unchecked) to trigger.";
-            // 
-            // wavelengthsBindingSource
-            // 
-            this.wavelengthsBindingSource.DataMember = "Wavelengths";
-            this.wavelengthsBindingSource.DataSource = typeof(spectra.processing.WavelengthManager);
             // 
             // groupBoxtriggering
             // 
@@ -292,14 +210,6 @@ namespace spectra.ui
             this.checkBoxTrigeringAllAboveEnabled.UseVisualStyleBackColor = true;
             this.checkBoxTrigeringAllAboveEnabled.CheckedChanged += new System.EventHandler(this.checkBoxTrigeringAllAboveEnabled_CheckedChanged);
             // 
-            // labelTriggeringInfo2
-            // 
-            this.labelTriggeringInfo2.Location = new System.Drawing.Point(6, 50);
-            this.labelTriggeringInfo2.Name = "labelTriggeringInfo2";
-            this.labelTriggeringInfo2.Size = new System.Drawing.Size(557, 23);
-            this.labelTriggeringInfo2.TabIndex = 226;
-            this.labelTriggeringInfo2.Text = "More parameters can be set in the Arduino tab of the main application window.";
-            // 
             // checkBoxTriggeringEnable
             // 
             this.checkBoxTriggeringEnable.AutoSize = true;
@@ -310,6 +220,103 @@ namespace spectra.ui
             this.checkBoxTriggeringEnable.Text = "Enable";
             this.checkBoxTriggeringEnable.UseVisualStyleBackColor = true;
             this.checkBoxTriggeringEnable.CheckedChanged += new System.EventHandler(this.checkBoxTriggeringEnable_CheckedChanged);
+            // 
+            // labelTriggeringInfo2
+            // 
+            this.labelTriggeringInfo2.Location = new System.Drawing.Point(6, 50);
+            this.labelTriggeringInfo2.Name = "labelTriggeringInfo2";
+            this.labelTriggeringInfo2.Size = new System.Drawing.Size(557, 23);
+            this.labelTriggeringInfo2.TabIndex = 226;
+            this.labelTriggeringInfo2.Text = "More parameters can be set in the Arduino tab of the main application window.";
+            // 
+            // valueDataGridViewTextBoxColumn
+            // 
+            this.valueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.valueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.valueDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.valueDataGridViewTextBoxColumn.HeaderText = "Wavelength";
+            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            this.valueDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.valueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valueDataGridViewTextBoxColumn.ToolTipText = "Wavelength in nm.";
+            // 
+            // thresholdValueDataGridViewTextBoxColumn
+            // 
+            this.thresholdValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thresholdValueDataGridViewTextBoxColumn.DataPropertyName = "ThresholdValue";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.thresholdValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.thresholdValueDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.thresholdValueDataGridViewTextBoxColumn.HeaderText = "Threshold";
+            this.thresholdValueDataGridViewTextBoxColumn.Name = "thresholdValueDataGridViewTextBoxColumn";
+            this.thresholdValueDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thresholdValueDataGridViewTextBoxColumn.ToolTipText = "Intiensity threshold for triggering.";
+            // 
+            // isForThresholdingDataGridViewCheckBoxColumn
+            // 
+            this.isForThresholdingDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isForThresholdingDataGridViewCheckBoxColumn.DataPropertyName = "IsForThresholding";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = false;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.isForThresholdingDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.isForThresholdingDataGridViewCheckBoxColumn.FillWeight = 1F;
+            this.isForThresholdingDataGridViewCheckBoxColumn.HeaderText = "Trigger";
+            this.isForThresholdingDataGridViewCheckBoxColumn.Name = "isForThresholdingDataGridViewCheckBoxColumn";
+            this.isForThresholdingDataGridViewCheckBoxColumn.ToolTipText = "Use this wavelength to trigger.";
+            // 
+            // thresholdAboveDataGridViewCheckBoxColumn
+            // 
+            this.thresholdAboveDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thresholdAboveDataGridViewCheckBoxColumn.DataPropertyName = "IsThresholdAbove";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = false;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.thresholdAboveDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.thresholdAboveDataGridViewCheckBoxColumn.FillWeight = 1.4F;
+            this.thresholdAboveDataGridViewCheckBoxColumn.HeaderText = "Above threshold";
+            this.thresholdAboveDataGridViewCheckBoxColumn.Name = "thresholdAboveDataGridViewCheckBoxColumn";
+            this.thresholdAboveDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.thresholdAboveDataGridViewCheckBoxColumn.ToolTipText = "Intensity must be above (or below if unchecked) to trigger.";
+            // 
+            // isToBePlottedDataGridViewCheckBoxColumn
+            // 
+            this.isToBePlottedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isToBePlottedDataGridViewCheckBoxColumn.DataPropertyName = "IsToBePlotted";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = false;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.isToBePlottedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.isToBePlottedDataGridViewCheckBoxColumn.FillWeight = 1F;
+            this.isToBePlottedDataGridViewCheckBoxColumn.HeaderText = "Time series";
+            this.isToBePlottedDataGridViewCheckBoxColumn.Name = "isToBePlottedDataGridViewCheckBoxColumn";
+            this.isToBePlottedDataGridViewCheckBoxColumn.ToolTipText = "Plot this wavelength in time series view.";
+            // 
+            // isToBeSavedDataGridViewCheckBoxColumn
+            // 
+            this.isToBeSavedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.isToBeSavedDataGridViewCheckBoxColumn.DataPropertyName = "IsToBeSaved";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = false;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.isToBeSavedDataGridViewCheckBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.isToBeSavedDataGridViewCheckBoxColumn.FillWeight = 1F;
+            this.isToBeSavedDataGridViewCheckBoxColumn.HeaderText = "Save";
+            this.isToBeSavedDataGridViewCheckBoxColumn.Name = "isToBeSavedDataGridViewCheckBoxColumn";
+            this.isToBeSavedDataGridViewCheckBoxColumn.ToolTipText = "Save this wavelength\'s intensity value to disk.";
+            // 
+            // seriesColorDataGridViewTextBoxColumn
+            // 
+            this.seriesColorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.seriesColorDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.seriesColorDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seriesColorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.seriesColorDataGridViewTextBoxColumn.Name = "seriesColorDataGridViewTextBoxColumn";
+            this.seriesColorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.seriesColorDataGridViewTextBoxColumn.ToolTipText = "Color of the line in the plot.";
             // 
             // WavelengthHub
             // 
@@ -329,9 +336,9 @@ namespace spectra.ui
             this.Activated += new System.EventHandler(this.WavelengthHub_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThresholdingSettings_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wavelengthsBindingSource)).EndInit();
             this.groupBoxSaving.ResumeLayout(false);
             this.groupBoxSaving.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wavelengthsBindingSource)).EndInit();
             this.groupBoxtriggering.ResumeLayout(false);
             this.groupBoxtriggering.PerformLayout();
             this.ResumeLayout(false);
@@ -345,13 +352,6 @@ namespace spectra.ui
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource wavelengthsBindingSource;
         private System.Windows.Forms.ToolTip removeToolTip;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thresholdValueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isForThresholdingDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isToBePlottedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isToBeSavedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn thresholdAboveDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn seriesColorDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolTip addToolTip;
         private System.Windows.Forms.Button buttonSaveWavelengthRange;
         private System.Windows.Forms.CheckBox checkBoxSaveWavelengthRange;
@@ -362,5 +362,12 @@ namespace spectra.ui
         private System.Windows.Forms.CheckBox checkBoxTrigeringAllAboveEnabled;
         private System.Windows.Forms.CheckBox checkBoxTriggeringEnable;
         private System.Windows.Forms.Label labelTriggeringInfo2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thresholdValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isForThresholdingDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn thresholdAboveDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isToBePlottedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isToBeSavedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn seriesColorDataGridViewTextBoxColumn;
     }
 }
