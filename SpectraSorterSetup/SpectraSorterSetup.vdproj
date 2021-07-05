@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_08B36FC94DA8E389439A60D8103B811F"
+        "MsmKey" = "8:_18D6A1BAA8674F64A7702CAAB0F0DE15"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
         "OwnerKey" = "8:_CC9D0B2215544B5FBD5F44B9C1EB7068"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_08B36FC94DA8E389439A60D8103B811F"
+        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
+        "OwnerKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -144,20 +150,40 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_08B36FC94DA8E389439A60D8103B811F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_18D6A1BAA8674F64A7702CAAB0F0DE15"
+            {
+            "SourcePath" = "8:..\\SpectraSorter User Manual_20210702.docx"
+            "TargetName" = "8:SpectraSorter User Manual_20210702.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_1A27049015444168970A5A5528A3850B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3739AC69005EC55F946F0743032FAD2D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:WinUSBNet, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_08B36FC94DA8E389439A60D8103B811F"
+                    "_3739AC69005EC55F946F0743032FAD2D"
                     {
-                    "Name" = "8:WinUSBNet.dll"
+                    "Name" = "8:WinUSBNet.DLL"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:WinUSBNet.dll"
+            "SourcePath" = "8:WinUSBNet.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -177,7 +203,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8E31AD87B3B949A490D27C87AE55A9B1"
             {
-            "SourcePath" = "8:..\\..\\SpectraSorter\\SpectraSorter\\Resources\\icon.ico"
+            "SourcePath" = "8:..\\SpectraSorter\\Resources\\icon.ico"
             "TargetName" = "8:icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -208,7 +234,7 @@
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\..\\SpectraSorter\\SpectraSorter\\OBP_Library.dll"
+            "SourcePath" = "8:..\\SpectraSorter\\OBP_Library.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -305,7 +331,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SpectraSorter"
         "ProductCode" = "8:{8EDCA164-13AE-4764-9182-173F824CE136}"
-        "PackageCode" = "8:{5B8362FA-5FDC-420C-B03E-B1161CCA0EB4}"
+        "PackageCode" = "8:{AD5326F9-6EE8-42F2-9B99-180EA31B3CFD}"
         "UpgradeCode" = "8:{C9545092-7627-4866-9E62-DCC71C17D6F0}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -425,6 +451,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2215F0CE729D4B89A9B69F6AEDDCE293"
+            {
+            "Name" = "8:SpectraSorter User Manual"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_18D6A1BAA8674F64A7702CAAB0F0DE15"
+            "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
+            "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4802C3766179482A8D174F50CDDEBB4E"
             {
             "Name" = "8:SpectraSorter"
@@ -854,7 +894,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_76DF1D05F82A4DA983CF441EA35268E3"
             {
-            "SourcePath" = "8:..\\..\\SpectraSorter\\SpectraSorter\\obj\\Debug\\SpectraSorter.exe"
+            "SourcePath" = "8:..\\SpectraSorter\\obj\\Release\\SpectraSorter.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
