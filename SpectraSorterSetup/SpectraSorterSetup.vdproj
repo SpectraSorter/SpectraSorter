@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_18D6A1BAA8674F64A7702CAAB0F0DE15"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
+        "OwnerKey" = "8:_CC9D0B2215544B5FBD5F44B9C1EB7068"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
-        "OwnerKey" = "8:_CC9D0B2215544B5FBD5F44B9C1EB7068"
+        "MsmKey" = "8:_561B26F77424431A9327B6F4FFC75658"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
+        "OwnerKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
+        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -150,26 +150,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_18D6A1BAA8674F64A7702CAAB0F0DE15"
-            {
-            "SourcePath" = "8:..\\SpectraSorter User Manual_20210702.docx"
-            "TargetName" = "8:SpectraSorter User Manual_20210702.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_1A27049015444168970A5A5528A3850B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3739AC69005EC55F946F0743032FAD2D"
             {
             "AssemblyRegister" = "3:1"
@@ -179,11 +159,11 @@
                 {
                     "_3739AC69005EC55F946F0743032FAD2D"
                     {
-                    "Name" = "8:WinUSBNet.DLL"
+                    "Name" = "8:WinUSBNet.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:WinUSBNet.DLL"
+            "SourcePath" = "8:WinUSBNet.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -199,6 +179,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_561B26F77424431A9327B6F4FFC75658"
+            {
+            "SourcePath" = "8:..\\SpectraSorter_User_Manual.docx"
+            "TargetName" = "8:SpectraSorter_User_Manual.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_1A27049015444168970A5A5528A3850B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8E31AD87B3B949A490D27C87AE55A9B1"
@@ -451,20 +451,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2215F0CE729D4B89A9B69F6AEDDCE293"
-            {
-            "Name" = "8:SpectraSorter User Manual"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_18D6A1BAA8674F64A7702CAAB0F0DE15"
-            "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
-            "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4802C3766179482A8D174F50CDDEBB4E"
             {
             "Name" = "8:SpectraSorter"
@@ -491,6 +477,20 @@
             "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
             "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
             "Icon" = "8:_8E31AD87B3B949A490D27C87AE55A9B1"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DCE59874630945EFA5F17812F0364594"
+            {
+            "Name" = "8:SpectraSorter User Manual"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_561B26F77424431A9327B6F4FFC75658"
+            "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
+            "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
