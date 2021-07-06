@@ -2744,7 +2744,7 @@ namespace spectra.ui
 
         private void revertSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to revert to default settings?",
+            if (MessageBox.Show("Are you sure you want to revert to factory settings?",
                 "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SettingsManager.RestoreDefaults();
