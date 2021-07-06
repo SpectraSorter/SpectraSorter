@@ -32,7 +32,7 @@ namespace spectra.processing
         public const UInt16 SATURATION_LEVEL = 65535;
 
         // Number of spectrum response buffers to allocate
-        public const int NUM_RESPONSES_TO_ALLOCATE = 10;
+        public const int NUM_RESPONSES_TO_ALLOCATE = 25;
 
         // Default IO timeout (UNUSED!)
         public const int SEND_TIMEOUT_MS = 1000;

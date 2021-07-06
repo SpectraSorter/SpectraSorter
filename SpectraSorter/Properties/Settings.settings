@@ -9,7 +9,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="BackToBackPerTrigger" Type="System.UInt32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">50000</Value>
     </Setting>
     <Setting Name="NumSpectraPerRequest" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">1</Value>

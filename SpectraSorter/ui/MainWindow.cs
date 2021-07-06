@@ -2760,8 +2760,13 @@ namespace spectra.ui
     }
 
     // Structure to store all data required for the save thread
+    //
+    // originalSpectrum is used at the end of saving to put it back into
+    // the Supply queue. Do not access it in the saving queue besides in the
+    // enqueue call at the end saving!
     public struct SpectrumForSaving
     {
+        public OBPGetRawSpectrumWithMetadata originalSpectrum; 
         public RawSpectrumWithMetadataBuffer rawSpectrum;
         public float[] computedSpectrum;
         public bool triggered;

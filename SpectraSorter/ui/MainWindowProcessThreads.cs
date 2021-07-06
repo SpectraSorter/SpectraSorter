@@ -154,7 +154,7 @@ namespace spectra.ui
 
                 // Initialize the statistic counters
                 mTotalRequests = 0;
-                mTotalSpectraReceived = 0; ;
+                mTotalSpectraReceived = 0;
                 mTotalAcquireTime = 0;
                 mCurSpectraPerSec = 0;
                 mMinSupplyCount = int.MaxValue;
@@ -182,6 +182,7 @@ namespace spectra.ui
                     {
                         mSpinCounter++;  // Ideally we're never spinning but it could happen if the compute and save thread is too slow
                     }
+                    mSpinCounter = 0;
 
                     if (State.Instance.IsStopAcquiringRequested)
                     {
@@ -576,6 +577,12 @@ namespace spectra.ui
                             }
                         }
 
+                        // Return the spectrum to the supply queue
+                        lock (mSupplyQueue)
+                        {
+                            mSupplyQueue.Enqueue(saveSpectrum.originalSpectrum);
+                        }
+
                         // Update number of processed spectra
                         processedSpectra++;
 
@@ -830,13 +837,14 @@ namespace spectra.ui
                             // Update counter of computed spectra
                             mTotalSpectraComputed++;
 
-                            // No matter whethe saving is on or not, we enque the spectrum.
+                            // No matter whether saving is on or not, we enqueue the spectrum.
                             // The save thread will take care of cleaning the queue, whether
                             // the spectra will be saved to disk or not.
                             lock (mSaveQueue)
                             {
                                 mSaveQueue.Enqueue(new SpectrumForSaving()
                                 {
+                                    originalSpectrum = computeSpectrum,
                                     rawSpectrum = spectrum,
                                     computedSpectrum = computedOutputSpectrum,
                                     triggered = IsThresholdConditionSatisfied
@@ -851,10 +859,13 @@ namespace spectra.ui
                             chartedSpectrum = null;
                         }
 
-                        // Return the spectrum to the supply queue
-                        lock (mSupplyQueue)
+                        // If we do not need it for saving, return the spectrum to the supply queue
+                        if (!SettingsManager.SaveToFile)
                         {
-                            mSupplyQueue.Enqueue(computeSpectrum);
+                            lock (mSupplyQueue)
+                            {
+                                mSupplyQueue.Enqueue(computeSpectrum);
+                            }
                         }
                     }
 
