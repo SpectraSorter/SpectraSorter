@@ -858,15 +858,6 @@ namespace spectra.ui
                             SpectrumProcessor.Instance.ResultSpectrum = chartedSpectrum;
                             chartedSpectrum = null;
                         }
-
-                        // If we do not need it for saving, return the spectrum to the supply queue
-                        if (!SettingsManager.SaveToFile)
-                        {
-                            lock (mSupplyQueue)
-                            {
-                                mSupplyQueue.Enqueue(computeSpectrum);
-                            }
-                        }
                     }
 
                     long curTime = stopWatch.ElapsedMilliseconds;
