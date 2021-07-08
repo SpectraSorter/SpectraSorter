@@ -121,7 +121,7 @@ namespace spectra.ui.components
             this.buttonTriggerArduino.TabIndex = 229;
             this.buttonTriggerArduino.Text = "On";
             this.buttonTriggerArduino.UseVisualStyleBackColor = true;
-            this.buttonTriggerArduino.Click += new System.EventHandler(this.buttonTriggerArduino_Click);
+            this.buttonTriggerArduino.Click += new System.EventHandler(this.ButtonTriggerArduino_Click);
             // 
             // buttonTriggerArduinoOff
             // 
@@ -130,7 +130,7 @@ namespace spectra.ui.components
             this.buttonTriggerArduinoOff.Size = new System.Drawing.Size(142, 23);
             this.buttonTriggerArduinoOff.TabIndex = 230;
             this.buttonTriggerArduinoOff.Text = "Off";
-            this.buttonTriggerArduinoOff.Click += new System.EventHandler(this.buttonTriggerArduinoOff_Click);
+            this.buttonTriggerArduinoOff.Click += new System.EventHandler(this.ButtonTriggerArduinoOff_Click);
             // 
             // labelTestTrigger
             // 
@@ -159,9 +159,9 @@ namespace spectra.ui.components
             this.textBoxDuration.Size = new System.Drawing.Size(60, 20);
             this.textBoxDuration.TabIndex = 225;
             this.textBoxDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxDuration.TextChanged += new System.EventHandler(this.textBoxDuration_TextChanged_1);
-            this.textBoxDuration.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDuration_Validating);
-            this.textBoxDuration.Validated += new System.EventHandler(this.textBoxDuration_Validated);
+            this.textBoxDuration.TextChanged += new System.EventHandler(this.TextBoxDuration_TextChanged);
+            this.textBoxDuration.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDuration_Validating);
+            this.textBoxDuration.Validated += new System.EventHandler(this.TextBoxDuration_Validated);
             // 
             // labelTriggerDuration
             // 
@@ -238,7 +238,7 @@ namespace spectra.ui.components
             this.buttonSendTriggerDuration.TabIndex = 217;
             this.buttonSendTriggerDuration.Text = "Set";
             this.buttonSendTriggerDuration.UseVisualStyleBackColor = true;
-            this.buttonSendTriggerDuration.Click += new System.EventHandler(this.buttonSendTriggerDuration_Click_1);
+            this.buttonSendTriggerDuration.Click += new System.EventHandler(this.ButtonSendTriggerDuration_Click);
             // 
             // buttonSendDigitalPin
             // 
@@ -248,7 +248,7 @@ namespace spectra.ui.components
             this.buttonSendDigitalPin.TabIndex = 216;
             this.buttonSendDigitalPin.Text = "Set";
             this.buttonSendDigitalPin.UseVisualStyleBackColor = true;
-            this.buttonSendDigitalPin.Click += new System.EventHandler(this.buttonSendDigitalPin_Click_1);
+            this.buttonSendDigitalPin.Click += new System.EventHandler(this.ButtonSendDigitalPin_Click);
             // 
             // textBoxDelay
             // 
@@ -257,9 +257,9 @@ namespace spectra.ui.components
             this.textBoxDelay.Size = new System.Drawing.Size(60, 20);
             this.textBoxDelay.TabIndex = 214;
             this.textBoxDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxDelay.TextChanged += new System.EventHandler(this.textBoxDelay_TextChanged_1);
-            this.textBoxDelay.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDelay_Validating);
-            this.textBoxDelay.Validated += new System.EventHandler(this.textBoxDelay_Validated);
+            this.textBoxDelay.TextChanged += new System.EventHandler(this.TextBoxDelay_TextChanged);
+            this.textBoxDelay.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDelay_Validating);
+            this.textBoxDelay.Validated += new System.EventHandler(this.TextBoxDelay_Validated);
             // 
             // labelPin
             // 
@@ -286,9 +286,9 @@ namespace spectra.ui.components
             this.textBoxPin.Size = new System.Drawing.Size(60, 20);
             this.textBoxPin.TabIndex = 211;
             this.textBoxPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxPin.TextChanged += new System.EventHandler(this.textBoxPin_TextChanged_1);
-            this.textBoxPin.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPin_Validating);
-            this.textBoxPin.Validated += new System.EventHandler(this.textBoxPin_Validated);
+            this.textBoxPin.TextChanged += new System.EventHandler(this.TextBoxPin_TextChanged);
+            this.textBoxPin.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxPin_Validating);
+            this.textBoxPin.Validated += new System.EventHandler(this.TextBoxPin_Validated);
             // 
             // tabPage2
             // 
@@ -341,9 +341,9 @@ namespace spectra.ui.components
             this.textBoxArduinoSpeedTest.TabIndex = 211;
             this.textBoxArduinoSpeedTest.Text = "1000";
             this.textBoxArduinoSpeedTest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxArduinoSpeedTest.TextChanged += new System.EventHandler(this.textBoxArduinoSpeedTest_TextChanged);
-            this.textBoxArduinoSpeedTest.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxArduinoSpeedTest_Validating);
-            this.textBoxArduinoSpeedTest.Validated += new System.EventHandler(this.textBoxArduinoSpeedTest_Validated);
+            this.textBoxArduinoSpeedTest.TextChanged += new System.EventHandler(this.TextBoxArduinoSpeedTest_TextChanged);
+            this.textBoxArduinoSpeedTest.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxArduinoSpeedTest_Validating);
+            this.textBoxArduinoSpeedTest.Validated += new System.EventHandler(this.TextBoxArduinoSpeedTest_Validated);
             // 
             // label7
             // 
@@ -362,7 +362,7 @@ namespace spectra.ui.components
             this.buttonArduinoSpeedTest.TabIndex = 209;
             this.buttonArduinoSpeedTest.Text = "Run speed test";
             this.buttonArduinoSpeedTest.UseVisualStyleBackColor = true;
-            this.buttonArduinoSpeedTest.Click += new System.EventHandler(this.buttonArduinoSpeedTest_Click);
+            this.buttonArduinoSpeedTest.Click += new System.EventHandler(this.ButtonArduinoSpeedTest_Click);
             // 
             // ArduinoParametersControl
             // 

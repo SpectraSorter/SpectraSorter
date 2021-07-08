@@ -63,7 +63,7 @@ namespace spectra.ui.components
             });
         }
 
-        private void buttonArduinoSpeedTest_Click(object sender, EventArgs e)
+        private void ButtonArduinoSpeedTest_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
             {
@@ -200,44 +200,6 @@ namespace spectra.ui.components
             });
         }
 
-        private void buttonSendDigitalPin_Click_1(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_PIN, value);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-            else
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
         private void ButtonSendDigitalPin_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
@@ -276,44 +238,6 @@ namespace spectra.ui.components
             }
         }
 
-        private void buttonSendTriggerDuration_Click_1(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_DURATION, value);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-            else
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
         private void ButtonSendTriggerDuration_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
@@ -324,7 +248,6 @@ namespace spectra.ui.components
 
             this.tabControlArduinoParameters.Enabled = true;
 
-
             if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
             {
                 Task.Run(() =>
@@ -353,7 +276,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void buttonTriggerArduino_Click(object sender, EventArgs e)
+        private void ButtonTriggerArduino_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
             {
@@ -366,7 +289,7 @@ namespace spectra.ui.components
             mArduino.SendCommand(Arduino.COMMANDS.TRIGGER);
         }
 
-        private void buttonTriggerArduinoOff_Click(object sender, EventArgs e)
+        private void ButtonTriggerArduinoOff_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
             {
@@ -441,12 +364,12 @@ namespace spectra.ui.components
             this.Refresh();
         }
 
-        private void textBoxArduinoSpeedTest_TextChanged(object sender, EventArgs e)
+        private void TextBoxArduinoSpeedTest_TextChanged(object sender, EventArgs e)
         {
             this.ValidateChildren();
         }
 
-        private void textBoxArduinoSpeedTest_Validating(object sender, CancelEventArgs e)
+        private void TextBoxArduinoSpeedTest_Validating(object sender, CancelEventArgs e)
         {
             if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
             {
@@ -460,7 +383,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxArduinoSpeedTest_Validated(object sender, EventArgs e)
+        private void TextBoxArduinoSpeedTest_Validated(object sender, EventArgs e)
         {
             if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
             {
@@ -511,7 +434,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxDelay_Validating(object sender, CancelEventArgs e)
+        private void TextBoxDelay_Validating(object sender, CancelEventArgs e)
         {
             if (UInt32.TryParse(textBoxDelay.Text, out UInt32 value))
             {
@@ -525,17 +448,12 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxDelay_Validated(object sender, EventArgs e)
+        private void TextBoxDelay_Validated(object sender, EventArgs e)
         {
             if (UInt32.TryParse(textBoxDelay.Text, out UInt32 value))
             {
                 textBoxDelay.BackColor = Color.White;
             }
-        }
-
-        private void textBoxPin_TextChanged_1(object sender, EventArgs e)
-        {
-            this.ValidateChildren();
         }
 
         private void TextBoxDuration_TextChanged(object sender, EventArgs e)
@@ -564,7 +482,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxPin_Validating(object sender, CancelEventArgs e)
+        private void TextBoxPin_Validating(object sender, CancelEventArgs e)
         {
             if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
             {
@@ -578,7 +496,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxPin_Validated(object sender, EventArgs e)
+        private void TextBoxPin_Validated(object sender, EventArgs e)
         {
             if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
             {
@@ -586,17 +504,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxDelay_TextChanged_1(object sender, EventArgs e)
-        {
-            this.ValidateChildren();
-        }
-
-        private void textBoxDuration_TextChanged_1(object sender, EventArgs e)
-        {
-            this.ValidateChildren();
-        }
-
-        private void textBoxDuration_Validating(object sender, CancelEventArgs e)
+        private void TextBoxDuration_Validating(object sender, CancelEventArgs e)
         {
             if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
             {
@@ -610,7 +518,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxDuration_Validated(object sender, EventArgs e)
+        private void TextBoxDuration_Validated(object sender, EventArgs e)
         {
             if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
             {
