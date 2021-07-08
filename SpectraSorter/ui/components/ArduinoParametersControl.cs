@@ -41,295 +41,6 @@ namespace spectra.ui.components
             this.tabControlArduinoParameters.Enabled = false;
         }
 
-        override public void Refresh()
-        {
-            if (this.mArduino == null)
-            {
-                return;
-            }
-
-            // Set the trigger delay
-            if (mArduino.TriggerDelayInMicros != SettingsManager.ArduinoTriggerDelay)
-            {
-                mArduino.TriggerDelayInMicros = SettingsManager.ArduinoTriggerDelay;
-            }
-            textBoxDelay.Text = mArduino.TriggerDelayInMicros.ToString(CultureInfo.InvariantCulture);
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                Thread.Sleep(250);
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                Thread.Sleep(250);
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
-
-        private void onQueryComplete()
-        {
-            textBoxPin.Text = "" + mArduino.Pin;
-            textBoxDuration.Text = "" + mArduino.TriggerDuration;
-            labelCount.Text = "" + this.mArduino.OnBoardCounter;
-        }
-
-        public void SetArduino(Arduino arduino)
-        {
-            this.mArduino = arduino;
-
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            // Update the UI fields
-            this.Refresh();
-        }
-
-        public void UpdateTriggerCounter()
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
-
-        private void ButtonSendDigitalPin_Click(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_PIN, value);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-            else
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
-        private void ButtonQueryPin_Click(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
-
-        private void TextBoxPin_TextChanged(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            if (!UInt32.TryParse(textBoxPin.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
-        private void TextBoxDelay_TextChanged(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            if (UInt32.TryParse(textBoxDelay.Text, out UInt32 value))
-            {
-                this.mArduino.TriggerDelayInMicros = value;
-
-                SettingsManager.ArduinoTriggerDelay = value;
-            }
-        }
-
-        private void TextBoxDuration_TextChanged(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-
-            if (!UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
-        private void ButtonSendTriggerDuration_Click(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-
-            if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_DURATION, value);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-            else
-            {
-                Task.Run(() =>
-                {
-                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                    Thread.Sleep(250);
-
-                    Invoke((MethodInvoker)delegate
-                    {
-                        onQueryComplete();  // Invoke on UI thread
-                    });
-                });
-            }
-        }
-
-        private void ButtonQueryTriggerDuration_Click(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
-
-        private void ButtonResetCount_Click(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
-            }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.RESET_COUNTER);
-                Thread.Sleep(250);
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
-
         private void ButtonArduinoShowCount_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
@@ -421,13 +132,72 @@ namespace spectra.ui.components
             });
         }
 
-        private void onSpeedTestComplete(string mean, string total)
+        private void ButtonQueryPin_Click(object sender, EventArgs e)
         {
-            labelArduinoSpeedTestReport.Text = mean;
-            labelArduinoTotalTestReport.Text = total;
-            labelCount.Text = "" + this.mArduino.OnBoardCounter;
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
 
-            tabControlArduinoParameters.Enabled = true;
+            this.tabControlArduinoParameters.Enabled = true;
+
+            Task.Run(() =>
+            {
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
+                Thread.Sleep(250);
+
+                Invoke((MethodInvoker)delegate
+                {
+                    onQueryComplete();  // Invoke on UI thread
+                });
+            });
+        }
+
+        private void ButtonQueryTriggerDuration_Click(object sender, EventArgs e)
+        {
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            Task.Run(() =>
+            {
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
+                Thread.Sleep(250);
+
+                Invoke((MethodInvoker)delegate
+                {
+                    onQueryComplete();  // Invoke on UI thread
+                });
+            });
+        }
+
+        private void ButtonResetCount_Click(object sender, EventArgs e)
+        {
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            Task.Run(() =>
+            {
+                this.mArduino.SendCommand(Arduino.COMMANDS.RESET_COUNTER);
+                Thread.Sleep(250);
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
+                Thread.Sleep(250);
+
+                Invoke((MethodInvoker)delegate
+                {
+                    onQueryComplete();  // Invoke on UI thread
+                });
+            });
         }
 
         private void buttonSendDigitalPin_Click_1(object sender, EventArgs e)
@@ -468,7 +238,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void buttonQueryPin_Click_1(object sender, EventArgs e)
+        private void ButtonSendDigitalPin_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
             {
@@ -478,16 +248,32 @@ namespace spectra.ui.components
 
             this.tabControlArduinoParameters.Enabled = true;
 
-            Task.Run(() =>
+            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
             {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
+                Task.Run(() =>
                 {
-                    onQueryComplete();  // Invoke on UI thread
+                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_PIN, value);
+                    Thread.Sleep(250);
+
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
                 });
-            });
+            }
+            else
+            {
+                Task.Run(() =>
+                {
+                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
+                    Thread.Sleep(250);
+
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
+                });
+            }
         }
 
         private void buttonSendTriggerDuration_Click_1(object sender, EventArgs e)
@@ -528,7 +314,7 @@ namespace spectra.ui.components
             }
         }
 
-        private void buttonQueryTriggerDuration_Click_1(object sender, EventArgs e)
+        private void ButtonSendTriggerDuration_Click(object sender, EventArgs e)
         {
             if (this.mArduino == null || !this.mArduino.IsConnected())
             {
@@ -538,62 +324,33 @@ namespace spectra.ui.components
 
             this.tabControlArduinoParameters.Enabled = true;
 
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
-                Thread.Sleep(250);
 
-                Invoke((MethodInvoker)delegate
+            if (UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
+            {
+                Task.Run(() =>
                 {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
+                    this.mArduino.SendCommandWithParameter(Arduino.COMMANDS.SET_DURATION, value);
+                    Thread.Sleep(250);
 
-        private void buttonResetCount_Click_1(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
+                });
             }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
+            else
             {
-                this.mArduino.SendCommand(Arduino.COMMANDS.RESET_COUNTER);
-                Thread.Sleep(250);
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
+                Task.Run(() =>
                 {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });
-        }
+                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
+                    Thread.Sleep(250);
 
-        private void buttonArduinoShowCount_Click_1(object sender, EventArgs e)
-        {
-            if (this.mArduino == null || !this.mArduino.IsConnected())
-            {
-                this.tabControlArduinoParameters.Enabled = false;
-                return;
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
+                });
             }
-
-            this.tabControlArduinoParameters.Enabled = true;
-
-            Task.Run(() =>
-            {
-                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
-                Thread.Sleep(250);
-
-                Invoke((MethodInvoker)delegate
-                {
-                    onQueryComplete();  // Invoke on UI thread
-                });
-            });           
         }
 
         private void buttonTriggerArduino_Click(object sender, EventArgs e)
@@ -622,25 +379,135 @@ namespace spectra.ui.components
             mArduino.SendCommand(Arduino.COMMANDS.STOP);
         }
 
-        private void textBoxPin_Validating(object sender, CancelEventArgs e)
+        private void onQueryComplete()
         {
-            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
+            textBoxPin.Text = "" + mArduino.Pin;
+            textBoxDuration.Text = "" + mArduino.TriggerDuration;
+            labelCount.Text = "" + this.mArduino.OnBoardCounter;
+        }
+
+        private void onSpeedTestComplete(string mean, string total)
+        {
+            labelArduinoSpeedTestReport.Text = mean;
+            labelArduinoTotalTestReport.Text = total;
+            labelCount.Text = "" + this.mArduino.OnBoardCounter;
+
+            tabControlArduinoParameters.Enabled = true;
+        }
+
+        override public void Refresh()
+        {
+            if (this.mArduino == null)
             {
-                textBoxPin.BackColor = Color.White;
+                return;
+            }
+
+            // Set the trigger delay
+            if (mArduino.TriggerDelayInMicros != SettingsManager.ArduinoTriggerDelay)
+            {
+                mArduino.TriggerDelayInMicros = SettingsManager.ArduinoTriggerDelay;
+            }
+            textBoxDelay.Text = mArduino.TriggerDelayInMicros.ToString(CultureInfo.InvariantCulture);
+
+            Task.Run(() =>
+            {
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
+                Thread.Sleep(250);
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
+                Thread.Sleep(250);
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
+                Thread.Sleep(250);
+
+                Invoke((MethodInvoker)delegate
+                {
+                    onQueryComplete();  // Invoke on UI thread
+                });
+            });
+        }
+
+        public void SetArduino(Arduino arduino)
+        {
+            this.mArduino = arduino;
+
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            // Update the UI fields
+            this.Refresh();
+        }
+
+        private void textBoxArduinoSpeedTest_TextChanged(object sender, EventArgs e)
+        {
+            this.ValidateChildren();
+        }
+
+        private void textBoxArduinoSpeedTest_Validating(object sender, CancelEventArgs e)
+        {
+            if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
+            {
+                textBoxArduinoSpeedTest.BackColor = Color.White;
                 e.Cancel = false;
             }
             else
             {
-                textBoxPin.BackColor = Color.Red;
+                textBoxArduinoSpeedTest.BackColor = Color.Red;
                 e.Cancel = true;
             }
         }
 
-        private void textBoxPin_Validated(object sender, EventArgs e)
+        private void textBoxArduinoSpeedTest_Validated(object sender, EventArgs e)
         {
-            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
+            if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
             {
-                textBoxPin.BackColor = Color.White;
+                textBoxArduinoSpeedTest.BackColor = Color.White;
+            }
+        }
+
+        private void TextBoxPin_TextChanged(object sender, EventArgs e)
+        {
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            if (!UInt32.TryParse(textBoxPin.Text, out UInt32 value))
+            {
+                Task.Run(() =>
+                {
+                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_PIN);
+                    Thread.Sleep(250);
+
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
+                });
+            }
+        }
+
+        private void TextBoxDelay_TextChanged(object sender, EventArgs e)
+        {
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            if (UInt32.TryParse(textBoxDelay.Text, out UInt32 value))
+            {
+                this.mArduino.TriggerDelayInMicros = value;
+
+                SettingsManager.ArduinoTriggerDelay = value;
             }
         }
 
@@ -669,6 +536,54 @@ namespace spectra.ui.components
         private void textBoxPin_TextChanged_1(object sender, EventArgs e)
         {
             this.ValidateChildren();
+        }
+
+        private void TextBoxDuration_TextChanged(object sender, EventArgs e)
+        {
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+
+            if (!UInt32.TryParse(textBoxDuration.Text, out UInt32 value))
+            {
+                Task.Run(() =>
+                {
+                    this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_DURATION);
+                    Thread.Sleep(250);
+
+                    Invoke((MethodInvoker)delegate
+                    {
+                        onQueryComplete();  // Invoke on UI thread
+                    });
+                });
+            }
+        }
+
+        private void textBoxPin_Validating(object sender, CancelEventArgs e)
+        {
+            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
+            {
+                textBoxPin.BackColor = Color.White;
+                e.Cancel = false;
+            }
+            else
+            {
+                textBoxPin.BackColor = Color.Red;
+                e.Cancel = true;
+            }
+        }
+
+        private void textBoxPin_Validated(object sender, EventArgs e)
+        {
+            if (UInt32.TryParse(textBoxPin.Text, out UInt32 value))
+            {
+                textBoxPin.BackColor = Color.White;
+            }
         }
 
         private void textBoxDelay_TextChanged_1(object sender, EventArgs e)
@@ -703,31 +618,27 @@ namespace spectra.ui.components
             }
         }
 
-        private void textBoxArduinoSpeedTest_TextChanged(object sender, EventArgs e)
+        public void UpdateTriggerCounter()
         {
-            this.ValidateChildren();
+            if (this.mArduino == null || !this.mArduino.IsConnected())
+            {
+                this.tabControlArduinoParameters.Enabled = false;
+                return;
+            }
+
+            this.tabControlArduinoParameters.Enabled = true;
+
+            Task.Run(() =>
+            {
+                this.mArduino.SendCommand(Arduino.COMMANDS.QUERY_COUNTER);
+                Thread.Sleep(250);
+
+                Invoke((MethodInvoker)delegate
+                {
+                    onQueryComplete();  // Invoke on UI thread
+                });
+            });
         }
 
-        private void textBoxArduinoSpeedTest_Validating(object sender, CancelEventArgs e)
-        {
-            if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
-            {
-                textBoxArduinoSpeedTest.BackColor = Color.White;
-                e.Cancel = false;
-            }
-            else
-            {
-                textBoxArduinoSpeedTest.BackColor = Color.Red;
-                e.Cancel = true;
-            }
-        }
-
-        private void textBoxArduinoSpeedTest_Validated(object sender, EventArgs e)
-        {
-            if (UInt32.TryParse(textBoxArduinoSpeedTest.Text, out UInt32 value))
-            {
-                textBoxArduinoSpeedTest.BackColor = Color.White;
-            }
-        }
     }
 }

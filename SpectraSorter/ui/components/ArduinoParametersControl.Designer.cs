@@ -180,7 +180,7 @@ namespace spectra.ui.components
             this.buttonArduinoShowCount.TabIndex = 221;
             this.buttonArduinoShowCount.Text = "Get";
             this.buttonArduinoShowCount.UseVisualStyleBackColor = true;
-            this.buttonArduinoShowCount.Click += new System.EventHandler(this.buttonArduinoShowCount_Click_1);
+            this.buttonArduinoShowCount.Click += new System.EventHandler(this.ButtonArduinoShowCount_Click);
             // 
             // buttonResetCount
             // 
@@ -190,7 +190,7 @@ namespace spectra.ui.components
             this.buttonResetCount.TabIndex = 222;
             this.buttonResetCount.Text = "Reset";
             this.buttonResetCount.UseVisualStyleBackColor = true;
-            this.buttonResetCount.Click += new System.EventHandler(this.buttonResetCount_Click_1);
+            this.buttonResetCount.Click += new System.EventHandler(this.ButtonResetCount_Click);
             // 
             // buttonQueryTriggerDuration
             // 
@@ -200,7 +200,7 @@ namespace spectra.ui.components
             this.buttonQueryTriggerDuration.TabIndex = 223;
             this.buttonQueryTriggerDuration.Text = "Get";
             this.buttonQueryTriggerDuration.UseVisualStyleBackColor = true;
-            this.buttonQueryTriggerDuration.Click += new System.EventHandler(this.buttonQueryTriggerDuration_Click_1);
+            this.buttonQueryTriggerDuration.Click += new System.EventHandler(this.ButtonQueryTriggerDuration_Click);
             // 
             // labelTriggerCounter
             // 
@@ -228,7 +228,7 @@ namespace spectra.ui.components
             this.buttonQueryPin.TabIndex = 218;
             this.buttonQueryPin.Text = "Get";
             this.buttonQueryPin.UseVisualStyleBackColor = true;
-            this.buttonQueryPin.Click += new System.EventHandler(this.buttonQueryPin_Click_1);
+            this.buttonQueryPin.Click += new System.EventHandler(this.ButtonQueryPin_Click);
             // 
             // buttonSendTriggerDuration
             // 
