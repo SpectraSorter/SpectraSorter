@@ -27,7 +27,7 @@ unsigned long TRIGGER_COUNTER = 0L;
 unsigned long PIN = LED_BUILTIN;
 
 // Delay in microseconds between triggering and turn-off
-unsigned long TURN_OFF_DELAY = 50L;
+unsigned long TURN_OFF_DELAY = 10000L;
 
 // Keep track of sevetal key times in micros
 unsigned long EXPERIMENT_START_TIME_MICROS = 0L;
