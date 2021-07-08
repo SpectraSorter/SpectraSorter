@@ -506,8 +506,8 @@ namespace spectra.ui
                     }
                 }
 
-                // Declare our spectrum to save
-                SpectrumForSaving saveSpectrum;
+                // Declare our spectrum queue for saving
+                SpectrumForSavingQueueObject saveSpectrumQueue;
 
                 //
                 // Process the queue
@@ -522,69 +522,76 @@ namespace spectra.ui
                         // Get the next spectrum response
                         lock (mSaveQueue)
                         {
-                            saveSpectrum = mSaveQueue.Dequeue();
+                            saveSpectrumQueue = mSaveQueue.Dequeue();
                         }
 
-                        if (SettingsManager.SaveToFile)
+                        int spectraInThisQueue = saveSpectrumQueue.Count;
+
+                        while (saveSpectrumQueue.Count > 0)
                         {
-                            // Since saving floats to disk is very slow, we avoid doing it if possible
-                            if (resultSpectrumTypeCache == Options.ResultSpectrumType.RAW_SPECTRUM ||
-                                resultSpectrumTypeCache == Options.ResultSpectrumType.DARK_CORRECTED)
+                            SpectrumForSaving saveSpectrum = saveSpectrumQueue.Dequeue();
+
+                            if (SettingsManager.SaveToFile)
                             {
-                                // Convert back to int
-                                int[] convertedOutputArray = Utils.ToIntArray(saveSpectrum.computedSpectrum);
-
-                                if (bSaveOnlySelectedWavelengths == true)
+                                // Since saving floats to disk is very slow, we avoid doing it if possible
+                                if (resultSpectrumTypeCache == Options.ResultSpectrumType.RAW_SPECTRUM ||
+                                    resultSpectrumTypeCache == Options.ResultSpectrumType.DARK_CORRECTED)
                                 {
-                                    SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, convertedOutputArray, outFile, saveSpectrum.triggered);
+                                    // Convert back to int
+                                    int[] convertedOutputArray = Utils.ToIntArray(saveSpectrum.computedSpectrum);
 
-                                    // Update the number of saved bytes
-                                    mTotalSavedBytes += (long)(sizeof(UInt16) * wavelengthsToSaveCache.Count);
+                                    if (bSaveOnlySelectedWavelengths == true)
+                                    {
+                                        SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, convertedOutputArray, outFile, saveSpectrum.triggered);
 
+                                        // Update the number of saved bytes
+                                        mTotalSavedBytes += (long)(sizeof(UInt16) * wavelengthsToSaveCache.Count);
+
+                                    }
+                                    else
+                                    {
+                                        SaveSpectrum(sb, saveSpectrum.rawSpectrum, convertedOutputArray, outFile, saveSpectrum.triggered, savingWavelengthStep);
+
+                                        // Update the number of saved bytes
+                                        mTotalSavedBytes += (long)(sizeof(UInt16)) * (saveEndPixelCache - saveStartPixelCache + 1) / savingWavelengthStep;
+                                    }
+
+                                    // Update the number of spectra saved
+                                    mTotalSpectraSaved += 1;
                                 }
                                 else
                                 {
-                                    SaveSpectrum(sb, saveSpectrum.rawSpectrum, convertedOutputArray, outFile, saveSpectrum.triggered, savingWavelengthStep);
+                                    if (bSaveOnlySelectedWavelengths == true)
+                                    {
+                                        SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, saveSpectrum.computedSpectrum, outFile, saveSpectrum.triggered);
 
-                                    // Update the number of saved bytes
-                                    mTotalSavedBytes += (long)(sizeof(UInt16)) * (saveEndPixelCache - saveStartPixelCache + 1) / savingWavelengthStep;
+                                        // Update the number of saved bytes
+                                        mTotalSavedBytes += (long)(sizeof(float) * wavelengthsToSaveCache.Count);
+
+                                    }
+                                    else
+                                    {
+                                        SaveSpectrum(sb, saveSpectrum.rawSpectrum, saveSpectrum.computedSpectrum, outFile, saveSpectrum.triggered, savingWavelengthStep);
+
+                                        // Update the number of saved bytes
+                                        mTotalSavedBytes += (long)(sizeof(float)) * (saveEndPixelCache - saveStartPixelCache + 1) / savingWavelengthStep;
+
+                                    }
+
+                                    // Update the number of spectra saved
+                                    mTotalSpectraSaved += 1;
                                 }
-
-                                // Update the number of spectra saved
-                                mTotalSpectraSaved += 1;
-                            }
-                            else
-                            {
-                                if (bSaveOnlySelectedWavelengths == true)
-                                {
-                                    SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, saveSpectrum.computedSpectrum, outFile, saveSpectrum.triggered);
-
-                                    // Update the number of saved bytes
-                                    mTotalSavedBytes += (long)(sizeof(float) * wavelengthsToSaveCache.Count);
-
-                                }
-                                else
-                                {
-                                    SaveSpectrum(sb, saveSpectrum.rawSpectrum, saveSpectrum.computedSpectrum, outFile, saveSpectrum.triggered, savingWavelengthStep);
-
-                                    // Update the number of saved bytes
-                                    mTotalSavedBytes += (long)(sizeof(float)) * (saveEndPixelCache - saveStartPixelCache + 1) / savingWavelengthStep;
-
-                                }
-
-                                // Update the number of spectra saved
-                                mTotalSpectraSaved += 1;
                             }
                         }
 
                         // Return the spectrum to the supply queue
                         lock (mSupplyQueue)
                         {
-                            mSupplyQueue.Enqueue(saveSpectrum.originalSpectrum);
+                            mSupplyQueue.Enqueue(saveSpectrumQueue.originalSpectrum);
                         }
 
                         // Update number of processed spectra
-                        processedSpectra++;
+                        processedSpectra += spectraInThisQueue;
 
                         // Context switch
                         Thread.Sleep(0);
@@ -673,6 +680,9 @@ namespace spectra.ui
                         {
                             computeSpectrum = mComputeQueue.Dequeue();
                         }
+
+                        // Create a new save spectrum queue object
+                        SpectrumForSavingQueueObject spectrumQueue = new SpectrumForSavingQueueObject(computeSpectrum);
 
                         // Get the spectrum with metadata
                         RawSpectrumWithMetadataBuffer[] spectrumA = computeSpectrum.Spectrum;
@@ -840,17 +850,17 @@ namespace spectra.ui
                             // No matter whether saving is on or not, we enqueue the spectrum.
                             // The save thread will take care of cleaning the queue, whether
                             // the spectra will be saved to disk or not.
-                            lock (mSaveQueue)
+                            spectrumQueue.Enqueue(new SpectrumForSaving()
                             {
-                                mSaveQueue.Enqueue(new SpectrumForSaving()
-                                {
-                                    originalSpectrum = computeSpectrum,
-                                    rawSpectrum = spectrum,
-                                    computedSpectrum = computedOutputSpectrum,
-                                    triggered = IsThresholdConditionSatisfied
-                                }
-                                );
-                            }
+                                rawSpectrum = spectrum,
+                                computedSpectrum = computedOutputSpectrum,
+                                triggered = IsThresholdConditionSatisfied
+                            });
+                        }
+
+                        lock (mSaveQueue)
+                        {
+                            mSaveQueue.Enqueue(spectrumQueue);
                         }
 
                         if (chartedSpectrum != null)
@@ -908,4 +918,3 @@ namespace spectra.ui
         }
     }
 }
-
