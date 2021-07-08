@@ -115,7 +115,7 @@ namespace spectra.ui
 
         private Queue<OBPGetRawSpectrumWithMetadata> mSupplyQueue = new Queue<OBPGetRawSpectrumWithMetadata>();
 
-        private Queue<SpectrumForSaving> mSaveQueue = new Queue<SpectrumForSaving>();
+        private Queue<SpectrumForSavingQueueObject> mSaveQueue = new Queue<SpectrumForSavingQueueObject>();
 
         private bool mClearBufferBeforeTest = true;
 
@@ -2760,16 +2760,49 @@ namespace spectra.ui
     }
 
     // Structure to store all data required for the save thread
-    //
-    // originalSpectrum is used at the end of saving to put it back into
-    // the Supply queue. Do not access it in the saving queue besides in the
-    // enqueue call at the end saving!
     public struct SpectrumForSaving
     {
-        public OBPGetRawSpectrumWithMetadata originalSpectrum; 
         public RawSpectrumWithMetadataBuffer rawSpectrum;
         public float[] computedSpectrum;
         public bool triggered;
     }
 
+    // Queue for SpectrumForSaving objects, to make sure that in acquisitions
+    // with number of requested spectra larger than 1, only one
+    // OBPGetRawSpectrumWithMetadata spectrum is added back to the supply queue
+    // at the end of processing.
+    public class SpectrumForSavingQueueObject
+    {
+        // Lock object
+        private static readonly object LockObject = new object();
+
+        public OBPGetRawSpectrumWithMetadata originalSpectrum;
+        public Queue<SpectrumForSaving> mQueue;
+
+        public SpectrumForSavingQueueObject(OBPGetRawSpectrumWithMetadata spectrum)
+        {
+            originalSpectrum = spectrum;
+            mQueue = new Queue<SpectrumForSaving>();
+        }
+
+        public void Enqueue(SpectrumForSaving s)
+        {
+            lock (LockObject)
+            {
+                mQueue.Enqueue(s);
+            }
+        }
+
+        public SpectrumForSaving Dequeue()
+        {
+            SpectrumForSaving s;
+            lock (LockObject)
+            {
+                s = mQueue.Dequeue();
+            }
+            return s;
+        }
+
+        public int Count => mQueue.Count;
+    }
 }
