@@ -1647,8 +1647,8 @@ namespace spectra.ui
             //SettingsManager.Save();
 
             // Store the acquisition settings
-            string filename = Path.Combine(SettingsManager.SaveDirectory, SettingsManager.SaveFileName.Replace(".csv", "_settings.conf"));
-            SaveAcquisitionSettingsToResultDir(filename);
+            string filename = Path.Combine(SettingsManager.SaveDirectory, SettingsManager.SaveFileName.Replace(".csv", "_settings.xml"));
+            SettingsWriter.Save(filename);
 
             updateAcquisitionButtonAndMenuState();
         }
@@ -1908,11 +1908,6 @@ namespace spectra.ui
             // Toggle buttons
             buttonConnectToArduino.Enabled = true;
             buttonDisconnectFromArduino.Enabled = false;
-        }
-
-        private void SaveAcquisitionSettingsToResultDir(string filename)
-        {
-            SettingsWriter.Save(filename);
         }
 
         // Handle the TrackBar.ValueChanged event by calculating a value for
