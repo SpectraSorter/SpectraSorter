@@ -307,6 +307,8 @@ namespace spectra.ui.components
             textBoxPin.Text = "" + mArduino.Pin;
             textBoxDuration.Text = "" + mArduino.TriggerDuration;
             labelCount.Text = "" + this.mArduino.OnBoardCounter;
+
+            this.ValidateChildren();
         }
 
         private void onSpeedTestComplete(string mean, string total)
