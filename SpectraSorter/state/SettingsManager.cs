@@ -1049,6 +1049,15 @@ namespace spectra.state
             Properties.Settings.Default.Save();
         }
 
+
+        /// <summary>
+        /// Revert to last saved values
+        /// </summary>
+        public static void RestoreLastSavedValues()
+        {
+            Properties.Settings.Default.Reload();
+        }
+
         /// <summary>
         /// Revert to default values
         /// </summary>

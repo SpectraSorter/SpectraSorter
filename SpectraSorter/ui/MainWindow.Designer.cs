@@ -85,6 +85,7 @@ namespace spectra.ui
             this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.saveSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revertSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,6 +221,7 @@ namespace spectra.ui
             this.groupBoxOceanFXUSB = new System.Windows.Forms.GroupBox();
             this.groupBoxOceanFXNetwork = new System.Windows.Forms.GroupBox();
             this.groupBoxArduinoCOM = new System.Windows.Forms.GroupBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIPDevices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUSBDeviceList)).BeginInit();
             this.groupBoxDark.SuspendLayout();
@@ -349,7 +351,7 @@ namespace spectra.ui
             this.checkBoxLampEnableDark.AutoSize = true;
             this.checkBoxLampEnableDark.Location = new System.Drawing.Point(6, 7);
             this.checkBoxLampEnableDark.Name = "checkBoxLampEnableDark";
-            this.checkBoxLampEnableDark.Size = new System.Drawing.Size(134, 27);
+            this.checkBoxLampEnableDark.Size = new System.Drawing.Size(91, 17);
             this.checkBoxLampEnableDark.TabIndex = 37;
             this.checkBoxLampEnableDark.Text = "Enable Lamp";
             this.checkBoxLampEnableDark.UseVisualStyleBackColor = true;
@@ -362,7 +364,7 @@ namespace spectra.ui
             this.labelFileSaveError.ForeColor = System.Drawing.Color.Crimson;
             this.labelFileSaveError.Location = new System.Drawing.Point(12, 144);
             this.labelFileSaveError.Name = "labelFileSaveError";
-            this.labelFileSaveError.Size = new System.Drawing.Size(148, 23);
+            this.labelFileSaveError.Size = new System.Drawing.Size(95, 13);
             this.labelFileSaveError.TabIndex = 121;
             this.labelFileSaveError.Text = "* File save error *";
             this.labelFileSaveError.Visible = false;
@@ -401,7 +403,7 @@ namespace spectra.ui
             this.textBoxNumInBuffer.Location = new System.Drawing.Point(108, 742);
             this.textBoxNumInBuffer.Name = "textBoxNumInBuffer";
             this.textBoxNumInBuffer.ReadOnly = true;
-            this.textBoxNumInBuffer.Size = new System.Drawing.Size(61, 29);
+            this.textBoxNumInBuffer.Size = new System.Drawing.Size(61, 22);
             this.textBoxNumInBuffer.TabIndex = 136;
             this.textBoxNumInBuffer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxNumInBuffer.TextChanged += new System.EventHandler(this.textBoxNumInBuffer_TextChanged);
@@ -412,7 +414,7 @@ namespace spectra.ui
             this.label26.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(6, 747);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(136, 23);
+            this.label26.Size = new System.Drawing.Size(93, 13);
             this.label26.TabIndex = 135;
             this.label26.Text = "Spectra in Buffer";
             // 
@@ -455,7 +457,7 @@ namespace spectra.ui
             this.labelDarkStatus.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelDarkStatus.Location = new System.Drawing.Point(135, 24);
             this.labelDarkStatus.Name = "labelDarkStatus";
-            this.labelDarkStatus.Size = new System.Drawing.Size(72, 23);
+            this.labelDarkStatus.Size = new System.Drawing.Size(49, 13);
             this.labelDarkStatus.TabIndex = 144;
             this.labelDarkStatus.Text = "00:00:00";
             this.labelDarkStatus.Visible = false;
@@ -466,7 +468,7 @@ namespace spectra.ui
             this.labelReferenceStatus.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelReferenceStatus.Location = new System.Drawing.Point(122, 11);
             this.labelReferenceStatus.Name = "labelReferenceStatus";
-            this.labelReferenceStatus.Size = new System.Drawing.Size(72, 23);
+            this.labelReferenceStatus.Size = new System.Drawing.Size(49, 13);
             this.labelReferenceStatus.TabIndex = 147;
             this.labelReferenceStatus.Text = "00:00:00";
             this.labelReferenceStatus.Visible = false;
@@ -524,7 +526,7 @@ namespace spectra.ui
             this.checkBoxClearBufferBeforeAcquisition.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxClearBufferBeforeAcquisition.Location = new System.Drawing.Point(137, 7);
             this.checkBoxClearBufferBeforeAcquisition.Name = "checkBoxClearBufferBeforeAcquisition";
-            this.checkBoxClearBufferBeforeAcquisition.Size = new System.Drawing.Size(268, 27);
+            this.checkBoxClearBufferBeforeAcquisition.Size = new System.Drawing.Size(185, 17);
             this.checkBoxClearBufferBeforeAcquisition.TabIndex = 142;
             this.checkBoxClearBufferBeforeAcquisition.Text = "Clear Buffer Before Acquisition";
             this.checkBoxClearBufferBeforeAcquisition.UseVisualStyleBackColor = true;
@@ -634,7 +636,7 @@ namespace spectra.ui
             this.toolStripHelpMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1353, 33);
+            this.menuStrip.Size = new System.Drawing.Size(1353, 24);
             this.menuStrip.TabIndex = 209;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -645,7 +647,7 @@ namespace spectra.ui
             this.toolStripSeparator4,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // toolStripSettings
@@ -655,53 +657,62 @@ namespace spectra.ui
             this.exportSettingsToolStripMenuItem,
             this.toolStripSeparator5,
             this.saveSettingsToolStripMenuItem,
+            this.reloadDefaultsToolStripMenuItem,
+            this.toolStripSeparator6,
             this.revertSettingsToolStripMenuItem});
             this.toolStripSettings.Name = "toolStripSettings";
-            this.toolStripSettings.Size = new System.Drawing.Size(270, 34);
+            this.toolStripSettings.Size = new System.Drawing.Size(180, 22);
             this.toolStripSettings.Text = "Settings";
             // 
             // importSettingsToolStripMenuItem
             // 
             this.importSettingsToolStripMenuItem.Name = "importSettingsToolStripMenuItem";
-            this.importSettingsToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.importSettingsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.importSettingsToolStripMenuItem.Text = "Import from file";
             this.importSettingsToolStripMenuItem.Click += new System.EventHandler(this.importSettingsToolStripMenuItem_Click);
             // 
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export to file";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(296, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(194, 6);
             // 
             // saveSettingsToolStripMenuItem
             // 
             this.saveSettingsToolStripMenuItem.Name = "saveSettingsToolStripMenuItem";
-            this.saveSettingsToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
-            this.saveSettingsToolStripMenuItem.Text = "Store as default";
+            this.saveSettingsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.saveSettingsToolStripMenuItem.Text = "Store as new default";
             this.saveSettingsToolStripMenuItem.Click += new System.EventHandler(this.saveSettingsToolStripMenuItem_Click);
+            // 
+            // reloadDefaultsToolStripMenuItem
+            // 
+            this.reloadDefaultsToolStripMenuItem.Name = "reloadDefaultsToolStripMenuItem";
+            this.reloadDefaultsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.reloadDefaultsToolStripMenuItem.Text = "Reload current default";
+            this.reloadDefaultsToolStripMenuItem.Click += new System.EventHandler(this.reloadDefaultsToolStripMenuItem_Click);
             // 
             // revertSettingsToolStripMenuItem
             // 
             this.revertSettingsToolStripMenuItem.Name = "revertSettingsToolStripMenuItem";
-            this.revertSettingsToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.revertSettingsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.revertSettingsToolStripMenuItem.Text = "Revert to factory values";
             this.revertSettingsToolStripMenuItem.Click += new System.EventHandler(this.revertSettingsToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -710,14 +721,14 @@ namespace spectra.ui
             this.wavelengthsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.wavelengthHubToolStripMenuItem});
             this.wavelengthsToolStripMenuItem.Name = "wavelengthsToolStripMenuItem";
-            this.wavelengthsToolStripMenuItem.Size = new System.Drawing.Size(37, 29);
+            this.wavelengthsToolStripMenuItem.Size = new System.Drawing.Size(25, 20);
             this.wavelengthsToolStripMenuItem.Text = "λ";
             // 
             // wavelengthHubToolStripMenuItem
             // 
             this.wavelengthHubToolStripMenuItem.Name = "wavelengthHubToolStripMenuItem";
             this.wavelengthHubToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.wavelengthHubToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
+            this.wavelengthHubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wavelengthHubToolStripMenuItem.Text = "Hub";
             this.wavelengthHubToolStripMenuItem.Click += new System.EventHandler(this.managerToolStripMenuItem_Click);
             // 
@@ -735,14 +746,14 @@ namespace spectra.ui
             this.processToolStripMenuItem.Enabled = false;
             this.processToolStripMenuItem.Name = "processToolStripMenuItem";
             this.processToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.processToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.processToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.processToolStripMenuItem.Text = "Process";
             // 
             // enabledFilteringToolStripMenuItem
             // 
             this.enabledFilteringToolStripMenuItem.Name = "enabledFilteringToolStripMenuItem";
             this.enabledFilteringToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.enabledFilteringToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
+            this.enabledFilteringToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.enabledFilteringToolStripMenuItem.Text = "Filtering";
             this.enabledFilteringToolStripMenuItem.Click += new System.EventHandler(this.enabledFilteringToolStripMenuItem_Click);
             // 
@@ -750,7 +761,7 @@ namespace spectra.ui
             // 
             this.enabledTriggeringToolStripMenuItem.Name = "enabledTriggeringToolStripMenuItem";
             this.enabledTriggeringToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.enabledTriggeringToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
+            this.enabledTriggeringToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.enabledTriggeringToolStripMenuItem.Text = "Triggering";
             this.enabledTriggeringToolStripMenuItem.Click += new System.EventHandler(this.enabledTriggeringToolStripMenuItem_Click);
             // 
@@ -762,34 +773,34 @@ namespace spectra.ui
             this.dynamicReferenceToolStripMenuItem});
             this.referenceToolStripMenuItem1.Name = "referenceToolStripMenuItem1";
             this.referenceToolStripMenuItem1.ShowShortcutKeys = false;
-            this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(256, 34);
+            this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.referenceToolStripMenuItem1.Text = "Reference";
             // 
             // doNotUseReferenceToolStripMenuItem
             // 
             this.doNotUseReferenceToolStripMenuItem.Name = "doNotUseReferenceToolStripMenuItem";
-            this.doNotUseReferenceToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
+            this.doNotUseReferenceToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.doNotUseReferenceToolStripMenuItem.Text = "None";
             this.doNotUseReferenceToolStripMenuItem.Click += new System.EventHandler(this.DoNotUseToolStripMenuItem_Click);
             // 
             // staticToolStripMenuItem
             // 
             this.staticToolStripMenuItem.Name = "staticToolStripMenuItem";
-            this.staticToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
+            this.staticToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.staticToolStripMenuItem.Text = "Static";
             this.staticToolStripMenuItem.Click += new System.EventHandler(this.StaticToolStripMenuItem_Click);
             // 
             // dynamicReferenceToolStripMenuItem
             // 
             this.dynamicReferenceToolStripMenuItem.Name = "dynamicReferenceToolStripMenuItem";
-            this.dynamicReferenceToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
+            this.dynamicReferenceToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.dynamicReferenceToolStripMenuItem.Text = "Dynamic";
             this.dynamicReferenceToolStripMenuItem.Click += new System.EventHandler(this.DynamicReferenceToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(253, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // outputToolStripMenuItem
             // 
@@ -799,34 +810,34 @@ namespace spectra.ui
             this.absorbanceToolStripMenuItem,
             this.transmissionToolStripMenuItem});
             this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
-            this.outputToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
+            this.outputToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.outputToolStripMenuItem.Text = "Output";
             // 
             // rawSpectrumToolStripMenuItem
             // 
             this.rawSpectrumToolStripMenuItem.Name = "rawSpectrumToolStripMenuItem";
-            this.rawSpectrumToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.rawSpectrumToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.rawSpectrumToolStripMenuItem.Text = "Raw spectrum";
             this.rawSpectrumToolStripMenuItem.Click += new System.EventHandler(this.RawSpectrumToolStripMenuItem_Click);
             // 
             // darkCorrectedToolStripMenuItem
             // 
             this.darkCorrectedToolStripMenuItem.Name = "darkCorrectedToolStripMenuItem";
-            this.darkCorrectedToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.darkCorrectedToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.darkCorrectedToolStripMenuItem.Text = "Dark corrected";
             this.darkCorrectedToolStripMenuItem.Click += new System.EventHandler(this.DarkCorrectedToolStripMenuItem_Click);
             // 
             // absorbanceToolStripMenuItem
             // 
             this.absorbanceToolStripMenuItem.Name = "absorbanceToolStripMenuItem";
-            this.absorbanceToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.absorbanceToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.absorbanceToolStripMenuItem.Text = "Absorbance";
             this.absorbanceToolStripMenuItem.Click += new System.EventHandler(this.AbsorbanceToolStripMenuItem_Click);
             // 
             // transmissionToolStripMenuItem
             // 
             this.transmissionToolStripMenuItem.Name = "transmissionToolStripMenuItem";
-            this.transmissionToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.transmissionToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.transmissionToolStripMenuItem.Text = "Transmission";
             this.transmissionToolStripMenuItem.Click += new System.EventHandler(this.TransmissionToolStripMenuItem_Click);
             // 
@@ -834,14 +845,14 @@ namespace spectra.ui
             // 
             this.enableSaveToFileToolStripMenuItem.Name = "enableSaveToFileToolStripMenuItem";
             this.enableSaveToFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.enableSaveToFileToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
+            this.enableSaveToFileToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.enableSaveToFileToolStripMenuItem.Text = "Saving";
             this.enableSaveToFileToolStripMenuItem.Click += new System.EventHandler(this.enableSaveToFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(253, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
             // startToolStripMenuItem2
             // 
@@ -849,7 +860,7 @@ namespace spectra.ui
             this.startToolStripMenuItem,
             this.abortToolStripMenuItem});
             this.startToolStripMenuItem2.Name = "startToolStripMenuItem2";
-            this.startToolStripMenuItem2.Size = new System.Drawing.Size(256, 34);
+            this.startToolStripMenuItem2.Size = new System.Drawing.Size(170, 22);
             this.startToolStripMenuItem2.Text = "Acquisition";
             // 
             // startToolStripMenuItem
@@ -857,7 +868,7 @@ namespace spectra.ui
             this.startToolStripMenuItem.Enabled = false;
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
             this.startToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.StartToolStripMenuItem_Click);
             // 
@@ -866,7 +877,7 @@ namespace spectra.ui
             this.abortToolStripMenuItem.Enabled = false;
             this.abortToolStripMenuItem.Name = "abortToolStripMenuItem";
             this.abortToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.abortToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
+            this.abortToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.abortToolStripMenuItem.Text = "Abort";
             this.abortToolStripMenuItem.Click += new System.EventHandler(this.AbortToolStripMenuItem_Click);
             // 
@@ -889,7 +900,7 @@ namespace spectra.ui
             this.plotToolStripMenuItem.Enabled = false;
             this.plotToolStripMenuItem.Name = "plotToolStripMenuItem";
             this.plotToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.plotToolStripMenuItem.Size = new System.Drawing.Size(59, 29);
+            this.plotToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.plotToolStripMenuItem.Text = "Plot";
             // 
             // spectrumToolStripMenuItem
@@ -898,7 +909,7 @@ namespace spectra.ui
             this.spectrumToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.spectrumToolStripMenuItem.Name = "spectrumToolStripMenuItem";
             this.spectrumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.spectrumToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.spectrumToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.spectrumToolStripMenuItem.Text = "[Live] Output spectrum";
             this.spectrumToolStripMenuItem.Click += new System.EventHandler(this.SpectrumToolStripMenuItem_Click);
             // 
@@ -906,20 +917,20 @@ namespace spectra.ui
             // 
             this.timeSeriesToolStripMenuItem.Name = "timeSeriesToolStripMenuItem";
             this.timeSeriesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.timeSeriesToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.timeSeriesToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.timeSeriesToolStripMenuItem.Text = "[Live] Time series";
             this.timeSeriesToolStripMenuItem.Click += new System.EventHandler(this.TimeSeriesToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(446, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(295, 6);
             // 
             // darkSpectrumToolStripMenuItem
             // 
             this.darkSpectrumToolStripMenuItem.Name = "darkSpectrumToolStripMenuItem";
             this.darkSpectrumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.darkSpectrumToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.darkSpectrumToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.darkSpectrumToolStripMenuItem.Text = "Dark spectrum";
             this.darkSpectrumToolStripMenuItem.Click += new System.EventHandler(this.DarkSpectrumToolStripMenuItem_Click);
             // 
@@ -927,7 +938,7 @@ namespace spectra.ui
             // 
             this.referenceSpectrumToolStripMenuItem.Name = "referenceSpectrumToolStripMenuItem";
             this.referenceSpectrumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-            this.referenceSpectrumToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.referenceSpectrumToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.referenceSpectrumToolStripMenuItem.Text = "Reference spectrum";
             this.referenceSpectrumToolStripMenuItem.Click += new System.EventHandler(this.ReferenceSpectrumToolStripMenuItem_Click);
             // 
@@ -935,20 +946,20 @@ namespace spectra.ui
             // 
             this.correctedReferenceSpectrumToolStripMenuItem.Name = "correctedReferenceSpectrumToolStripMenuItem";
             this.correctedReferenceSpectrumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.correctedReferenceSpectrumToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.correctedReferenceSpectrumToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.correctedReferenceSpectrumToolStripMenuItem.Text = "Dark-corrected reference spectrum";
             this.correctedReferenceSpectrumToolStripMenuItem.Click += new System.EventHandler(this.CorrectedReferenceSpectrumToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(446, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(295, 6);
             // 
             // accumulatedSpectraToolStripMenuItem
             // 
             this.accumulatedSpectraToolStripMenuItem.Name = "accumulatedSpectraToolStripMenuItem";
             this.accumulatedSpectraToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-            this.accumulatedSpectraToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.accumulatedSpectraToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.accumulatedSpectraToolStripMenuItem.Text = "Accumulated spectra";
             this.accumulatedSpectraToolStripMenuItem.Click += new System.EventHandler(this.AccumulatedSpectraToolStripMenuItem_Click);
             // 
@@ -956,20 +967,20 @@ namespace spectra.ui
             // 
             this.accumulatedTimeSeriesToolStripMenuItem.Name = "accumulatedTimeSeriesToolStripMenuItem";
             this.accumulatedTimeSeriesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
-            this.accumulatedTimeSeriesToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.accumulatedTimeSeriesToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.accumulatedTimeSeriesToolStripMenuItem.Text = "Accumulated time series";
             this.accumulatedTimeSeriesToolStripMenuItem.Click += new System.EventHandler(this.AccumulatedTimeSeriesToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(446, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(295, 6);
             // 
             // showThresholdsToolStripMenuItem
             // 
             this.showThresholdsToolStripMenuItem.Name = "showThresholdsToolStripMenuItem";
             this.showThresholdsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.showThresholdsToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.showThresholdsToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.showThresholdsToolStripMenuItem.Text = "Show thresholds";
             this.showThresholdsToolStripMenuItem.Click += new System.EventHandler(this.ShowThresholdsToolStripMenuItem_Click);
             // 
@@ -977,7 +988,7 @@ namespace spectra.ui
             // 
             this.showTriggerPointsToolStripMenuItem.Name = "showTriggerPointsToolStripMenuItem";
             this.showTriggerPointsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.showTriggerPointsToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.showTriggerPointsToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.showTriggerPointsToolStripMenuItem.Text = "Show trigger points";
             this.showTriggerPointsToolStripMenuItem.Click += new System.EventHandler(this.showTriggerPointsToolStripMenuItem_Click);
             // 
@@ -985,7 +996,7 @@ namespace spectra.ui
             // 
             this.autoScaleYAxisToolStripMenuItem.Name = "autoScaleYAxisToolStripMenuItem";
             this.autoScaleYAxisToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.autoScaleYAxisToolStripMenuItem.Size = new System.Drawing.Size(449, 34);
+            this.autoScaleYAxisToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
             this.autoScaleYAxisToolStripMenuItem.Text = "Auto scale Y axis";
             this.autoScaleYAxisToolStripMenuItem.Click += new System.EventHandler(this.YAutoScaleToolStripMenuItem_Click);
             // 
@@ -997,25 +1008,25 @@ namespace spectra.ui
             this.aboutToolStripMenuItem});
             this.toolStripHelpMenuItem.Name = "toolStripHelpMenuItem";
             this.toolStripHelpMenuItem.ShowShortcutKeys = false;
-            this.toolStripHelpMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.toolStripHelpMenuItem.Size = new System.Drawing.Size(44, 20);
             this.toolStripHelpMenuItem.Text = "Help";
             // 
             // shortcutsToolStripMenuItem
             // 
             this.shortcutsToolStripMenuItem.Name = "shortcutsToolStripMenuItem";
-            this.shortcutsToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
+            this.shortcutsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.shortcutsToolStripMenuItem.Text = "Shortcuts";
             this.shortcutsToolStripMenuItem.Click += new System.EventHandler(this.ShortcutsToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(186, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(121, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -1101,7 +1112,7 @@ namespace spectra.ui
             this.labelCorrectedReferenceSpectrumType.AutoSize = true;
             this.labelCorrectedReferenceSpectrumType.Location = new System.Drawing.Point(198, 24);
             this.labelCorrectedReferenceSpectrumType.Name = "labelCorrectedReferenceSpectrumType";
-            this.labelCorrectedReferenceSpectrumType.Size = new System.Drawing.Size(0, 23);
+            this.labelCorrectedReferenceSpectrumType.Size = new System.Drawing.Size(0, 13);
             this.labelCorrectedReferenceSpectrumType.TabIndex = 149;
             this.labelCorrectedReferenceSpectrumType.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -1110,7 +1121,7 @@ namespace spectra.ui
             this.labelCorrectedReferenceSpectrumStatus.AutoSize = true;
             this.labelCorrectedReferenceSpectrumStatus.Location = new System.Drawing.Point(7, 24);
             this.labelCorrectedReferenceSpectrumStatus.Name = "labelCorrectedReferenceSpectrumStatus";
-            this.labelCorrectedReferenceSpectrumStatus.Size = new System.Drawing.Size(114, 23);
+            this.labelCorrectedReferenceSpectrumStatus.Size = new System.Drawing.Size(77, 13);
             this.labelCorrectedReferenceSpectrumStatus.TabIndex = 148;
             this.labelCorrectedReferenceSpectrumStatus.Text = "Not available.";
             // 
@@ -1119,7 +1130,7 @@ namespace spectra.ui
             this.toolStripOceanFXUSBStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripOceanFXUSBStatus.Image = global::spectra.Properties.Resources.oceanfx;
             this.toolStripOceanFXUSBStatus.Name = "toolStripOceanFXUSBStatus";
-            this.toolStripOceanFXUSBStatus.Size = new System.Drawing.Size(286, 25);
+            this.toolStripOceanFXUSBStatus.Size = new System.Drawing.Size(193, 21);
             this.toolStripOceanFXUSBStatus.Text = "OceanFX (USB): Disconnected";
             // 
             // toolStripOceanFXIPStatus
@@ -1127,7 +1138,7 @@ namespace spectra.ui
             this.toolStripOceanFXIPStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripOceanFXIPStatus.Image = global::spectra.Properties.Resources.ip;
             this.toolStripOceanFXIPStatus.Name = "toolStripOceanFXIPStatus";
-            this.toolStripOceanFXIPStatus.Size = new System.Drawing.Size(268, 25);
+            this.toolStripOceanFXIPStatus.Size = new System.Drawing.Size(180, 21);
             this.toolStripOceanFXIPStatus.Text = "OceanFX (IP): Disconnected";
             // 
             // toolStripArduinoStatus
@@ -1135,7 +1146,7 @@ namespace spectra.ui
             this.toolStripArduinoStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripArduinoStatus.Image = global::spectra.Properties.Resources.arduino;
             this.toolStripArduinoStatus.Name = "toolStripArduinoStatus";
-            this.toolStripArduinoStatus.Size = new System.Drawing.Size(226, 25);
+            this.toolStripArduinoStatus.Size = new System.Drawing.Size(153, 21);
             this.toolStripArduinoStatus.Text = "Arduino: Disconnected";
             // 
             // toolStripStatusSystemTimeAccuracy
@@ -1143,7 +1154,7 @@ namespace spectra.ui
             this.toolStripStatusSystemTimeAccuracy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusSystemTimeAccuracy.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusSystemTimeAccuracy.Image")));
             this.toolStripStatusSystemTimeAccuracy.Name = "toolStripStatusSystemTimeAccuracy";
-            this.toolStripStatusSystemTimeAccuracy.Size = new System.Drawing.Size(312, 25);
+            this.toolStripStatusSystemTimeAccuracy.Size = new System.Drawing.Size(211, 20);
             this.toolStripStatusSystemTimeAccuracy.Text = "System timer accuracy: unknown";
             // 
             // statusStripToolbar
@@ -1161,9 +1172,9 @@ namespace spectra.ui
             this.toolStripStatusSavingLabel,
             this.toolStripStatusSystemTimeAccuracy,
             this.toolStripMenuItem1});
-            this.statusStripToolbar.Location = new System.Drawing.Point(0, 1018);
+            this.statusStripToolbar.Location = new System.Drawing.Point(0, 1024);
             this.statusStripToolbar.Name = "statusStripToolbar";
-            this.statusStripToolbar.Size = new System.Drawing.Size(1353, 32);
+            this.statusStripToolbar.Size = new System.Drawing.Size(1353, 26);
             this.statusStripToolbar.TabIndex = 214;
             this.statusStripToolbar.Text = "Toolbar";
             // 
@@ -1175,14 +1186,14 @@ namespace spectra.ui
             this.toolStripStatusFilteringLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusFilteringLabel.Image = global::spectra.Properties.Resources.tool;
             this.toolStripStatusFilteringLabel.Name = "toolStripStatusFilteringLabel";
-            this.toolStripStatusFilteringLabel.Size = new System.Drawing.Size(158, 29);
+            this.toolStripStatusFilteringLabel.Size = new System.Drawing.Size(111, 24);
             this.toolStripStatusFilteringLabel.Text = "Filtering: Off";
             // 
             // onToolStripMenuItem
             // 
             this.onToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.onToolStripMenuItem.Name = "onToolStripMenuItem";
-            this.onToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
+            this.onToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.onToolStripMenuItem.Text = "On";
             this.onToolStripMenuItem.Click += new System.EventHandler(this.OnToolStripMenuItem_Click);
             // 
@@ -1190,7 +1201,7 @@ namespace spectra.ui
             // 
             this.offToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.offToolStripMenuItem.Name = "offToolStripMenuItem";
-            this.offToolStripMenuItem.Size = new System.Drawing.Size(140, 34);
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.offToolStripMenuItem.Text = "Off";
             this.offToolStripMenuItem.Click += new System.EventHandler(this.OffToolStripMenuItem_Click);
             // 
@@ -1202,14 +1213,14 @@ namespace spectra.ui
             this.toolStripStatusThresholdingLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusThresholdingLabel.Image = global::spectra.Properties.Resources.tool;
             this.toolStripStatusThresholdingLabel.Name = "toolStripStatusThresholdingLabel";
-            this.toolStripStatusThresholdingLabel.Size = new System.Drawing.Size(176, 29);
+            this.toolStripStatusThresholdingLabel.Size = new System.Drawing.Size(122, 24);
             this.toolStripStatusThresholdingLabel.Text = "Triggering: Off";
             // 
             // onToolStripMenuItem1
             // 
             this.onToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.onToolStripMenuItem1.Name = "onToolStripMenuItem1";
-            this.onToolStripMenuItem1.Size = new System.Drawing.Size(140, 34);
+            this.onToolStripMenuItem1.Size = new System.Drawing.Size(91, 22);
             this.onToolStripMenuItem1.Text = "On";
             this.onToolStripMenuItem1.Click += new System.EventHandler(this.OnToolStripMenuItem1_Click);
             // 
@@ -1217,7 +1228,7 @@ namespace spectra.ui
             // 
             this.offToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.offToolStripMenuItem1.Name = "offToolStripMenuItem1";
-            this.offToolStripMenuItem1.Size = new System.Drawing.Size(140, 34);
+            this.offToolStripMenuItem1.Size = new System.Drawing.Size(91, 22);
             this.offToolStripMenuItem1.Text = "Off";
             this.offToolStripMenuItem1.Click += new System.EventHandler(this.OffToolStripMenuItem1_Click);
             // 
@@ -1230,14 +1241,14 @@ namespace spectra.ui
             this.toolStripStatusReferenceLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusReferenceLabel.Image = global::spectra.Properties.Resources.reference;
             this.toolStripStatusReferenceLabel.Name = "toolStripStatusReferenceLabel";
-            this.toolStripStatusReferenceLabel.Size = new System.Drawing.Size(189, 29);
+            this.toolStripStatusReferenceLabel.Size = new System.Drawing.Size(133, 24);
             this.toolStripStatusReferenceLabel.Text = "Reference: none";
             // 
             // noneToolStripMenuItem
             // 
             this.noneToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            this.noneToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
+            this.noneToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.noneToolStripMenuItem.Text = "None";
             this.noneToolStripMenuItem.Click += new System.EventHandler(this.NoneToolStripMenuItem_Click);
             // 
@@ -1245,7 +1256,7 @@ namespace spectra.ui
             // 
             this.staticToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.staticToolStripMenuItem1.Name = "staticToolStripMenuItem1";
-            this.staticToolStripMenuItem1.Size = new System.Drawing.Size(183, 34);
+            this.staticToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.staticToolStripMenuItem1.Text = "Static";
             this.staticToolStripMenuItem1.Click += new System.EventHandler(this.StaticToolStripMenuItem1_Click);
             // 
@@ -1253,7 +1264,7 @@ namespace spectra.ui
             // 
             this.dynamicToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dynamicToolStripMenuItem.Name = "dynamicToolStripMenuItem";
-            this.dynamicToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
+            this.dynamicToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.dynamicToolStripMenuItem.Text = "Dynamic";
             this.dynamicToolStripMenuItem.Click += new System.EventHandler(this.DynamicToolStripMenuItem_Click);
             // 
@@ -1267,14 +1278,14 @@ namespace spectra.ui
             this.toolStripStatusOutput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusOutput.Image = global::spectra.Properties.Resources.ouput;
             this.toolStripStatusOutput.Name = "toolStripStatusOutput";
-            this.toolStripStatusOutput.Size = new System.Drawing.Size(241, 29);
+            this.toolStripStatusOutput.Size = new System.Drawing.Size(166, 24);
             this.toolStripStatusOutput.Text = "Output: Raw spectrum";
             // 
             // rawSpectrumToolStripMenuItem1
             // 
             this.rawSpectrumToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rawSpectrumToolStripMenuItem1.Name = "rawSpectrumToolStripMenuItem1";
-            this.rawSpectrumToolStripMenuItem1.Size = new System.Drawing.Size(233, 34);
+            this.rawSpectrumToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.rawSpectrumToolStripMenuItem1.Text = "Raw spectrum";
             this.rawSpectrumToolStripMenuItem1.Click += new System.EventHandler(this.RawSpectrumToolStripMenuItem1_Click);
             // 
@@ -1282,7 +1293,7 @@ namespace spectra.ui
             // 
             this.darkCorrectedToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.darkCorrectedToolStripMenuItem1.Name = "darkCorrectedToolStripMenuItem1";
-            this.darkCorrectedToolStripMenuItem1.Size = new System.Drawing.Size(233, 34);
+            this.darkCorrectedToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.darkCorrectedToolStripMenuItem1.Text = "Dark Corrected";
             this.darkCorrectedToolStripMenuItem1.Click += new System.EventHandler(this.DarkCorrectedToolStripMenuItem1_Click);
             // 
@@ -1290,7 +1301,7 @@ namespace spectra.ui
             // 
             this.absorbanceToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.absorbanceToolStripMenuItem1.Name = "absorbanceToolStripMenuItem1";
-            this.absorbanceToolStripMenuItem1.Size = new System.Drawing.Size(233, 34);
+            this.absorbanceToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.absorbanceToolStripMenuItem1.Text = "Absorbance";
             this.absorbanceToolStripMenuItem1.Click += new System.EventHandler(this.AbsorbanceToolStripMenuItem1_Click);
             // 
@@ -1298,7 +1309,7 @@ namespace spectra.ui
             // 
             this.transmissionToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.transmissionToolStripMenuItem1.Name = "transmissionToolStripMenuItem1";
-            this.transmissionToolStripMenuItem1.Size = new System.Drawing.Size(233, 34);
+            this.transmissionToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.transmissionToolStripMenuItem1.Text = "Transmission";
             this.transmissionToolStripMenuItem1.Click += new System.EventHandler(this.TransmissionToolStripMenuItem1_Click);
             // 
@@ -1310,14 +1321,14 @@ namespace spectra.ui
             this.toolStripStatusSavingLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusSavingLabel.Image = global::spectra.Properties.Resources.save;
             this.toolStripStatusSavingLabel.Name = "toolStripStatusSavingLabel";
-            this.toolStripStatusSavingLabel.Size = new System.Drawing.Size(200, 29);
+            this.toolStripStatusSavingLabel.Size = new System.Drawing.Size(138, 24);
             this.toolStripStatusSavingLabel.Text = "Saving to file: Off";
             // 
             // onToolStripMenuItem2
             // 
             this.onToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.onToolStripMenuItem2.Name = "onToolStripMenuItem2";
-            this.onToolStripMenuItem2.Size = new System.Drawing.Size(140, 34);
+            this.onToolStripMenuItem2.Size = new System.Drawing.Size(91, 22);
             this.onToolStripMenuItem2.Text = "On";
             this.onToolStripMenuItem2.Click += new System.EventHandler(this.OnToolStripMenuItem2_Click);
             // 
@@ -1325,14 +1336,14 @@ namespace spectra.ui
             // 
             this.offToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.offToolStripMenuItem2.Name = "offToolStripMenuItem2";
-            this.offToolStripMenuItem2.Size = new System.Drawing.Size(140, 34);
+            this.offToolStripMenuItem2.Size = new System.Drawing.Size(91, 22);
             this.offToolStripMenuItem2.Text = "Off";
             this.offToolStripMenuItem2.Click += new System.EventHandler(this.OffToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(16, 4);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 4);
             // 
             // labelTotalHits
             // 
@@ -1380,10 +1391,10 @@ namespace spectra.ui
             this.tabPageAcq.Controls.Add(this.textBoxNumInBuffer);
             this.tabPageAcq.Controls.Add(this.buttonUpdateSpectraInBuffer);
             this.tabPageAcq.Controls.Add(this.buttonClearBuffer);
-            this.tabPageAcq.Location = new System.Drawing.Point(4, 32);
+            this.tabPageAcq.Location = new System.Drawing.Point(4, 22);
             this.tabPageAcq.Name = "tabPageAcq";
             this.tabPageAcq.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAcq.Size = new System.Drawing.Size(328, 670);
+            this.tabPageAcq.Size = new System.Drawing.Size(328, 680);
             this.tabPageAcq.TabIndex = 0;
             this.tabPageAcq.Text = "Acquisition";
             // 
@@ -1407,7 +1418,7 @@ namespace spectra.ui
             "Transmission"});
             this.comboBoxAcquisitionOutput.Location = new System.Drawing.Point(7, 21);
             this.comboBoxAcquisitionOutput.Name = "comboBoxAcquisitionOutput";
-            this.comboBoxAcquisitionOutput.Size = new System.Drawing.Size(299, 31);
+            this.comboBoxAcquisitionOutput.Size = new System.Drawing.Size(299, 21);
             this.comboBoxAcquisitionOutput.TabIndex = 150;
             this.comboBoxAcquisitionOutput.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcquisitionOutput_SelectedIndexChanged);
             // 
@@ -1427,10 +1438,10 @@ namespace spectra.ui
             this.tabPageRef.Controls.Add(this.checkBoxLampEnableDark);
             this.tabPageRef.Controls.Add(this.groupBoxCorrectedReference);
             this.tabPageRef.Controls.Add(this.groupBoxDark);
-            this.tabPageRef.Location = new System.Drawing.Point(4, 32);
+            this.tabPageRef.Location = new System.Drawing.Point(4, 22);
             this.tabPageRef.Name = "tabPageRef";
             this.tabPageRef.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRef.Size = new System.Drawing.Size(328, 670);
+            this.tabPageRef.Size = new System.Drawing.Size(328, 680);
             this.tabPageRef.TabIndex = 1;
             this.tabPageRef.Text = "Reference";
             // 
@@ -1461,10 +1472,10 @@ namespace spectra.ui
             this.tabPageSingle.Controls.Add(this.buttonTakeReference);
             this.tabPageSingle.Controls.Add(this.buttonClearReference);
             this.tabPageSingle.Controls.Add(this.labelReferenceStatus);
-            this.tabPageSingle.Location = new System.Drawing.Point(4, 32);
+            this.tabPageSingle.Location = new System.Drawing.Point(4, 22);
             this.tabPageSingle.Name = "tabPageSingle";
             this.tabPageSingle.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSingle.Size = new System.Drawing.Size(294, 326);
+            this.tabPageSingle.Size = new System.Drawing.Size(294, 336);
             this.tabPageSingle.TabIndex = 0;
             this.tabPageSingle.Text = "Single";
             // 
@@ -1474,10 +1485,10 @@ namespace spectra.ui
             this.tabPageStatic.Controls.Add(this.buttonClearReferenceFromStatic);
             this.tabPageStatic.Controls.Add(this.groupBoxGenerateStaticReferenceSpectrum);
             this.tabPageStatic.Controls.Add(this.groupBoxAccumulateStaticReferenceSpectrum);
-            this.tabPageStatic.Location = new System.Drawing.Point(4, 32);
+            this.tabPageStatic.Location = new System.Drawing.Point(4, 22);
             this.tabPageStatic.Name = "tabPageStatic";
             this.tabPageStatic.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageStatic.Size = new System.Drawing.Size(294, 326);
+            this.tabPageStatic.Size = new System.Drawing.Size(294, 336);
             this.tabPageStatic.TabIndex = 1;
             this.tabPageStatic.Text = "Accumulated";
             // 
@@ -1513,7 +1524,7 @@ namespace spectra.ui
             this.labelEstimateReferenceSpectrumExplanation.AutoSize = true;
             this.labelEstimateReferenceSpectrumExplanation.Location = new System.Drawing.Point(10, 18);
             this.labelEstimateReferenceSpectrumExplanation.Name = "labelEstimateReferenceSpectrumExplanation";
-            this.labelEstimateReferenceSpectrumExplanation.Size = new System.Drawing.Size(381, 23);
+            this.labelEstimateReferenceSpectrumExplanation.Size = new System.Drawing.Size(256, 13);
             this.labelEstimateReferenceSpectrumExplanation.TabIndex = 187;
             this.labelEstimateReferenceSpectrumExplanation.Text = "Specify the range of accumulated spectra to use:";
             // 
@@ -1532,7 +1543,7 @@ namespace spectra.ui
             this.labelEstimateReferenceSpectrumMax.AutoSize = true;
             this.labelEstimateReferenceSpectrumMax.Location = new System.Drawing.Point(10, 78);
             this.labelEstimateReferenceSpectrumMax.Name = "labelEstimateReferenceSpectrumMax";
-            this.labelEstimateReferenceSpectrumMax.Size = new System.Drawing.Size(85, 23);
+            this.labelEstimateReferenceSpectrumMax.Size = new System.Drawing.Size(58, 13);
             this.labelEstimateReferenceSpectrumMax.TabIndex = 185;
             this.labelEstimateReferenceSpectrumMax.Text = "End index";
             // 
@@ -1540,7 +1551,7 @@ namespace spectra.ui
             // 
             this.textBoxEstimateReferenceSpectrumMax.Location = new System.Drawing.Point(170, 75);
             this.textBoxEstimateReferenceSpectrumMax.Name = "textBoxEstimateReferenceSpectrumMax";
-            this.textBoxEstimateReferenceSpectrumMax.Size = new System.Drawing.Size(109, 29);
+            this.textBoxEstimateReferenceSpectrumMax.Size = new System.Drawing.Size(109, 22);
             this.textBoxEstimateReferenceSpectrumMax.TabIndex = 184;
             this.textBoxEstimateReferenceSpectrumMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxEstimateReferenceSpectrumMax.TextChanged += new System.EventHandler(this.textBoxEstimateReferenceSpectrumMax_TextChanged);
@@ -1550,7 +1561,7 @@ namespace spectra.ui
             this.labelEstimateReferenceSpectrumMin.AutoSize = true;
             this.labelEstimateReferenceSpectrumMin.Location = new System.Drawing.Point(10, 50);
             this.labelEstimateReferenceSpectrumMin.Name = "labelEstimateReferenceSpectrumMin";
-            this.labelEstimateReferenceSpectrumMin.Size = new System.Drawing.Size(115, 23);
+            this.labelEstimateReferenceSpectrumMin.Size = new System.Drawing.Size(79, 13);
             this.labelEstimateReferenceSpectrumMin.TabIndex = 183;
             this.labelEstimateReferenceSpectrumMin.Text = "Starting index";
             // 
@@ -1558,7 +1569,7 @@ namespace spectra.ui
             // 
             this.textBoxEstimateReferenceSpectrumMin.Location = new System.Drawing.Point(170, 47);
             this.textBoxEstimateReferenceSpectrumMin.Name = "textBoxEstimateReferenceSpectrumMin";
-            this.textBoxEstimateReferenceSpectrumMin.Size = new System.Drawing.Size(109, 29);
+            this.textBoxEstimateReferenceSpectrumMin.Size = new System.Drawing.Size(109, 22);
             this.textBoxEstimateReferenceSpectrumMin.TabIndex = 182;
             this.textBoxEstimateReferenceSpectrumMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxEstimateReferenceSpectrumMin.TextChanged += new System.EventHandler(this.textBoxEstimateReferenceSpectrumMin_TextChanged);
@@ -1585,7 +1596,7 @@ namespace spectra.ui
             this.labelAcquireForSeconds.AutoSize = true;
             this.labelAcquireForSeconds.Location = new System.Drawing.Point(199, 24);
             this.labelAcquireForSeconds.Name = "labelAcquireForSeconds";
-            this.labelAcquireForSeconds.Size = new System.Drawing.Size(71, 23);
+            this.labelAcquireForSeconds.Size = new System.Drawing.Size(49, 13);
             this.labelAcquireForSeconds.TabIndex = 201;
             this.labelAcquireForSeconds.Text = "seconds";
             // 
@@ -1593,7 +1604,7 @@ namespace spectra.ui
             // 
             this.trackBarAccumulateSpectraSlider.Location = new System.Drawing.Point(6, 101);
             this.trackBarAccumulateSpectraSlider.Name = "trackBarAccumulateSpectraSlider";
-            this.trackBarAccumulateSpectraSlider.Size = new System.Drawing.Size(275, 69);
+            this.trackBarAccumulateSpectraSlider.Size = new System.Drawing.Size(275, 45);
             this.trackBarAccumulateSpectraSlider.TabIndex = 196;
             this.trackBarAccumulateSpectraSlider.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarAccumulateSpectraSlider.ValueChanged += new System.EventHandler(this.trackBarAccumulateSpectraSlider_ValueChanged);
@@ -1602,7 +1613,7 @@ namespace spectra.ui
             // 
             this.textBoxAcquireFor.Location = new System.Drawing.Point(108, 21);
             this.textBoxAcquireFor.Name = "textBoxAcquireFor";
-            this.textBoxAcquireFor.Size = new System.Drawing.Size(80, 29);
+            this.textBoxAcquireFor.Size = new System.Drawing.Size(80, 22);
             this.textBoxAcquireFor.TabIndex = 199;
             this.textBoxAcquireFor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxAcquireFor.TextChanged += new System.EventHandler(this.textBoxAcquireFor_TextChanged);
@@ -1614,7 +1625,7 @@ namespace spectra.ui
             this.labelAcquireFor.AutoSize = true;
             this.labelAcquireFor.Location = new System.Drawing.Point(28, 24);
             this.labelAcquireFor.Name = "labelAcquireFor";
-            this.labelAcquireFor.Size = new System.Drawing.Size(94, 23);
+            this.labelAcquireFor.Size = new System.Drawing.Size(64, 13);
             this.labelAcquireFor.TabIndex = 200;
             this.labelAcquireFor.Text = "Acquire for";
             // 
@@ -1627,9 +1638,9 @@ namespace spectra.ui
             this.tabPageDynamic.Controls.Add(this.labelNumberOfSpectramToAccumulate);
             this.tabPageDynamic.Controls.Add(this.textBoxNumberOfSpectramToAccumulate);
             this.tabPageDynamic.Controls.Add(this.labelDynamicReferenceExplanation_More);
-            this.tabPageDynamic.Location = new System.Drawing.Point(4, 32);
+            this.tabPageDynamic.Location = new System.Drawing.Point(4, 22);
             this.tabPageDynamic.Name = "tabPageDynamic";
-            this.tabPageDynamic.Size = new System.Drawing.Size(294, 326);
+            this.tabPageDynamic.Size = new System.Drawing.Size(294, 336);
             this.tabPageDynamic.TabIndex = 2;
             this.tabPageDynamic.Text = "Dynamic";
             // 
@@ -1648,7 +1659,7 @@ namespace spectra.ui
             this.labelSpectrumIntervalBetweenGeneration.AutoSize = true;
             this.labelSpectrumIntervalBetweenGeneration.Location = new System.Drawing.Point(7, 36);
             this.labelSpectrumIntervalBetweenGeneration.Name = "labelSpectrumIntervalBetweenGeneration";
-            this.labelSpectrumIntervalBetweenGeneration.Size = new System.Drawing.Size(247, 23);
+            this.labelSpectrumIntervalBetweenGeneration.Size = new System.Drawing.Size(167, 13);
             this.labelSpectrumIntervalBetweenGeneration.TabIndex = 227;
             this.labelSpectrumIntervalBetweenGeneration.Text = "Spectra between re-generation";
             // 
@@ -1656,7 +1667,7 @@ namespace spectra.ui
             // 
             this.textBoxSpectrumIntervalBetweenGeneration.Location = new System.Drawing.Point(199, 31);
             this.textBoxSpectrumIntervalBetweenGeneration.Name = "textBoxSpectrumIntervalBetweenGeneration";
-            this.textBoxSpectrumIntervalBetweenGeneration.Size = new System.Drawing.Size(83, 29);
+            this.textBoxSpectrumIntervalBetweenGeneration.Size = new System.Drawing.Size(83, 22);
             this.textBoxSpectrumIntervalBetweenGeneration.TabIndex = 226;
             this.textBoxSpectrumIntervalBetweenGeneration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSpectrumIntervalBetweenGeneration.TextChanged += new System.EventHandler(this.textBoxSpectrumIntervalBetweenGeneration_TextChanged);
@@ -1668,7 +1679,7 @@ namespace spectra.ui
             this.labelNumberOfSpectramToAccumulate.AutoSize = true;
             this.labelNumberOfSpectramToAccumulate.Location = new System.Drawing.Point(7, 8);
             this.labelNumberOfSpectramToAccumulate.Name = "labelNumberOfSpectramToAccumulate";
-            this.labelNumberOfSpectramToAccumulate.Size = new System.Drawing.Size(257, 23);
+            this.labelNumberOfSpectramToAccumulate.Size = new System.Drawing.Size(169, 13);
             this.labelNumberOfSpectramToAccumulate.TabIndex = 225;
             this.labelNumberOfSpectramToAccumulate.Text = "Number of spectra (max=65535)";
             // 
@@ -1676,7 +1687,7 @@ namespace spectra.ui
             // 
             this.textBoxNumberOfSpectramToAccumulate.Location = new System.Drawing.Point(199, 3);
             this.textBoxNumberOfSpectramToAccumulate.Name = "textBoxNumberOfSpectramToAccumulate";
-            this.textBoxNumberOfSpectramToAccumulate.Size = new System.Drawing.Size(83, 29);
+            this.textBoxNumberOfSpectramToAccumulate.Size = new System.Drawing.Size(83, 22);
             this.textBoxNumberOfSpectramToAccumulate.TabIndex = 224;
             this.textBoxNumberOfSpectramToAccumulate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxNumberOfSpectramToAccumulate.TextChanged += new System.EventHandler(this.textBoxNumberOfSpectramToAccumulate_TextChanged);
@@ -1696,9 +1707,9 @@ namespace spectra.ui
             // 
             this.tabPageProc.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageProc.Controls.Add(this.processingControl);
-            this.tabPageProc.Location = new System.Drawing.Point(4, 32);
+            this.tabPageProc.Location = new System.Drawing.Point(4, 22);
             this.tabPageProc.Name = "tabPageProc";
-            this.tabPageProc.Size = new System.Drawing.Size(328, 670);
+            this.tabPageProc.Size = new System.Drawing.Size(328, 680);
             this.tabPageProc.TabIndex = 3;
             this.tabPageProc.Text = "Processing";
             // 
@@ -1714,9 +1725,9 @@ namespace spectra.ui
             // 
             this.tabPagePlot.BackColor = System.Drawing.SystemColors.Control;
             this.tabPagePlot.Controls.Add(this.plotOptionsControl);
-            this.tabPagePlot.Location = new System.Drawing.Point(4, 32);
+            this.tabPagePlot.Location = new System.Drawing.Point(4, 22);
             this.tabPagePlot.Name = "tabPagePlot";
-            this.tabPagePlot.Size = new System.Drawing.Size(328, 670);
+            this.tabPagePlot.Size = new System.Drawing.Size(328, 680);
             this.tabPagePlot.TabIndex = 4;
             this.tabPagePlot.Text = "Plotting";
             // 
@@ -1732,9 +1743,9 @@ namespace spectra.ui
             // 
             this.tabPageArduino.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageArduino.Controls.Add(this.arduinoParametersControl);
-            this.tabPageArduino.Location = new System.Drawing.Point(4, 32);
+            this.tabPageArduino.Location = new System.Drawing.Point(4, 22);
             this.tabPageArduino.Name = "tabPageArduino";
-            this.tabPageArduino.Size = new System.Drawing.Size(328, 670);
+            this.tabPageArduino.Size = new System.Drawing.Size(328, 680);
             this.tabPageArduino.TabIndex = 2;
             this.tabPageArduino.Text = "Arduino";
             // 
@@ -1779,7 +1790,7 @@ namespace spectra.ui
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label3.Location = new System.Drawing.Point(126, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 167;
             this.label3.Text = "Received";
             // 
@@ -1790,7 +1801,7 @@ namespace spectra.ui
             this.labelComputedSpectra.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelComputedSpectra.Location = new System.Drawing.Point(200, 38);
             this.labelComputedSpectra.Name = "labelComputedSpectra";
-            this.labelComputedSpectra.Size = new System.Drawing.Size(19, 23);
+            this.labelComputedSpectra.Size = new System.Drawing.Size(13, 13);
             this.labelComputedSpectra.TabIndex = 170;
             this.labelComputedSpectra.Text = "0";
             // 
@@ -1800,7 +1811,7 @@ namespace spectra.ui
             this.label33.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label33.Location = new System.Drawing.Point(14, 101);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(135, 23);
+            this.label33.Size = new System.Drawing.Size(91, 13);
             this.label33.TabIndex = 157;
             this.label33.Text = "Spectra/Request";
             // 
@@ -1810,7 +1821,7 @@ namespace spectra.ui
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label6.Location = new System.Drawing.Point(200, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 23);
+            this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 169;
             this.label6.Text = "Processed";
             // 
@@ -1820,7 +1831,7 @@ namespace spectra.ui
             this.label34.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label34.Location = new System.Drawing.Point(14, 143);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(91, 23);
+            this.label34.Size = new System.Drawing.Size(61, 13);
             this.label34.TabIndex = 158;
             this.label34.Text = "Total Bytes";
             // 
@@ -1830,7 +1841,7 @@ namespace spectra.ui
             this.label32.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label32.Location = new System.Drawing.Point(14, 59);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(47, 23);
+            this.label32.Size = new System.Drawing.Size(30, 13);
             this.label32.TabIndex = 156;
             this.label32.Text = "Time";
             // 
@@ -1841,7 +1852,7 @@ namespace spectra.ui
             this.labelSavedSpectra.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelSavedSpectra.Location = new System.Drawing.Point(271, 38);
             this.labelSavedSpectra.Name = "labelSavedSpectra";
-            this.labelSavedSpectra.Size = new System.Drawing.Size(19, 23);
+            this.labelSavedSpectra.Size = new System.Drawing.Size(13, 13);
             this.labelSavedSpectra.TabIndex = 168;
             this.labelSavedSpectra.Text = "0";
             // 
@@ -1852,7 +1863,7 @@ namespace spectra.ui
             this.labelTotalTime.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelTotalTime.Location = new System.Drawing.Point(126, 59);
             this.labelTotalTime.Name = "labelTotalTime";
-            this.labelTotalTime.Size = new System.Drawing.Size(72, 23);
+            this.labelTotalTime.Size = new System.Drawing.Size(49, 13);
             this.labelTotalTime.TabIndex = 159;
             this.labelTotalTime.Text = "00:00:00";
             // 
@@ -1862,7 +1873,7 @@ namespace spectra.ui
             this.label31.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label31.Location = new System.Drawing.Point(14, 80);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(98, 23);
+            this.label31.Size = new System.Drawing.Size(65, 13);
             this.label31.TabIndex = 155;
             this.label31.Text = "Spectra/sec";
             // 
@@ -1873,7 +1884,7 @@ namespace spectra.ui
             this.labelTotalSpectra.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelTotalSpectra.Location = new System.Drawing.Point(126, 38);
             this.labelTotalSpectra.Name = "labelTotalSpectra";
-            this.labelTotalSpectra.Size = new System.Drawing.Size(19, 23);
+            this.labelTotalSpectra.Size = new System.Drawing.Size(13, 13);
             this.labelTotalSpectra.TabIndex = 160;
             this.labelTotalSpectra.Text = "0";
             // 
@@ -1883,7 +1894,7 @@ namespace spectra.ui
             this.label24.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label24.Location = new System.Drawing.Point(14, 122);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(119, 23);
+            this.label24.Size = new System.Drawing.Size(81, 13);
             this.label24.TabIndex = 154;
             this.label24.Text = "Total Requests";
             // 
@@ -1894,7 +1905,7 @@ namespace spectra.ui
             this.labelSavedBytes.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelSavedBytes.Location = new System.Drawing.Point(271, 143);
             this.labelSavedBytes.Name = "labelSavedBytes";
-            this.labelSavedBytes.Size = new System.Drawing.Size(19, 23);
+            this.labelSavedBytes.Size = new System.Drawing.Size(13, 13);
             this.labelSavedBytes.TabIndex = 166;
             this.labelSavedBytes.Text = "0";
             // 
@@ -1905,7 +1916,7 @@ namespace spectra.ui
             this.labelSpectraPerSec.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelSpectraPerSec.Location = new System.Drawing.Point(126, 80);
             this.labelSpectraPerSec.Name = "labelSpectraPerSec";
-            this.labelSpectraPerSec.Size = new System.Drawing.Size(19, 23);
+            this.labelSpectraPerSec.Size = new System.Drawing.Size(13, 13);
             this.labelSpectraPerSec.TabIndex = 161;
             this.labelSpectraPerSec.Text = "0";
             // 
@@ -1915,7 +1926,7 @@ namespace spectra.ui
             this.label23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label23.Location = new System.Drawing.Point(14, 38);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 23);
+            this.label23.Size = new System.Drawing.Size(45, 13);
             this.label23.TabIndex = 153;
             this.label23.Text = "Spectra";
             // 
@@ -1926,7 +1937,7 @@ namespace spectra.ui
             this.labelSpectraPerRequest.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelSpectraPerRequest.Location = new System.Drawing.Point(126, 101);
             this.labelSpectraPerRequest.Name = "labelSpectraPerRequest";
-            this.labelSpectraPerRequest.Size = new System.Drawing.Size(19, 23);
+            this.labelSpectraPerRequest.Size = new System.Drawing.Size(13, 13);
             this.labelSpectraPerRequest.TabIndex = 162;
             this.labelSpectraPerRequest.Text = "0";
             // 
@@ -1936,7 +1947,7 @@ namespace spectra.ui
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.label4.Location = new System.Drawing.Point(271, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 23);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 165;
             this.label4.Text = "Saved";
             // 
@@ -1947,7 +1958,7 @@ namespace spectra.ui
             this.labelTotalRequests.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelTotalRequests.Location = new System.Drawing.Point(126, 122);
             this.labelTotalRequests.Name = "labelTotalRequests";
-            this.labelTotalRequests.Size = new System.Drawing.Size(19, 23);
+            this.labelTotalRequests.Size = new System.Drawing.Size(13, 13);
             this.labelTotalRequests.TabIndex = 163;
             this.labelTotalRequests.Text = "0";
             // 
@@ -1958,7 +1969,7 @@ namespace spectra.ui
             this.labelTotalBytes.ForeColor = System.Drawing.Color.ForestGreen;
             this.labelTotalBytes.Location = new System.Drawing.Point(126, 143);
             this.labelTotalBytes.Name = "labelTotalBytes";
-            this.labelTotalBytes.Size = new System.Drawing.Size(19, 23);
+            this.labelTotalBytes.Size = new System.Drawing.Size(13, 13);
             this.labelTotalBytes.TabIndex = 164;
             this.labelTotalBytes.Text = "0";
             // 
@@ -2027,9 +2038,14 @@ namespace spectra.ui
             this.groupBoxArduinoCOM.TabStop = false;
             this.groupBoxArduinoCOM.Text = "Arduino (COM Devices)";
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(194, 6);
+            // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 1050);
             this.Controls.Add(this.groupBoxAcqStatistics);
@@ -2271,6 +2287,8 @@ namespace spectra.ui
         private System.Windows.Forms.GroupBox groupBoxOceanFXUSB;
         private System.Windows.Forms.GroupBox groupBoxOceanFXNetwork;
         private System.Windows.Forms.GroupBox groupBoxArduinoCOM;
+        private System.Windows.Forms.ToolStripMenuItem reloadDefaultsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }
 

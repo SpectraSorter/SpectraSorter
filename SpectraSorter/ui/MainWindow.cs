@@ -2757,6 +2757,17 @@ namespace spectra.ui
         {
             SettingsManager.SaveToFile = !(enableSaveToFileToolStripMenuItem.Checked);
         }
+
+        private void reloadDefaultsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to discard current changes and reload defaults settings?",
+                "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SettingsManager.RestoreLastSavedValues();
+
+                ApplySettingsToUI();
+            }
+        }
     }
 
     // Structure to store all data required for the save thread
