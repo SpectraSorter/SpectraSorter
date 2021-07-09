@@ -169,7 +169,7 @@ namespace spectra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
         public uint ArduinoTriggerDelay {
             get {
                 return ((uint)(this["ArduinoTriggerDelay"]));
