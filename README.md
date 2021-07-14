@@ -2,6 +2,8 @@
 
 Software for droplet sorting based on the analysis of high-speed spectrophotometer (OceanFX) measurements. This repository accompanies a manuscript submission currently under review. A link will be included after acceptance.
 
+<img src="SpectraSorter.png" alt="SpectraSorter" />
+
 ## Getting Started
 
 The source code comes in the form of a Visual Studio 2019 solution. A full description of software features and operation instructions are included in the user manual. The [most recent release](https://github.com/SpectraSorter/SpectraSorter/releases/latest) can be downloaded and installed.
