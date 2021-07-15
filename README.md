@@ -33,7 +33,11 @@ The source code comes in the form of a Visual Studio 2019 solution. A full descr
 
 ## Deployment
 
-The `SpectraSorterSetup` project can be used to create a redistributable Windows Installer. Right-click on `SpectraSorterSetup` and select `Build`. Once the build is complete, right-click on the project again and choose `Open Folder in File Explorer`.  The setup files can be used to install SpectraSorter on any machine.
+The `SpectraSorterSetup` project can be used to create a redistributable Windows Installer. Right-click on `SpectraSorterSetup` and select `Build`. Once the build is complete, right-click on the project again and choose `Open Folder in File Explorer`.  The setup files can be used to install SpectraSorter on any machine. More details can be found in the user manual (see next section).
+
+## User manual
+
+The user manual (in Microsoft Word format) can be download from [here](https://github.com/SpectraSorter/SpectraSorter/raw/master/SpectraSorter_User_Manual.docx).
 
 ## Contributing
 
