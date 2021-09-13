@@ -1,0 +1,6 @@
+/build/
+/install/
+/.vs/
+/packages/
+/TestResults/
+*.sln.DotSettings.user

@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
+        "MsmKey" = "8:_380092818F6D3BB18D94995EE97B69D3"
         "OwnerKey" = "8:_CC9D0B2215544B5FBD5F44B9C1EB7068"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_561B26F77424431A9327B6F4FFC75658"
+        "MsmKey" = "8:_8466B5A993FE49459446296CFD5F4661"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3739AC69005EC55F946F0743032FAD2D"
+        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
+        "OwnerKey" = "8:_380092818F6D3BB18D94995EE97B69D3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -150,20 +150,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3739AC69005EC55F946F0743032FAD2D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_380092818F6D3BB18D94995EE97B69D3"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:WinUSBNet, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3739AC69005EC55F946F0743032FAD2D"
+                    "_380092818F6D3BB18D94995EE97B69D3"
                     {
-                    "Name" = "8:WinUSBNet.dll"
+                    "Name" = "8:WinUSBNet.DLL"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:WinUSBNet.dll"
+            "SourcePath" = "8:WinUSBNet.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -181,9 +181,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_561B26F77424431A9327B6F4FFC75658"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8466B5A993FE49459446296CFD5F4661"
             {
-            "SourcePath" = "8:..\\SpectraSorter_User_Manual.docx"
+            "SourcePath" = "8:..\\..\\docs\\SpectraSorter_User_Manual.docx"
             "TargetName" = "8:SpectraSorter_User_Manual.docx"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -487,7 +487,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_561B26F77424431A9327B6F4FFC75658"
+            "Target" = "8:_8466B5A993FE49459446296CFD5F4661"
             "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
             "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
             "Icon" = "8:"
