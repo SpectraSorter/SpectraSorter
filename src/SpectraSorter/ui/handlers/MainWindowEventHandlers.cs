@@ -147,42 +147,12 @@ namespace spectra.ui
 
                 case Options.ReferenceType.STATIC:
 
-                    // This is the common static type
-
-                    if (SpectrumProcessor.Instance.ReferenceCorrectedSpectrum == null)
-                    {
-                        MessageBox.Show(
-                            "Please generate a reference spectrum first!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-
-                        // Reset
-                        SettingsManager.ReferenceType = Options.ReferenceType.NONE;
-
-                        return;
-                    }
-
                     staticToolStripMenuItem.Checked = true;
 
                     // Do not modify the labels!
                     break;
 
                 case Options.ReferenceType.STATIC_SINGLE:
-
-                    if (SpectrumProcessor.Instance.ReferenceCorrectedSpectrum == null)
-                    {
-                        MessageBox.Show(
-                            "Please generate a reference spectrum first!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-
-                        // Reset
-                        SettingsManager.ReferenceType = Options.ReferenceType.NONE;
-
-                        return;
-                    }
 
                     staticToolStripMenuItem.Checked = true;
                     toolStripStatusReferenceLabel.Text = "Reference: single";
@@ -191,20 +161,6 @@ namespace spectra.ui
 
                 case Options.ReferenceType.STATIC_ACCUMULATED:
 
-                    if (SpectrumProcessor.Instance.ReferenceCorrectedSpectrum == null)
-                    {
-                        MessageBox.Show(
-                            "Please generate a reference spectrum first!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-
-                        // Reset
-                        SettingsManager.ReferenceType = Options.ReferenceType.NONE;
-
-                        return;
-                    }
-
                     staticToolStripMenuItem.Checked = true;
                     toolStripStatusReferenceLabel.Text = "Reference: accumulated";
                     labelCorrectedReferenceSpectrumStatus.Text = "Averaged static corrected spectrum available.";
@@ -212,20 +168,6 @@ namespace spectra.ui
                     break;
 
                 case Options.ReferenceType.DYNAMIC:
-
-                    if (SpectrumProcessor.Instance.DarkSpectrum == null)
-                    {
-                        MessageBox.Show(
-                            "Please acquire a dark spectrum first!",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-
-                        // Reset
-                        SettingsManager.ReferenceType = Options.ReferenceType.NONE;
-
-                        return;
-                    }
 
                     dynamicReferenceToolStripMenuItem.Checked = true;
                     toolStripStatusReferenceLabel.Text = "Reference: dynamic (" + 
