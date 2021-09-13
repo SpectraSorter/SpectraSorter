@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_380092818F6D3BB18D94995EE97B69D3"
+        "MsmKey" = "8:_135403A2ACD7BFFD33D666CA71F90611"
         "OwnerKey" = "8:_CC9D0B2215544B5FBD5F44B9C1EB7068"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
+        "OwnerKey" = "8:_135403A2ACD7BFFD33D666CA71F90611"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_380092818F6D3BB18D94995EE97B69D3"
+        "OwnerKey" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -150,20 +150,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_380092818F6D3BB18D94995EE97B69D3"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_135403A2ACD7BFFD33D666CA71F90611"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:WinUSBNet, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_380092818F6D3BB18D94995EE97B69D3"
+                    "_135403A2ACD7BFFD33D666CA71F90611"
                     {
-                    "Name" = "8:WinUSBNet.DLL"
+                    "Name" = "8:WinUSBNet.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:WinUSBNet.DLL"
+            "SourcePath" = "8:WinUSBNet.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A27049015444168970A5A5528A3850B"
@@ -292,24 +292,13 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_12B46706C8B0413E8B86E22D70DD0801"
                     {
-                    "Name" = "8:ETH Zurich"
+                    "Name" = "8:SpectraSorter (ETH Zurich)"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_5FE4F0793E864524922EAB7CC79EFDF0"
                         "Folders"
                         {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_54B98BAF930047C18D1A001AA3FE49E6"
-                            {
-                            "Name" = "8:SpectraSorter"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_1DB0D72150FF4286AF770645BCC9D39A"
-                                "Folders"
-                                {
-                                }
-                            }
                         }
                     }
                 }
@@ -331,7 +320,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SpectraSorter"
         "ProductCode" = "8:{8EDCA164-13AE-4764-9182-173F824CE136}"
-        "PackageCode" = "8:{AD5326F9-6EE8-42F2-9B99-180EA31B3CFD}"
+        "PackageCode" = "8:{BF302DF0-1F1E-44DC-A670-EA961D584E6A}"
         "UpgradeCode" = "8:{C9545092-7627-4866-9E62-DCC71C17D6F0}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -474,7 +463,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_76DF1D05F82A4DA983CF441EA35268E3"
-            "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
+            "Folder" = "8:_12B46706C8B0413E8B86E22D70DD0801"
             "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
             "Icon" = "8:_8E31AD87B3B949A490D27C87AE55A9B1"
             "Feature" = "8:"
@@ -488,7 +477,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_8466B5A993FE49459446296CFD5F4661"
-            "Folder" = "8:_54B98BAF930047C18D1A001AA3FE49E6"
+            "Folder" = "8:_12B46706C8B0413E8B86E22D70DD0801"
             "WorkingFolder" = "8:_1A27049015444168970A5A5528A3850B"
             "Icon" = "8:"
             "Feature" = "8:"
