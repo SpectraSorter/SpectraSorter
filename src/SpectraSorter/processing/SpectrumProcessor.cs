@@ -72,7 +72,7 @@ namespace spectra.processing
         /// Please notice: the calculation of absorbance requires that the dark and reference spectrum
         /// have been acquired (and stored):
         ///   * if the dark spectrum is not present, it will be ignored.
-        ///   * if the reference spectrum is not present, the abosrbance will be set to 0.
+        ///   * if the reference spectrum is not present, the absorbance will be set to 0.
         public void CalculateAbsorbance(int[] input, ref float[] output)
         {
             double ratioVal;
@@ -111,7 +111,7 @@ namespace spectra.processing
         /// Please notice: the calculation of transmission requires that the dark and reference spectrum
         /// have been acquired (and stored):
         ///   * if the dark spectrum is not present, it will be ignored.
-        ///   * if the reference spectrum is not present, the abosrbance will be set to 0.
+        ///   * if the reference spectrum is not present, the absorbance will be set to 0.
         /// </summary>
         public void CalculateTransmission(int[] input, ref float[] output)
         {
