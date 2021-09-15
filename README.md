@@ -37,7 +37,7 @@ The `SpectraSorterSetup` project can be used to create a redistributable Windows
 
 ## User manual
 
-The user manual (in Microsoft Word format) can be download from [here](https://github.com/SpectraSorter/SpectraSorter/raw/master/SpectraSorter_User_Manual.docx).
+The user manual (in Microsoft Word format) can be download from [here](https://github.com/SpectraSorter/SpectraSorter/tree/master/docs).
 
 ## Video Demo
 
