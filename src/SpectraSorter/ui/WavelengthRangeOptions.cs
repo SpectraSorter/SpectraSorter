@@ -64,9 +64,9 @@ namespace spectra.ui
             {
                 nW--;
                 labelTotalPixelRange.Text = "Complete spectrum ranges from " +
-                    SpectrumProcessor.Instance.Wavelengths[0].ToString("N1", CultureInfo.InvariantCulture) + 
+                    SpectrumProcessor.Instance.Wavelengths[0].ToString("F1", CultureInfo.InvariantCulture) + 
                     " to " +
-                    SpectrumProcessor.Instance.Wavelengths[nW].ToString("N1", CultureInfo.InvariantCulture) +
+                    SpectrumProcessor.Instance.Wavelengths[nW].ToString("F1", CultureInfo.InvariantCulture) +
                     " nm (indices 0 to " +
                     nW.ToString(CultureInfo.InvariantCulture) +
                     ").";
@@ -80,8 +80,8 @@ namespace spectra.ui
             {
                 textBoxSaveStartRange.Text = SettingsManager.SaveStartPixel.ToString(CultureInfo.InvariantCulture);
                 textBoxSaveEndRange.Text = SettingsManager.SaveEndPixel.ToString(CultureInfo.InvariantCulture);
-                labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                labelConvertedEndRange.Text = SettingsManager.SaveEndWavelength.ToString("N1", CultureInfo.InvariantCulture);
+                labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                labelConvertedEndRange.Text = SettingsManager.SaveEndWavelength.ToString("F1", CultureInfo.InvariantCulture);
                 labelUnit.Text = "pixels";
                 labelConvertedUnit.Text = "nm";
                 if (SettingsManager.SaveStepPixel == 1)
@@ -96,10 +96,10 @@ namespace spectra.ui
 
             if (SettingsManager.SaveRangeUnits == Options.RangeUnits.Wavelengths)
             {
-                textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                textBoxSaveEndRange.Text = SettingsManager.SaveEndWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("N0", CultureInfo.InvariantCulture);
-                labelConvertedEndRange.Text = SettingsManager.SaveEndPixel.ToString("N0", CultureInfo.InvariantCulture);
+                textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                textBoxSaveEndRange.Text = SettingsManager.SaveEndWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("F0", CultureInfo.InvariantCulture);
+                labelConvertedEndRange.Text = SettingsManager.SaveEndPixel.ToString("F0", CultureInfo.InvariantCulture);
                 labelUnit.Text = "nm";
                 labelConvertedUnit.Text = "pixels";
                 labelWavelengthSavingStepExplanation.Text = "nm";
@@ -114,7 +114,7 @@ namespace spectra.ui
                 int pixelStep = PixelStepFromWavelength(Double.Parse(this.textBoxWavelengthSavingStep.Text, CultureInfo.InvariantCulture));
 
                 // Update the text
-                this.textBoxWavelengthSavingStep.Text = pixelStep.ToString("N0", CultureInfo.InvariantCulture);
+                this.textBoxWavelengthSavingStep.Text = pixelStep.ToString("F0", CultureInfo.InvariantCulture);
 
             }
             else
@@ -123,7 +123,7 @@ namespace spectra.ui
                 double wavelengthStep = WavelengthStepFromPixel(Int32.Parse(this.textBoxWavelengthSavingStep.Text, CultureInfo.InvariantCulture));
 
                 // Update the text
-                this.textBoxWavelengthSavingStep.Text = wavelengthStep.ToString("N3", CultureInfo.InvariantCulture);
+                this.textBoxWavelengthSavingStep.Text = wavelengthStep.ToString("F3", CultureInfo.InvariantCulture);
             }
         }
 
@@ -182,16 +182,16 @@ namespace spectra.ui
             comboBoxSaveRangeUnits.SelectedIndex = (int)SettingsManager.SaveRangeUnits;
             if (SettingsManager.SaveRangeUnits == Options.RangeUnits.Pixels)
             {
-                textBoxSaveStartRange.Text = SettingsManager.SaveStartPixel.ToString("N0", CultureInfo.InvariantCulture);
-                labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
+                textBoxSaveStartRange.Text = SettingsManager.SaveStartPixel.ToString("F0", CultureInfo.InvariantCulture);
+                labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
             }
             else
             {
-                textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("N0", CultureInfo.InvariantCulture);
+                textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("F0", CultureInfo.InvariantCulture);
             }
 
-            textBoxWavelengthSavingStep.Text = SettingsManager.SaveStepPixel.ToString("N0", CultureInfo.InvariantCulture);
+            textBoxWavelengthSavingStep.Text = SettingsManager.SaveStepPixel.ToString("F0", CultureInfo.InvariantCulture);
         }
 
         #endregion public
@@ -285,8 +285,8 @@ namespace spectra.ui
                         (int)value, SpectrumProcessor.Instance.Wavelengths
                     );
 
-                    textBoxSaveStartRange.Text = SettingsManager.SaveStartPixel.ToString("N0", CultureInfo.InvariantCulture);
-                    labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
+                    textBoxSaveStartRange.Text = SettingsManager.SaveStartPixel.ToString("F0", CultureInfo.InvariantCulture);
+                    labelConvertedStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
                     textBoxSaveStartRange.BackColor = Color.White;
                 }  
             }
@@ -298,8 +298,8 @@ namespace spectra.ui
                         value, SpectrumProcessor.Instance.Wavelengths
                     );
 
-                    textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                    labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("N0", CultureInfo.InvariantCulture);
+                    textBoxSaveStartRange.Text = SettingsManager.SaveStartWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                    labelConvertedStartRange.Text = SettingsManager.SaveStartPixel.ToString("F0", CultureInfo.InvariantCulture);
                     textBoxSaveStartRange.BackColor = Color.White;
                 }
             }
@@ -322,8 +322,8 @@ namespace spectra.ui
                         (int)value, SpectrumProcessor.Instance.Wavelengths
                     );
 
-                    textBoxSaveEndRange.Text = SettingsManager.SaveEndPixel.ToString("N0", CultureInfo.InvariantCulture);
-                    labelConvertedEndRange.Text = SettingsManager.SaveEndWavelength.ToString("N1", CultureInfo.InvariantCulture);
+                    textBoxSaveEndRange.Text = SettingsManager.SaveEndPixel.ToString("F0", CultureInfo.InvariantCulture);
+                    labelConvertedEndRange.Text = SettingsManager.SaveEndWavelength.ToString("F1", CultureInfo.InvariantCulture);
                     textBoxSaveEndRange.BackColor = Color.White;
                 }
             }
@@ -335,8 +335,8 @@ namespace spectra.ui
                         value, SpectrumProcessor.Instance.Wavelengths
                     );
 
-                    textBoxSaveEndRange.Text = SettingsManager.SaveEndWavelength.ToString("N1", CultureInfo.InvariantCulture);
-                    labelConvertedEndRange.Text = SettingsManager.SaveEndPixel.ToString("N0", CultureInfo.InvariantCulture);
+                    textBoxSaveEndRange.Text = SettingsManager.SaveEndWavelength.ToString("F1", CultureInfo.InvariantCulture);
+                    labelConvertedEndRange.Text = SettingsManager.SaveEndPixel.ToString("F0", CultureInfo.InvariantCulture);
                     textBoxSaveEndRange.BackColor = Color.White;
                 }
             }
@@ -354,7 +354,7 @@ namespace spectra.ui
             {
                 textBoxSaveEndRange.BackColor = Color.Red;
                 e.Cancel = true;
-                return;
+                return; 
             }
 
             if (Double.TryParse(textBoxSaveEndRange.Text, out double value))
@@ -494,16 +494,6 @@ namespace spectra.ui
         private void textBoxWavelengthSavingStep_TextChanged(object sender, EventArgs e)
         {
             // Validate on change
-            this.Validate();
-        }
-
-        private void textBoxSaveStartRange_TextChanged(object sender, EventArgs e)
-        {
-            this.Validate();
-        }
-
-        private void textBoxSaveEndRange_TextChanged(object sender, EventArgs e)
-        {
             this.Validate();
         }
     }
