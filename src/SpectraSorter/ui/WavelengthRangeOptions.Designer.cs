@@ -48,7 +48,6 @@ namespace spectra.ui
             this.label133 = new System.Windows.Forms.Label();
             this.textBoxSaveEndRange = new System.Windows.Forms.TextBox();
             this.groupBoxWavelengthSubset = new System.Windows.Forms.GroupBox();
-            this.labelUpdateInform = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
             this.labelConvertedPixels = new System.Windows.Forms.Label();
             this.labelWavelengthSavingStepExplanation = new System.Windows.Forms.Label();
@@ -68,7 +67,7 @@ namespace spectra.ui
             // labelRange
             // 
             this.labelRange.AutoSize = true;
-            this.labelRange.Location = new System.Drawing.Point(102, 53);
+            this.labelRange.Location = new System.Drawing.Point(102, 30);
             this.labelRange.Name = "labelRange";
             this.labelRange.Size = new System.Drawing.Size(37, 13);
             this.labelRange.TabIndex = 203;
@@ -81,7 +80,7 @@ namespace spectra.ui
             this.comboBoxSaveRangeUnits.Items.AddRange(new object[] {
             "Pixel Range",
             "Wavelength Range"});
-            this.comboBoxSaveRangeUnits.Location = new System.Drawing.Point(145, 50);
+            this.comboBoxSaveRangeUnits.Location = new System.Drawing.Point(145, 27);
             this.comboBoxSaveRangeUnits.Name = "comboBoxSaveRangeUnits";
             this.comboBoxSaveRangeUnits.Size = new System.Drawing.Size(142, 21);
             this.comboBoxSaveRangeUnits.TabIndex = 1;
@@ -89,18 +88,19 @@ namespace spectra.ui
             // 
             // textBoxSaveStartRange
             // 
-            this.textBoxSaveStartRange.Location = new System.Drawing.Point(293, 50);
+            this.textBoxSaveStartRange.Location = new System.Drawing.Point(293, 27);
             this.textBoxSaveStartRange.Name = "textBoxSaveStartRange";
             this.textBoxSaveStartRange.Size = new System.Drawing.Size(69, 22);
             this.textBoxSaveStartRange.TabIndex = 2;
             this.textBoxSaveStartRange.Text = "0";
             this.textBoxSaveStartRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSaveStartRange.TextChanged += new System.EventHandler(this.textBoxSaveStartRange_TextChanged);
             this.textBoxSaveStartRange.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSaveStartRange_Validating);
             this.textBoxSaveStartRange.Validated += new System.EventHandler(this.TextBoxSaveStartRange_Validated);
             // 
             // label133
             // 
-            this.label133.Location = new System.Drawing.Point(368, 52);
+            this.label133.Location = new System.Drawing.Point(368, 29);
             this.label133.Name = "label133";
             this.label133.Size = new System.Drawing.Size(30, 17);
             this.label133.TabIndex = 197;
@@ -109,18 +109,18 @@ namespace spectra.ui
             // 
             // textBoxSaveEndRange
             // 
-            this.textBoxSaveEndRange.Location = new System.Drawing.Point(404, 50);
+            this.textBoxSaveEndRange.Location = new System.Drawing.Point(404, 27);
             this.textBoxSaveEndRange.Name = "textBoxSaveEndRange";
             this.textBoxSaveEndRange.Size = new System.Drawing.Size(66, 22);
             this.textBoxSaveEndRange.TabIndex = 3;
             this.textBoxSaveEndRange.Text = "0";
             this.textBoxSaveEndRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSaveEndRange.TextChanged += new System.EventHandler(this.textBoxSaveEndRange_TextChanged);
             this.textBoxSaveEndRange.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSaveEndRange_Validating);
             this.textBoxSaveEndRange.Validated += new System.EventHandler(this.TextBoxSaveEndRange_Validated);
             // 
             // groupBoxWavelengthSubset
             // 
-            this.groupBoxWavelengthSubset.Controls.Add(this.labelUpdateInform);
             this.groupBoxWavelengthSubset.Controls.Add(this.labelInfo);
             this.groupBoxWavelengthSubset.Controls.Add(this.labelConvertedPixels);
             this.groupBoxWavelengthSubset.Controls.Add(this.labelWavelengthSavingStepExplanation);
@@ -147,15 +147,6 @@ namespace spectra.ui
             this.groupBoxWavelengthSubset.TabStop = false;
             this.groupBoxWavelengthSubset.Text = "Save range";
             // 
-            // labelUpdateInform
-            // 
-            this.labelUpdateInform.AutoSize = true;
-            this.labelUpdateInform.Location = new System.Drawing.Point(305, 32);
-            this.labelUpdateInform.Name = "labelUpdateInform";
-            this.labelUpdateInform.Size = new System.Drawing.Size(155, 13);
-            this.labelUpdateInform.TabIndex = 231;
-            this.labelUpdateInform.Text = "Hit TAB on change to update";
-            // 
             // labelInfo
             // 
             this.labelInfo.AutoSize = true;
@@ -170,7 +161,7 @@ namespace spectra.ui
             // 
             this.labelConvertedPixels.AutoSize = true;
             this.labelConvertedPixels.ForeColor = System.Drawing.Color.Black;
-            this.labelConvertedPixels.Location = new System.Drawing.Point(293, 159);
+            this.labelConvertedPixels.Location = new System.Drawing.Point(293, 136);
             this.labelConvertedPixels.Name = "labelConvertedPixels";
             this.labelConvertedPixels.Size = new System.Drawing.Size(95, 13);
             this.labelConvertedPixels.TabIndex = 229;
@@ -180,7 +171,7 @@ namespace spectra.ui
             // labelWavelengthSavingStepExplanation
             // 
             this.labelWavelengthSavingStepExplanation.AutoSize = true;
-            this.labelWavelengthSavingStepExplanation.Location = new System.Drawing.Point(368, 125);
+            this.labelWavelengthSavingStepExplanation.Location = new System.Drawing.Point(368, 102);
             this.labelWavelengthSavingStepExplanation.Name = "labelWavelengthSavingStepExplanation";
             this.labelWavelengthSavingStepExplanation.Size = new System.Drawing.Size(36, 13);
             this.labelWavelengthSavingStepExplanation.TabIndex = 223;
@@ -188,7 +179,7 @@ namespace spectra.ui
             // 
             // textBoxWavelengthSavingStep
             // 
-            this.textBoxWavelengthSavingStep.Location = new System.Drawing.Point(293, 122);
+            this.textBoxWavelengthSavingStep.Location = new System.Drawing.Point(293, 99);
             this.textBoxWavelengthSavingStep.Name = "textBoxWavelengthSavingStep";
             this.textBoxWavelengthSavingStep.Size = new System.Drawing.Size(69, 22);
             this.textBoxWavelengthSavingStep.TabIndex = 4;
@@ -210,7 +201,7 @@ namespace spectra.ui
             // labelWavelengthSavingStep
             // 
             this.labelWavelengthSavingStep.AutoSize = true;
-            this.labelWavelengthSavingStep.Location = new System.Drawing.Point(218, 125);
+            this.labelWavelengthSavingStep.Location = new System.Drawing.Point(218, 102);
             this.labelWavelengthSavingStep.Name = "labelWavelengthSavingStep";
             this.labelWavelengthSavingStep.Size = new System.Drawing.Size(69, 13);
             this.labelWavelengthSavingStep.TabIndex = 221;
@@ -218,7 +209,7 @@ namespace spectra.ui
             // 
             // buttonResetRange
             // 
-            this.buttonResetRange.Location = new System.Drawing.Point(21, 48);
+            this.buttonResetRange.Location = new System.Drawing.Point(21, 25);
             this.buttonResetRange.Name = "buttonResetRange";
             this.buttonResetRange.Size = new System.Drawing.Size(75, 23);
             this.buttonResetRange.TabIndex = 0;
@@ -228,7 +219,7 @@ namespace spectra.ui
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(368, 86);
+            this.label1.Location = new System.Drawing.Point(368, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 17);
             this.label1.TabIndex = 219;
@@ -238,7 +229,7 @@ namespace spectra.ui
             // labelCorrespondingTo
             // 
             this.labelCorrespondingTo.AutoSize = true;
-            this.labelCorrespondingTo.Location = new System.Drawing.Point(185, 88);
+            this.labelCorrespondingTo.Location = new System.Drawing.Point(185, 65);
             this.labelCorrespondingTo.Name = "labelCorrespondingTo";
             this.labelCorrespondingTo.Size = new System.Drawing.Size(102, 13);
             this.labelCorrespondingTo.TabIndex = 218;
@@ -247,7 +238,7 @@ namespace spectra.ui
             // labelConvertedUnit
             // 
             this.labelConvertedUnit.AutoSize = true;
-            this.labelConvertedUnit.Location = new System.Drawing.Point(477, 88);
+            this.labelConvertedUnit.Location = new System.Drawing.Point(477, 65);
             this.labelConvertedUnit.Name = "labelConvertedUnit";
             this.labelConvertedUnit.Size = new System.Drawing.Size(23, 13);
             this.labelConvertedUnit.TabIndex = 215;
@@ -256,7 +247,7 @@ namespace spectra.ui
             // labelConvertedEndRange
             // 
             this.labelConvertedEndRange.ForeColor = System.Drawing.Color.Black;
-            this.labelConvertedEndRange.Location = new System.Drawing.Point(404, 85);
+            this.labelConvertedEndRange.Location = new System.Drawing.Point(404, 62);
             this.labelConvertedEndRange.Name = "labelConvertedEndRange";
             this.labelConvertedEndRange.Size = new System.Drawing.Size(65, 19);
             this.labelConvertedEndRange.TabIndex = 214;
@@ -266,7 +257,7 @@ namespace spectra.ui
             // labelConvertedStartRange
             // 
             this.labelConvertedStartRange.ForeColor = System.Drawing.Color.Black;
-            this.labelConvertedStartRange.Location = new System.Drawing.Point(293, 85);
+            this.labelConvertedStartRange.Location = new System.Drawing.Point(293, 62);
             this.labelConvertedStartRange.Name = "labelConvertedStartRange";
             this.labelConvertedStartRange.Size = new System.Drawing.Size(69, 19);
             this.labelConvertedStartRange.TabIndex = 213;
@@ -276,7 +267,7 @@ namespace spectra.ui
             // labelUnit
             // 
             this.labelUnit.AutoSize = true;
-            this.labelUnit.Location = new System.Drawing.Point(477, 54);
+            this.labelUnit.Location = new System.Drawing.Point(477, 31);
             this.labelUnit.Name = "labelUnit";
             this.labelUnit.Size = new System.Drawing.Size(36, 13);
             this.labelUnit.TabIndex = 211;
@@ -318,6 +309,5 @@ namespace spectra.ui
         private System.Windows.Forms.Label labelWavelengthSavingStep;
         private System.Windows.Forms.Label labelConvertedPixels;
         private System.Windows.Forms.Label labelInfo;
-        private System.Windows.Forms.Label labelUpdateInform;
     }
 }

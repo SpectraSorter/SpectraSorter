@@ -256,6 +256,24 @@ namespace spectra.ui
 
             if (Double.TryParse(textBoxSaveStartRange.Text, out double value))
             {
+                if (SettingsManager.SaveRangeUnits == Options.RangeUnits.Pixels) 
+                {
+                    if (value < 0)
+                    {
+                        textBoxSaveStartRange.BackColor = Color.Red;
+                        e.Cancel = true;
+                        return;
+                    }
+                } else
+                {
+                    if (value < Math.Round(SpectrumProcessor.Instance.Wavelengths[0], 0))
+                    {
+                        textBoxSaveStartRange.BackColor = Color.Red;
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+
                 if (compare)
                 {
                     if (value >= endValue)
@@ -492,6 +510,18 @@ namespace spectra.ui
         }
 
         private void textBoxWavelengthSavingStep_TextChanged(object sender, EventArgs e)
+        {
+            // Validate on change
+            this.Validate();
+        }
+
+        private void textBoxSaveStartRange_TextChanged(object sender, EventArgs e)
+        {
+            // Validate on change
+            this.Validate();
+        }
+
+        private void textBoxSaveEndRange_TextChanged(object sender, EventArgs e)
         {
             // Validate on change
             this.Validate();
