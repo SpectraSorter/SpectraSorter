@@ -571,15 +571,16 @@ namespace spectra.ui.components
         {
             checkBoxEnableSavingToFile.Checked = enabled;
 
-            checkBoxEnableFileNameAutoUpdate.Enabled = enabled;
-            buttonSaveDir.Enabled = enabled;
-            labelFileName.Enabled = enabled;
-            labelExperimentName.Enabled = enabled;
-            textBoxExperiment.Enabled = enabled;
-            labelExperimentConditions.Enabled = enabled;
-            textBoxConditions.Enabled = enabled;
-            textBoxSaveFilename.Enabled = enabled;
-            buttonUpdateFileTime.Enabled = enabled;
+            // The other elements remain enabled
+            checkBoxEnableFileNameAutoUpdate.Enabled = true;
+            buttonSaveDir.Enabled = true;
+            labelFileName.Enabled = true;
+            labelExperimentName.Enabled = true;
+            textBoxExperiment.Enabled = true;
+            labelExperimentConditions.Enabled = true;
+            textBoxConditions.Enabled = true;
+            textBoxSaveFilename.Enabled = true;
+            buttonUpdateFileTime.Enabled = true;
         }
 
         private void checkBoxEnableFileNameAutoUpdate_CheckedChanged(object sender, EventArgs e)
