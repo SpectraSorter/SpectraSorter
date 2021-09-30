@@ -25,6 +25,7 @@ namespace spectra.ui
 {
     partial class AboutDialog : Form
     {
+        private const string repository = "https://github.com/SpectraSorter/SpectraSorter";
         public AboutDialog()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace spectra.ui
             this.labelProductName.Text = AssemblyTitle;
             this.labelVersion.Text = $"Version {AssemblyVersion.Substring(0, AssemblyVersion.LastIndexOf('.'))}";
             this.labelCopyright.Text = AssemblyCopyright;
+            this.labelRepository.Text = repository;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
@@ -126,6 +128,12 @@ namespace spectra.ui
         private void OkButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void labelRepository_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(repository);
         }
     }
 }
