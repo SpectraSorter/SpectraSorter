@@ -385,10 +385,28 @@ namespace spectra.ui
                     return;
                 }
 
-                if (value < 0.0f)
+                double minWavelength = 0.0f;
+                double maxWavelength = 1000000.0f;
+                if (SpectrumProcessor.Instance.Wavelengths.Length > 0)
+                {
+                    minWavelength = Math.Floor(SpectrumProcessor.Instance.Wavelengths[0]);
+                    maxWavelength = Math.Ceiling(SpectrumProcessor.Instance.Wavelengths[SpectrumProcessor.Instance.Wavelengths.Length - 1]);
+                }
+                if (value < minWavelength)
                 {
                     // Invalid
-                    dataGridView1.Rows[e.RowIndex].ErrorText = "Invalid wavelength!";
+                    dataGridView1.Rows[e.RowIndex].ErrorText = "Wavelengths must be >= " + minWavelength + "!";
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+
+                    this.canCommit = false;
+                    e.Cancel = true;
+                    return;
+                }
+
+                if (value > maxWavelength)
+                {
+                    // Invalid
+                    dataGridView1.Rows[e.RowIndex].ErrorText = "Wavelengths must be <= " + maxWavelength + "!";
                     dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
 
                     this.canCommit = false;

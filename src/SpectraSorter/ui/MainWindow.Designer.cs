@@ -86,6 +86,7 @@ namespace spectra.ui
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.saveSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.revertSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,7 +222,6 @@ namespace spectra.ui
             this.groupBoxOceanFXUSB = new System.Windows.Forms.GroupBox();
             this.groupBoxOceanFXNetwork = new System.Windows.Forms.GroupBox();
             this.groupBoxArduinoCOM = new System.Windows.Forms.GroupBox();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIPDevices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUSBDeviceList)).BeginInit();
             this.groupBoxDark.SuspendLayout();
@@ -661,7 +661,7 @@ namespace spectra.ui
             this.toolStripSeparator6,
             this.revertSettingsToolStripMenuItem});
             this.toolStripSettings.Name = "toolStripSettings";
-            this.toolStripSettings.Size = new System.Drawing.Size(180, 22);
+            this.toolStripSettings.Size = new System.Drawing.Size(116, 22);
             this.toolStripSettings.Text = "Settings";
             // 
             // importSettingsToolStripMenuItem
@@ -697,6 +697,11 @@ namespace spectra.ui
             this.reloadDefaultsToolStripMenuItem.Text = "Reload current default";
             this.reloadDefaultsToolStripMenuItem.Click += new System.EventHandler(this.reloadDefaultsToolStripMenuItem_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(194, 6);
+            // 
             // revertSettingsToolStripMenuItem
             // 
             this.revertSettingsToolStripMenuItem.Name = "revertSettingsToolStripMenuItem";
@@ -707,12 +712,12 @@ namespace spectra.ui
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(113, 6);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -720,6 +725,7 @@ namespace spectra.ui
             // 
             this.wavelengthsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.wavelengthHubToolStripMenuItem});
+            this.wavelengthsToolStripMenuItem.Enabled = false;
             this.wavelengthsToolStripMenuItem.Name = "wavelengthsToolStripMenuItem";
             this.wavelengthsToolStripMenuItem.Size = new System.Drawing.Size(25, 20);
             this.wavelengthsToolStripMenuItem.Text = "λ";
@@ -753,7 +759,7 @@ namespace spectra.ui
             // 
             this.enabledFilteringToolStripMenuItem.Name = "enabledFilteringToolStripMenuItem";
             this.enabledFilteringToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.enabledFilteringToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.enabledFilteringToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.enabledFilteringToolStripMenuItem.Text = "Filtering";
             this.enabledFilteringToolStripMenuItem.Click += new System.EventHandler(this.enabledFilteringToolStripMenuItem_Click);
             // 
@@ -761,7 +767,7 @@ namespace spectra.ui
             // 
             this.enabledTriggeringToolStripMenuItem.Name = "enabledTriggeringToolStripMenuItem";
             this.enabledTriggeringToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.enabledTriggeringToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.enabledTriggeringToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.enabledTriggeringToolStripMenuItem.Text = "Triggering";
             this.enabledTriggeringToolStripMenuItem.Click += new System.EventHandler(this.enabledTriggeringToolStripMenuItem_Click);
             // 
@@ -773,7 +779,7 @@ namespace spectra.ui
             this.dynamicReferenceToolStripMenuItem});
             this.referenceToolStripMenuItem1.Name = "referenceToolStripMenuItem1";
             this.referenceToolStripMenuItem1.ShowShortcutKeys = false;
-            this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.referenceToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.referenceToolStripMenuItem1.Text = "Reference";
             // 
             // doNotUseReferenceToolStripMenuItem
@@ -800,7 +806,7 @@ namespace spectra.ui
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // outputToolStripMenuItem
             // 
@@ -810,7 +816,7 @@ namespace spectra.ui
             this.absorbanceToolStripMenuItem,
             this.transmissionToolStripMenuItem});
             this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
-            this.outputToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.outputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.outputToolStripMenuItem.Text = "Output";
             // 
             // rawSpectrumToolStripMenuItem
@@ -845,14 +851,14 @@ namespace spectra.ui
             // 
             this.enableSaveToFileToolStripMenuItem.Name = "enableSaveToFileToolStripMenuItem";
             this.enableSaveToFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.enableSaveToFileToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.enableSaveToFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.enableSaveToFileToolStripMenuItem.Text = "Saving";
             this.enableSaveToFileToolStripMenuItem.Click += new System.EventHandler(this.enableSaveToFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // startToolStripMenuItem2
             // 
@@ -860,7 +866,7 @@ namespace spectra.ui
             this.startToolStripMenuItem,
             this.abortToolStripMenuItem});
             this.startToolStripMenuItem2.Name = "startToolStripMenuItem2";
-            this.startToolStripMenuItem2.Size = new System.Drawing.Size(170, 22);
+            this.startToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.startToolStripMenuItem2.Text = "Acquisition";
             // 
             // startToolStripMenuItem
@@ -2037,11 +2043,6 @@ namespace spectra.ui
             this.groupBoxArduinoCOM.TabIndex = 232;
             this.groupBoxArduinoCOM.TabStop = false;
             this.groupBoxArduinoCOM.Text = "Arduino (COM Devices)";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(194, 6);
             // 
             // MainWindow
             // 

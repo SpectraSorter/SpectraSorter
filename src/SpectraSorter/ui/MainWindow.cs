@@ -1067,6 +1067,7 @@ namespace spectra.ui
             processToolStripMenuItem.Enabled = bActiveIO;
             plotToolStripMenuItem.Enabled = bActiveIO;
             statusStripToolbar.Enabled = bActiveIO;
+            wavelengthsToolStripMenuItem.Enabled = bActiveIO;
 
             acquisitionParametersControl.Enabled = bActiveIO;
             tabControlAcquisition.Enabled = bActiveIO;
