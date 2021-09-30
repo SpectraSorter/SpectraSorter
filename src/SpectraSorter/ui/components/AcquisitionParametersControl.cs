@@ -536,11 +536,16 @@ namespace spectra.ui.components
                 conditions = "_" + conditions.Replace(" ", "_");
             }
 
-            textBoxSaveFilename.Text = baseName + experiment + conditions + "_" +
+            string csvFileName = baseName + experiment + conditions + "_" +
                 SettingsManager.ResultSpectrumType.ToString("g").ToLower(CultureInfo.InvariantCulture) +
                 DateTime.Now.ToString("_ddMMMyyyy_HHmmss", CultureInfo.InvariantCulture) + ".csv";
 
-            SettingsManager.SaveFileName = Path.Combine(SettingsManager.SaveDirectory, textBoxSaveFilename.Text);
+            textBoxSaveFilename.Text = csvFileName;
+
+            SettingsManager.SaveFileName = Path.Combine(SettingsManager.SaveDirectory, csvFileName);
+
+            // Update field with settings name
+            textBoxSettingsFileName.Text = csvFileName.Replace(".csv", "_settings.xml");
         }
 
         private void TextBoxExperiment_TextChanged(object sender, EventArgs e)

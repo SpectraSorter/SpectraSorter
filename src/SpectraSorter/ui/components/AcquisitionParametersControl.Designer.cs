@@ -75,6 +75,7 @@ namespace spectra.ui.components
             this.tabControlAcquisitionParameters = new System.Windows.Forms.TabControl();
             this.tabPageCommunication = new System.Windows.Forms.TabPage();
             this.tabPageSaving = new System.Windows.Forms.TabPage();
+            this.checkBoxEnableFileNameAutoUpdate = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableSavingToFile = new System.Windows.Forms.CheckBox();
             this.labelFileName = new System.Windows.Forms.Label();
             this.labelExperimentName = new System.Windows.Forms.Label();
@@ -94,7 +95,9 @@ namespace spectra.ui.components
             this.textBoxFPGAVersion = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBoxSerialNum = new System.Windows.Forms.TextBox();
-            this.checkBoxEnableFileNameAutoUpdate = new System.Windows.Forms.CheckBox();
+            this.labelResultFileName = new System.Windows.Forms.Label();
+            this.labelSettingsFileName = new System.Windows.Forms.Label();
+            this.textBoxSettingsFileName = new System.Windows.Forms.TextBox();
             this.tabControlAcquisitionParameters.SuspendLayout();
             this.tabPageCommunication.SuspendLayout();
             this.tabPageSaving.SuspendLayout();
@@ -105,10 +108,9 @@ namespace spectra.ui.components
             // checkBoxBufferingEnabled
             // 
             this.checkBoxBufferingEnabled.AutoSize = true;
-            this.checkBoxBufferingEnabled.Location = new System.Drawing.Point(11, 9);
-            this.checkBoxBufferingEnabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxBufferingEnabled.Location = new System.Drawing.Point(8, 7);
             this.checkBoxBufferingEnabled.Name = "checkBoxBufferingEnabled";
-            this.checkBoxBufferingEnabled.Size = new System.Drawing.Size(143, 21);
+            this.checkBoxBufferingEnabled.Size = new System.Drawing.Size(110, 17);
             this.checkBoxBufferingEnabled.TabIndex = 170;
             this.checkBoxBufferingEnabled.Text = "Buffering Enabled";
             this.checkBoxBufferingEnabled.UseVisualStyleBackColor = true;
@@ -116,10 +118,9 @@ namespace spectra.ui.components
             // 
             // textBoxSpectraPerRequest
             // 
-            this.textBoxSpectraPerRequest.Location = new System.Drawing.Point(277, 146);
-            this.textBoxSpectraPerRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSpectraPerRequest.Location = new System.Drawing.Point(208, 119);
             this.textBoxSpectraPerRequest.Name = "textBoxSpectraPerRequest";
-            this.textBoxSpectraPerRequest.Size = new System.Drawing.Size(117, 22);
+            this.textBoxSpectraPerRequest.Size = new System.Drawing.Size(89, 20);
             this.textBoxSpectraPerRequest.TabIndex = 175;
             this.textBoxSpectraPerRequest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSpectraPerRequest.TextChanged += new System.EventHandler(this.textBoxSpectraPerRequest_TextChanged);
@@ -129,20 +130,18 @@ namespace spectra.ui.components
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(11, 151);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Location = new System.Drawing.Point(8, 123);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(228, 17);
+            this.label30.Size = new System.Drawing.Size(169, 13);
             this.label30.TabIndex = 185;
             this.label30.Text = "Num spectra per request (max=15)";
             // 
             // checkBoxSingleSWTrigger
             // 
             this.checkBoxSingleSWTrigger.AutoSize = true;
-            this.checkBoxSingleSWTrigger.Location = new System.Drawing.Point(11, 255);
-            this.checkBoxSingleSWTrigger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxSingleSWTrigger.Location = new System.Drawing.Point(8, 207);
             this.checkBoxSingleSWTrigger.Name = "checkBoxSingleSWTrigger";
-            this.checkBoxSingleSWTrigger.Size = new System.Drawing.Size(171, 21);
+            this.checkBoxSingleSWTrigger.Size = new System.Drawing.Size(130, 17);
             this.checkBoxSingleSWTrigger.TabIndex = 178;
             this.checkBoxSingleSWTrigger.Text = "Single software trigger";
             this.checkBoxSingleSWTrigger.UseVisualStyleBackColor = true;
@@ -151,10 +150,9 @@ namespace spectra.ui.components
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(11, 220);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Location = new System.Drawing.Point(8, 179);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 17);
+            this.label25.Size = new System.Drawing.Size(69, 13);
             this.label25.TabIndex = 183;
             this.label25.Text = "Trigger mode";
             // 
@@ -162,7 +160,7 @@ namespace spectra.ui.components
             // 
             this.comboBoxTriggerMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTriggerMode.FormattingEnabled = true;
-            this.comboBoxTriggerMode.ItemHeight = 16;
+            this.comboBoxTriggerMode.ItemHeight = 13;
             this.comboBoxTriggerMode.Items.AddRange(new object[] {
             "Software  (default)",
             "HW - Rising Edge",
@@ -171,10 +169,9 @@ namespace spectra.ui.components
             "HW - Legacy Synchronous",
             "HW - Synchronous  Start/Stop",
             "OFF   (disabled)"});
-            this.comboBoxTriggerMode.Location = new System.Drawing.Point(176, 215);
-            this.comboBoxTriggerMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTriggerMode.Location = new System.Drawing.Point(132, 175);
             this.comboBoxTriggerMode.Name = "comboBoxTriggerMode";
-            this.comboBoxTriggerMode.Size = new System.Drawing.Size(219, 24);
+            this.comboBoxTriggerMode.Size = new System.Drawing.Size(165, 21);
             this.comboBoxTriggerMode.TabIndex = 177;
             this.comboBoxTriggerMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxTriggerMode_SelectedIndexChanged);
             // 
@@ -187,19 +184,17 @@ namespace spectra.ui.components
             "minutes",
             "hours",
             "spectra"});
-            this.comboBoxAcquireUnits.Location = new System.Drawing.Point(307, 289);
-            this.comboBoxAcquireUnits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAcquireUnits.Location = new System.Drawing.Point(230, 235);
             this.comboBoxAcquireUnits.Name = "comboBoxAcquireUnits";
-            this.comboBoxAcquireUnits.Size = new System.Drawing.Size(88, 24);
+            this.comboBoxAcquireUnits.Size = new System.Drawing.Size(67, 21);
             this.comboBoxAcquireUnits.TabIndex = 180;
             this.comboBoxAcquireUnits.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcquireUnits_SelectedIndexChanged);
             // 
             // textBoxAcquireDuration
             // 
-            this.textBoxAcquireDuration.Location = new System.Drawing.Point(176, 289);
-            this.textBoxAcquireDuration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAcquireDuration.Location = new System.Drawing.Point(132, 235);
             this.textBoxAcquireDuration.Name = "textBoxAcquireDuration";
-            this.textBoxAcquireDuration.Size = new System.Drawing.Size(117, 22);
+            this.textBoxAcquireDuration.Size = new System.Drawing.Size(89, 20);
             this.textBoxAcquireDuration.TabIndex = 179;
             this.textBoxAcquireDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxAcquireDuration.TextChanged += new System.EventHandler(this.textBoxAcquireDuration_TextChanged);
@@ -209,19 +204,17 @@ namespace spectra.ui.components
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(11, 294);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(8, 239);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 17);
+            this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 182;
             this.label16.Text = "Acquire for";
             // 
             // textBoxAcquisitionDelay
             // 
-            this.textBoxAcquisitionDelay.Location = new System.Drawing.Point(277, 181);
-            this.textBoxAcquisitionDelay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAcquisitionDelay.Location = new System.Drawing.Point(208, 147);
             this.textBoxAcquisitionDelay.Name = "textBoxAcquisitionDelay";
-            this.textBoxAcquisitionDelay.Size = new System.Drawing.Size(117, 22);
+            this.textBoxAcquisitionDelay.Size = new System.Drawing.Size(89, 20);
             this.textBoxAcquisitionDelay.TabIndex = 176;
             this.textBoxAcquisitionDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxAcquisitionDelay.TextChanged += new System.EventHandler(this.textBoxAcquisitionDelay_TextChanged);
@@ -230,10 +223,9 @@ namespace spectra.ui.components
             // 
             // textBoxBackToBack
             // 
-            this.textBoxBackToBack.Location = new System.Drawing.Point(277, 112);
-            this.textBoxBackToBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxBackToBack.Location = new System.Drawing.Point(208, 91);
             this.textBoxBackToBack.Name = "textBoxBackToBack";
-            this.textBoxBackToBack.Size = new System.Drawing.Size(117, 22);
+            this.textBoxBackToBack.Size = new System.Drawing.Size(89, 20);
             this.textBoxBackToBack.TabIndex = 174;
             this.textBoxBackToBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxBackToBack.TextChanged += new System.EventHandler(this.textBoxBackToBack_TextChanged);
@@ -242,10 +234,9 @@ namespace spectra.ui.components
             // 
             // textBoxScansToAverage
             // 
-            this.textBoxScansToAverage.Location = new System.Drawing.Point(277, 78);
-            this.textBoxScansToAverage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxScansToAverage.Location = new System.Drawing.Point(208, 63);
             this.textBoxScansToAverage.Name = "textBoxScansToAverage";
-            this.textBoxScansToAverage.Size = new System.Drawing.Size(117, 22);
+            this.textBoxScansToAverage.Size = new System.Drawing.Size(89, 20);
             this.textBoxScansToAverage.TabIndex = 172;
             this.textBoxScansToAverage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxScansToAverage.TextChanged += new System.EventHandler(this.textBoxScansToAverage_TextChanged);
@@ -255,19 +246,17 @@ namespace spectra.ui.components
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(11, 186);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(8, 151);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 17);
+            this.label14.Size = new System.Drawing.Size(106, 13);
             this.label14.TabIndex = 169;
             this.label14.Text = "Acquisition delay (µs)";
             // 
             // textBoxIntegrationTime
             // 
-            this.textBoxIntegrationTime.Location = new System.Drawing.Point(277, 43);
-            this.textBoxIntegrationTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIntegrationTime.Location = new System.Drawing.Point(208, 35);
             this.textBoxIntegrationTime.Name = "textBoxIntegrationTime";
-            this.textBoxIntegrationTime.Size = new System.Drawing.Size(117, 22);
+            this.textBoxIntegrationTime.Size = new System.Drawing.Size(89, 20);
             this.textBoxIntegrationTime.TabIndex = 171;
             this.textBoxIntegrationTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxIntegrationTime.TextChanged += new System.EventHandler(this.textBoxIntegrationTime_TextChanged);
@@ -277,59 +266,53 @@ namespace spectra.ui.components
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 117);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(8, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(248, 17);
+            this.label13.Size = new System.Drawing.Size(185, 13);
             this.label13.TabIndex = 168;
             this.label13.Text = "Back-to-back per trigger (max=65535)";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 82);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(8, 67);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(198, 17);
+            this.label12.Size = new System.Drawing.Size(149, 13);
             this.label12.TabIndex = 167;
             this.label12.Text = "Scans to average (max=5000)";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 48);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(8, 39);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 17);
+            this.label11.Size = new System.Drawing.Size(99, 13);
             this.label11.TabIndex = 166;
             this.label11.Text = "Integration time (µs)";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(335, 119);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(251, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 17);
+            this.label6.Size = new System.Drawing.Size(18, 13);
             this.label6.TabIndex = 253;
             this.label6.Text = "µs";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 96);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(178, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 252;
             this.label4.Text = "Width";
             // 
             // textBoxContinuousStrobeWidth
             // 
-            this.textBoxContinuousStrobeWidth.Location = new System.Drawing.Point(299, 91);
-            this.textBoxContinuousStrobeWidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxContinuousStrobeWidth.Location = new System.Drawing.Point(224, 74);
             this.textBoxContinuousStrobeWidth.Name = "textBoxContinuousStrobeWidth";
-            this.textBoxContinuousStrobeWidth.Size = new System.Drawing.Size(91, 22);
+            this.textBoxContinuousStrobeWidth.Size = new System.Drawing.Size(69, 20);
             this.textBoxContinuousStrobeWidth.TabIndex = 251;
             this.textBoxContinuousStrobeWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxContinuousStrobeWidth.TextChanged += new System.EventHandler(this.textBoxContinuousStrobeWidth_TextChanged);
@@ -339,19 +322,17 @@ namespace spectra.ui.components
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 64);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(178, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 250;
             this.label3.Text = "Period";
             // 
             // textBoxContinuousStrobePeriod
             // 
-            this.textBoxContinuousStrobePeriod.Location = new System.Drawing.Point(299, 59);
-            this.textBoxContinuousStrobePeriod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxContinuousStrobePeriod.Location = new System.Drawing.Point(224, 48);
             this.textBoxContinuousStrobePeriod.Name = "textBoxContinuousStrobePeriod";
-            this.textBoxContinuousStrobePeriod.Size = new System.Drawing.Size(91, 22);
+            this.textBoxContinuousStrobePeriod.Size = new System.Drawing.Size(69, 20);
             this.textBoxContinuousStrobePeriod.TabIndex = 249;
             this.textBoxContinuousStrobePeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxContinuousStrobePeriod.TextChanged += new System.EventHandler(this.textBoxContinuousStrobePeriod_TextChanged);
@@ -361,10 +342,9 @@ namespace spectra.ui.components
             // checkBoxContinuousStrobeEnabled
             // 
             this.checkBoxContinuousStrobeEnabled.AutoSize = true;
-            this.checkBoxContinuousStrobeEnabled.Location = new System.Drawing.Point(237, 31);
-            this.checkBoxContinuousStrobeEnabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxContinuousStrobeEnabled.Location = new System.Drawing.Point(178, 25);
             this.checkBoxContinuousStrobeEnabled.Name = "checkBoxContinuousStrobeEnabled";
-            this.checkBoxContinuousStrobeEnabled.Size = new System.Drawing.Size(145, 21);
+            this.checkBoxContinuousStrobeEnabled.Size = new System.Drawing.Size(111, 17);
             this.checkBoxContinuousStrobeEnabled.TabIndex = 248;
             this.checkBoxContinuousStrobeEnabled.Text = "Continuous strobe";
             this.checkBoxContinuousStrobeEnabled.UseVisualStyleBackColor = true;
@@ -373,10 +353,9 @@ namespace spectra.ui.components
             // checkBoxSingleStrobeEnabled
             // 
             this.checkBoxSingleStrobeEnabled.AutoSize = true;
-            this.checkBoxSingleStrobeEnabled.Location = new System.Drawing.Point(9, 31);
-            this.checkBoxSingleStrobeEnabled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxSingleStrobeEnabled.Location = new System.Drawing.Point(7, 25);
             this.checkBoxSingleStrobeEnabled.Name = "checkBoxSingleStrobeEnabled";
-            this.checkBoxSingleStrobeEnabled.Size = new System.Drawing.Size(113, 21);
+            this.checkBoxSingleStrobeEnabled.Size = new System.Drawing.Size(87, 17);
             this.checkBoxSingleStrobeEnabled.TabIndex = 241;
             this.checkBoxSingleStrobeEnabled.Text = "Single strobe";
             this.checkBoxSingleStrobeEnabled.UseVisualStyleBackColor = true;
@@ -385,19 +364,17 @@ namespace spectra.ui.components
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(131, 119);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(98, 97);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 17);
+            this.label8.Size = new System.Drawing.Size(18, 13);
             this.label8.TabIndex = 246;
             this.label8.Text = "µs";
             // 
             // textBoxSingleStrobePulseWidth
             // 
-            this.textBoxSingleStrobePulseWidth.Location = new System.Drawing.Point(103, 91);
-            this.textBoxSingleStrobePulseWidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSingleStrobePulseWidth.Location = new System.Drawing.Point(77, 74);
             this.textBoxSingleStrobePulseWidth.Name = "textBoxSingleStrobePulseWidth";
-            this.textBoxSingleStrobePulseWidth.Size = new System.Drawing.Size(91, 22);
+            this.textBoxSingleStrobePulseWidth.Size = new System.Drawing.Size(69, 20);
             this.textBoxSingleStrobePulseWidth.TabIndex = 244;
             this.textBoxSingleStrobePulseWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSingleStrobePulseWidth.TextChanged += new System.EventHandler(this.textBoxSingleStrobePulseWidth_TextChanged);
@@ -407,19 +384,17 @@ namespace spectra.ui.components
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 96);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(7, 78);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 17);
+            this.label9.Size = new System.Drawing.Size(64, 13);
             this.label9.TabIndex = 245;
             this.label9.Text = "Pulse Width";
             // 
             // textBoxSingleStrobePulseDelay
             // 
-            this.textBoxSingleStrobePulseDelay.Location = new System.Drawing.Point(101, 59);
-            this.textBoxSingleStrobePulseDelay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSingleStrobePulseDelay.Location = new System.Drawing.Point(76, 48);
             this.textBoxSingleStrobePulseDelay.Name = "textBoxSingleStrobePulseDelay";
-            this.textBoxSingleStrobePulseDelay.Size = new System.Drawing.Size(91, 22);
+            this.textBoxSingleStrobePulseDelay.Size = new System.Drawing.Size(69, 20);
             this.textBoxSingleStrobePulseDelay.TabIndex = 242;
             this.textBoxSingleStrobePulseDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxSingleStrobePulseDelay.TextChanged += new System.EventHandler(this.textBoxSingleStrobePulseDelay_TextChanged);
@@ -429,10 +404,9 @@ namespace spectra.ui.components
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 64);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(7, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 17);
+            this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 243;
             this.label10.Text = "Pulse Delay";
             // 
@@ -440,10 +414,9 @@ namespace spectra.ui.components
             // 
             this.labelStrobeParameters.AutoSize = true;
             this.labelStrobeParameters.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStrobeParameters.Location = new System.Drawing.Point(4, 4);
-            this.labelStrobeParameters.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStrobeParameters.Location = new System.Drawing.Point(3, 3);
             this.labelStrobeParameters.Name = "labelStrobeParameters";
-            this.labelStrobeParameters.Size = new System.Drawing.Size(340, 19);
+            this.labelStrobeParameters.Size = new System.Drawing.Size(286, 13);
             this.labelStrobeParameters.TabIndex = 255;
             this.labelStrobeParameters.Text = "Strobe parameters are applied only at acquisition start";
             // 
@@ -453,11 +426,10 @@ namespace spectra.ui.components
             this.tabControlAcquisitionParameters.Controls.Add(this.tabPageSaving);
             this.tabControlAcquisitionParameters.Controls.Add(this.tabPageStrobe);
             this.tabControlAcquisitionParameters.Controls.Add(this.tabPageInfo);
-            this.tabControlAcquisitionParameters.Location = new System.Drawing.Point(4, 4);
-            this.tabControlAcquisitionParameters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControlAcquisitionParameters.Location = new System.Drawing.Point(3, 3);
             this.tabControlAcquisitionParameters.Name = "tabControlAcquisitionParameters";
             this.tabControlAcquisitionParameters.SelectedIndex = 0;
-            this.tabControlAcquisitionParameters.Size = new System.Drawing.Size(420, 363);
+            this.tabControlAcquisitionParameters.Size = new System.Drawing.Size(315, 348);
             this.tabControlAcquisitionParameters.TabIndex = 256;
             // 
             // tabPageCommunication
@@ -480,17 +452,18 @@ namespace spectra.ui.components
             this.tabPageCommunication.Controls.Add(this.textBoxAcquisitionDelay);
             this.tabPageCommunication.Controls.Add(this.textBoxAcquireDuration);
             this.tabPageCommunication.Controls.Add(this.label16);
-            this.tabPageCommunication.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCommunication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCommunication.Location = new System.Drawing.Point(4, 22);
             this.tabPageCommunication.Name = "tabPageCommunication";
-            this.tabPageCommunication.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageCommunication.Size = new System.Drawing.Size(412, 334);
+            this.tabPageCommunication.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageCommunication.Size = new System.Drawing.Size(307, 322);
             this.tabPageCommunication.TabIndex = 0;
             this.tabPageCommunication.Text = "Communication";
             // 
             // tabPageSaving
             // 
             this.tabPageSaving.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageSaving.Controls.Add(this.labelSettingsFileName);
+            this.tabPageSaving.Controls.Add(this.labelResultFileName);
             this.tabPageSaving.Controls.Add(this.checkBoxEnableFileNameAutoUpdate);
             this.tabPageSaving.Controls.Add(this.checkBoxEnableSavingToFile);
             this.tabPageSaving.Controls.Add(this.labelFileName);
@@ -501,20 +474,30 @@ namespace spectra.ui.components
             this.tabPageSaving.Controls.Add(this.buttonSaveDir);
             this.tabPageSaving.Controls.Add(this.textBoxConditions);
             this.tabPageSaving.Controls.Add(this.textBoxSaveFilename);
-            this.tabPageSaving.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSaving.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageSaving.Controls.Add(this.textBoxSettingsFileName);
+            this.tabPageSaving.Location = new System.Drawing.Point(4, 22);
             this.tabPageSaving.Name = "tabPageSaving";
-            this.tabPageSaving.Size = new System.Drawing.Size(412, 334);
+            this.tabPageSaving.Size = new System.Drawing.Size(307, 322);
             this.tabPageSaving.TabIndex = 3;
             this.tabPageSaving.Text = "Saving";
+            // 
+            // checkBoxEnableFileNameAutoUpdate
+            // 
+            this.checkBoxEnableFileNameAutoUpdate.AutoSize = true;
+            this.checkBoxEnableFileNameAutoUpdate.Location = new System.Drawing.Point(128, 16);
+            this.checkBoxEnableFileNameAutoUpdate.Name = "checkBoxEnableFileNameAutoUpdate";
+            this.checkBoxEnableFileNameAutoUpdate.Size = new System.Drawing.Size(155, 17);
+            this.checkBoxEnableFileNameAutoUpdate.TabIndex = 204;
+            this.checkBoxEnableFileNameAutoUpdate.Text = "Auto-update save file name";
+            this.checkBoxEnableFileNameAutoUpdate.UseVisualStyleBackColor = true;
+            this.checkBoxEnableFileNameAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxEnableFileNameAutoUpdate_CheckedChanged);
             // 
             // checkBoxEnableSavingToFile
             // 
             this.checkBoxEnableSavingToFile.AutoSize = true;
-            this.checkBoxEnableSavingToFile.Location = new System.Drawing.Point(12, 20);
-            this.checkBoxEnableSavingToFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxEnableSavingToFile.Location = new System.Drawing.Point(9, 16);
             this.checkBoxEnableSavingToFile.Name = "checkBoxEnableSavingToFile";
-            this.checkBoxEnableSavingToFile.Size = new System.Drawing.Size(100, 21);
+            this.checkBoxEnableSavingToFile.Size = new System.Drawing.Size(79, 17);
             this.checkBoxEnableSavingToFile.TabIndex = 203;
             this.checkBoxEnableSavingToFile.Text = "Save to file";
             this.checkBoxEnableSavingToFile.UseVisualStyleBackColor = true;
@@ -524,39 +507,35 @@ namespace spectra.ui.components
             // 
             this.labelFileName.AutoSize = true;
             this.labelFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFileName.Location = new System.Drawing.Point(8, 90);
-            this.labelFileName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFileName.Location = new System.Drawing.Point(6, 73);
             this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(78, 17);
+            this.labelFileName.Size = new System.Drawing.Size(67, 13);
             this.labelFileName.TabIndex = 202;
-            this.labelFileName.Text = "File name";
+            this.labelFileName.Text = "File names";
             // 
             // labelExperimentName
             // 
             this.labelExperimentName.AutoSize = true;
-            this.labelExperimentName.Location = new System.Drawing.Point(168, 100);
-            this.labelExperimentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelExperimentName.Location = new System.Drawing.Point(126, 81);
             this.labelExperimentName.Name = "labelExperimentName";
-            this.labelExperimentName.Size = new System.Drawing.Size(78, 17);
+            this.labelExperimentName.Size = new System.Drawing.Size(59, 13);
             this.labelExperimentName.TabIndex = 198;
             this.labelExperimentName.Text = "Experiment";
             // 
             // textBoxExperiment
             // 
-            this.textBoxExperiment.Location = new System.Drawing.Point(4, 121);
-            this.textBoxExperiment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxExperiment.Location = new System.Drawing.Point(3, 98);
             this.textBoxExperiment.Name = "textBoxExperiment";
-            this.textBoxExperiment.Size = new System.Drawing.Size(400, 22);
+            this.textBoxExperiment.Size = new System.Drawing.Size(301, 20);
             this.textBoxExperiment.TabIndex = 199;
             this.textBoxExperiment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxExperiment.TextChanged += new System.EventHandler(this.TextBoxExperiment_TextChanged);
             // 
             // buttonUpdateFileTime
             // 
-            this.buttonUpdateFileTime.Location = new System.Drawing.Point(168, 299);
-            this.buttonUpdateFileTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUpdateFileTime.Location = new System.Drawing.Point(124, 296);
             this.buttonUpdateFileTime.Name = "buttonUpdateFileTime";
-            this.buttonUpdateFileTime.Size = new System.Drawing.Size(79, 28);
+            this.buttonUpdateFileTime.Size = new System.Drawing.Size(59, 23);
             this.buttonUpdateFileTime.TabIndex = 197;
             this.buttonUpdateFileTime.Text = "Update";
             this.buttonUpdateFileTime.UseVisualStyleBackColor = true;
@@ -565,19 +544,17 @@ namespace spectra.ui.components
             // labelExperimentConditions
             // 
             this.labelExperimentConditions.AutoSize = true;
-            this.labelExperimentConditions.Location = new System.Drawing.Point(169, 150);
-            this.labelExperimentConditions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelExperimentConditions.Location = new System.Drawing.Point(127, 122);
             this.labelExperimentConditions.Name = "labelExperimentConditions";
-            this.labelExperimentConditions.Size = new System.Drawing.Size(74, 17);
+            this.labelExperimentConditions.Size = new System.Drawing.Size(56, 13);
             this.labelExperimentConditions.TabIndex = 201;
             this.labelExperimentConditions.Text = "Conditions";
             // 
             // buttonSaveDir
             // 
-            this.buttonSaveDir.Location = new System.Drawing.Point(4, 58);
-            this.buttonSaveDir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSaveDir.Location = new System.Drawing.Point(3, 47);
             this.buttonSaveDir.Name = "buttonSaveDir";
-            this.buttonSaveDir.Size = new System.Drawing.Size(401, 28);
+            this.buttonSaveDir.Size = new System.Drawing.Size(301, 23);
             this.buttonSaveDir.TabIndex = 195;
             this.buttonSaveDir.Text = "Set target directory...";
             this.buttonSaveDir.UseVisualStyleBackColor = true;
@@ -585,22 +562,20 @@ namespace spectra.ui.components
             // 
             // textBoxConditions
             // 
-            this.textBoxConditions.Location = new System.Drawing.Point(4, 171);
-            this.textBoxConditions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxConditions.Location = new System.Drawing.Point(3, 139);
             this.textBoxConditions.Name = "textBoxConditions";
-            this.textBoxConditions.Size = new System.Drawing.Size(400, 22);
+            this.textBoxConditions.Size = new System.Drawing.Size(301, 20);
             this.textBoxConditions.TabIndex = 200;
             this.textBoxConditions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxConditions.TextChanged += new System.EventHandler(this.TextBoxConditions_TextChanged);
             // 
             // textBoxSaveFilename
             // 
-            this.textBoxSaveFilename.Location = new System.Drawing.Point(4, 219);
-            this.textBoxSaveFilename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSaveFilename.Location = new System.Drawing.Point(3, 187);
             this.textBoxSaveFilename.Multiline = true;
             this.textBoxSaveFilename.Name = "textBoxSaveFilename";
             this.textBoxSaveFilename.ReadOnly = true;
-            this.textBoxSaveFilename.Size = new System.Drawing.Size(400, 72);
+            this.textBoxSaveFilename.Size = new System.Drawing.Size(301, 40);
             this.textBoxSaveFilename.TabIndex = 196;
             this.textBoxSaveFilename.Text = "oceanfx_spectrum.csv";
             this.textBoxSaveFilename.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -621,11 +596,10 @@ namespace spectra.ui.components
             this.tabPageStrobe.Controls.Add(this.textBoxContinuousStrobePeriod);
             this.tabPageStrobe.Controls.Add(this.checkBoxSingleStrobeEnabled);
             this.tabPageStrobe.Controls.Add(this.checkBoxContinuousStrobeEnabled);
-            this.tabPageStrobe.Location = new System.Drawing.Point(4, 25);
-            this.tabPageStrobe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageStrobe.Location = new System.Drawing.Point(4, 22);
             this.tabPageStrobe.Name = "tabPageStrobe";
-            this.tabPageStrobe.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageStrobe.Size = new System.Drawing.Size(412, 334);
+            this.tabPageStrobe.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageStrobe.Size = new System.Drawing.Size(307, 322);
             this.tabPageStrobe.TabIndex = 1;
             this.tabPageStrobe.Text = "Strobe";
             // 
@@ -640,109 +614,118 @@ namespace spectra.ui.components
             this.tabPageInfo.Controls.Add(this.textBoxFPGAVersion);
             this.tabPageInfo.Controls.Add(this.label21);
             this.tabPageInfo.Controls.Add(this.textBoxSerialNum);
-            this.tabPageInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabPageInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageInfo.Location = new System.Drawing.Point(4, 22);
             this.tabPageInfo.Name = "tabPageInfo";
-            this.tabPageInfo.Size = new System.Drawing.Size(412, 334);
+            this.tabPageInfo.Size = new System.Drawing.Size(307, 322);
             this.tabPageInfo.TabIndex = 2;
             this.tabPageInfo.Text = "Info";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(33, 12);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(25, 10);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(117, 17);
+            this.label17.Size = new System.Drawing.Size(87, 13);
             this.label17.TabIndex = 137;
             this.label17.Text = "Firmware Version";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 46);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(7, 37);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(140, 17);
+            this.label19.Size = new System.Drawing.Size(105, 13);
             this.label19.TabIndex = 138;
             this.label19.Text = "Firmware Subversion";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(52, 79);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(39, 64);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(97, 17);
+            this.label20.Size = new System.Drawing.Size(73, 13);
             this.label20.TabIndex = 139;
             this.label20.Text = "FPGA Version";
             // 
             // textBoxFWVersion
             // 
-            this.textBoxFWVersion.Location = new System.Drawing.Point(177, 7);
-            this.textBoxFWVersion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFWVersion.Location = new System.Drawing.Point(133, 6);
             this.textBoxFWVersion.Name = "textBoxFWVersion";
             this.textBoxFWVersion.ReadOnly = true;
-            this.textBoxFWVersion.Size = new System.Drawing.Size(215, 22);
+            this.textBoxFWVersion.Size = new System.Drawing.Size(162, 20);
             this.textBoxFWVersion.TabIndex = 136;
             // 
             // textBoxFWSubversion
             // 
-            this.textBoxFWSubversion.Location = new System.Drawing.Point(177, 41);
-            this.textBoxFWSubversion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFWSubversion.Location = new System.Drawing.Point(133, 33);
             this.textBoxFWSubversion.Name = "textBoxFWSubversion";
             this.textBoxFWSubversion.ReadOnly = true;
-            this.textBoxFWSubversion.Size = new System.Drawing.Size(215, 22);
+            this.textBoxFWSubversion.Size = new System.Drawing.Size(162, 20);
             this.textBoxFWSubversion.TabIndex = 140;
             // 
             // textBoxFPGAVersion
             // 
-            this.textBoxFPGAVersion.Location = new System.Drawing.Point(177, 74);
-            this.textBoxFPGAVersion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFPGAVersion.Location = new System.Drawing.Point(133, 60);
             this.textBoxFPGAVersion.Name = "textBoxFPGAVersion";
             this.textBoxFPGAVersion.ReadOnly = true;
-            this.textBoxFPGAVersion.Size = new System.Drawing.Size(215, 22);
+            this.textBoxFPGAVersion.Size = new System.Drawing.Size(162, 20);
             this.textBoxFPGAVersion.TabIndex = 141;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(52, 112);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(39, 91);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 17);
+            this.label21.Size = new System.Drawing.Size(73, 13);
             this.label21.TabIndex = 142;
             this.label21.Text = "Serial Number";
             // 
             // textBoxSerialNum
             // 
-            this.textBoxSerialNum.Location = new System.Drawing.Point(177, 107);
-            this.textBoxSerialNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSerialNum.Location = new System.Drawing.Point(133, 87);
             this.textBoxSerialNum.Name = "textBoxSerialNum";
             this.textBoxSerialNum.ReadOnly = true;
-            this.textBoxSerialNum.Size = new System.Drawing.Size(215, 22);
+            this.textBoxSerialNum.Size = new System.Drawing.Size(162, 20);
             this.textBoxSerialNum.TabIndex = 143;
             // 
-            // checkBoxEnableFileNameAutoUpdate
+            // labelResultFileName
             // 
-            this.checkBoxEnableFileNameAutoUpdate.AutoSize = true;
-            this.checkBoxEnableFileNameAutoUpdate.Location = new System.Drawing.Point(171, 20);
-            this.checkBoxEnableFileNameAutoUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxEnableFileNameAutoUpdate.Name = "checkBoxEnableFileNameAutoUpdate";
-            this.checkBoxEnableFileNameAutoUpdate.Size = new System.Drawing.Size(203, 21);
-            this.checkBoxEnableFileNameAutoUpdate.TabIndex = 204;
-            this.checkBoxEnableFileNameAutoUpdate.Text = "Auto-update save file name";
-            this.checkBoxEnableFileNameAutoUpdate.UseVisualStyleBackColor = true;
-            this.checkBoxEnableFileNameAutoUpdate.CheckedChanged += new System.EventHandler(this.checkBoxEnableFileNameAutoUpdate_CheckedChanged);
+            this.labelResultFileName.AutoSize = true;
+            this.labelResultFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultFileName.Location = new System.Drawing.Point(6, 171);
+            this.labelResultFileName.Name = "labelResultFileName";
+            this.labelResultFileName.Size = new System.Drawing.Size(37, 13);
+            this.labelResultFileName.TabIndex = 205;
+            this.labelResultFileName.Text = "Result";
+            // 
+            // labelSettingsFileName
+            // 
+            this.labelSettingsFileName.AutoSize = true;
+            this.labelSettingsFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSettingsFileName.Location = new System.Drawing.Point(6, 232);
+            this.labelSettingsFileName.Name = "labelSettingsFileName";
+            this.labelSettingsFileName.Size = new System.Drawing.Size(45, 13);
+            this.labelSettingsFileName.TabIndex = 207;
+            this.labelSettingsFileName.Text = "Settings";
+            // 
+            // textBoxSettingsFileName
+            // 
+            this.textBoxSettingsFileName.Location = new System.Drawing.Point(3, 250);
+            this.textBoxSettingsFileName.Multiline = true;
+            this.textBoxSettingsFileName.Name = "textBoxSettingsFileName";
+            this.textBoxSettingsFileName.ReadOnly = true;
+            this.textBoxSettingsFileName.Size = new System.Drawing.Size(301, 40);
+            this.textBoxSettingsFileName.TabIndex = 206;
+            this.textBoxSettingsFileName.Text = "oceanfx_spectrum_settings.xml";
+            this.textBoxSettingsFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AcquisitionParametersControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControlAcquisitionParameters);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AcquisitionParametersControl";
-            this.Size = new System.Drawing.Size(425, 373);
+            this.Size = new System.Drawing.Size(319, 356);
             this.tabControlAcquisitionParameters.ResumeLayout(false);
             this.tabPageCommunication.ResumeLayout(false);
             this.tabPageCommunication.PerformLayout();
@@ -810,5 +793,8 @@ namespace spectra.ui.components
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.CheckBox checkBoxEnableSavingToFile;
         private System.Windows.Forms.CheckBox checkBoxEnableFileNameAutoUpdate;
+        private System.Windows.Forms.Label labelSettingsFileName;
+        private System.Windows.Forms.Label labelResultFileName;
+        private System.Windows.Forms.TextBox textBoxSettingsFileName;
     }
 }
