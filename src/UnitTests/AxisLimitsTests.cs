@@ -227,14 +227,9 @@ namespace SpectraSorterUnitTests
             float[] floatArray = new float[] { 200.0F, 300.0F, 400.0F, 500.0F, 400.0F, 300.0F, 200.0F, 100.0F };
 
             // Set the max allowed value for lower bound
-            double newMaxAllowedValueForLowerBound = axisLimits.SetMaxAllowedValueForLowerBoundFromArray(floatArray);
-            Assert.AreEqual(newMaxAllowedValueForLowerBound, 500);
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArray(floatArray);
             Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 500);
             Assert.IsFalse(axisLimits.IsLowerBoundSet());
-
-            // Set the min allowed value for upper bound
-            double newMaxAllowedValue = axisLimits.SetMinAllowedValueForUpperBoundFromArray(floatArray);
-            Assert.AreEqual(newMaxAllowedValue, 100);
             Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 100);
             Assert.IsFalse(axisLimits.IsUpperBoundSet());
 
@@ -251,14 +246,9 @@ namespace SpectraSorterUnitTests
             ushort[] ushortArray = new ushort[] { 200, 300, 400, 500, 400, 300, 200, 100 };
 
             // Set the max allowed value for lower bound
-            double newMaxAllowedValueForLowerBound = axisLimits.SetMaxAllowedValueForLowerBoundFromArray(ushortArray);
-            Assert.AreEqual(newMaxAllowedValueForLowerBound, 500);
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArray(ushortArray);
             Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 500);
             Assert.IsFalse(axisLimits.IsLowerBoundSet());
-
-            // Set the min allowed value for upper bound
-            double newMaxAllowedValue = axisLimits.SetMinAllowedValueForUpperBoundFromArray(ushortArray);
-            Assert.AreEqual(newMaxAllowedValue, 100);
             Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 100);
             Assert.IsFalse(axisLimits.IsUpperBoundSet());
         }
@@ -301,7 +291,7 @@ namespace SpectraSorterUnitTests
             float[] floatArray = new float[] { 200.0F, 300.0F, 400.0F, 500.0F, 400.0F, 300.0F, 200.0F, 100.0F };
 
             // Set the min allowed value for upper bound
-            double newMinAllowedValueForUpperBound = axisLimits.SetMinAllowedValueForUpperBoundFromArray(floatArray);
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArray(floatArray);
 
             // Set upper bound larger than max allowed value
             axisLimits.UpperBound = 50;
@@ -322,7 +312,7 @@ namespace SpectraSorterUnitTests
             float[] floatArray = new float[] { 200.0F, 300.0F, 400.0F, 500.0F, 400.0F, 300.0F, 200.0F, 100.0F };
 
             // Set the max allowed value for lower bound
-            double newMaxAllowedValueForLowerBoundFromArray = axisLimits.SetMaxAllowedValueForLowerBoundFromArray(floatArray);
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArray(floatArray);
 
             // Set min larger than max allowed value
             axisLimits.LowerBound = 550;
@@ -341,18 +331,12 @@ namespace SpectraSorterUnitTests
             // Float array
             float[] floatArray = new float[] { 200.0F, 300.0F, 400.0F, 500.0F, 400.0F, 300.0F, 200.0F, 100.0F };
 
-            // Set the max allowed value for lower bound
-            double newMaxAllowedValueForLowerBound = axisLimits.SetMaxAllowedValueForLowerBoundFromArrayAndRange(floatArray, 4, 6);
-            Assert.AreEqual(newMaxAllowedValueForLowerBound, 400);
-            Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 400);
+            // Set the bounds from the range
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(floatArray, 4, 6);
+            Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 400.0);
             Assert.IsFalse(axisLimits.IsLowerBoundSet());
-
-            // Set the min allowed value for upper bound
-            double newMaxAllowedValue = axisLimits.SetMinAllowedValueForUpperBoundFromArrayAndRange(floatArray, 4, 6);
-            Assert.AreEqual(newMaxAllowedValue, 200);
-            Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 200);
+            Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 200.0);
             Assert.IsFalse(axisLimits.IsUpperBoundSet());
-
         }
 
         [TestMethod]
@@ -365,18 +349,44 @@ namespace SpectraSorterUnitTests
             // Float array
             ushort[] ushortArray = new ushort[] { 200, 300, 400, 500, 400, 300, 200, 100 };
 
-            // Set the max allowed value for lower bound
-            double newMaxAllowedValueForLowerBound = axisLimits.SetMaxAllowedValueForLowerBoundFromArrayAndRange(ushortArray, 4, 6);
-            Assert.AreEqual(newMaxAllowedValueForLowerBound, 400);
+            // Set the bounds
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(ushortArray, 4, 6);
             Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 400);
             Assert.IsFalse(axisLimits.IsLowerBoundSet());
-
-            // Set the min allowed value for upper bound
-            double newMaxAllowedValue = axisLimits.SetMinAllowedValueForUpperBoundFromArrayAndRange(ushortArray, 4, 6);
-            Assert.AreEqual(newMaxAllowedValue, 200);
             Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 200);
             Assert.IsFalse(axisLimits.IsUpperBoundSet());
+        }
 
+        [TestMethod]
+        public void TestConflictingAxisLimits()
+        {
+            // Reset min and max allowed values
+            axisLimits.ResetMaxAllowedValueForLowerBound();
+            axisLimits.ResetMinAllowedValueForUpperBound();
+
+            // Float array
+            ushort[] ushortArray = new ushort[] { 0, 0, 0, 0, 0, 0, 0};
+
+            // Set the bounds from the range
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(ushortArray, 0, 6);
+            Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 1.0);
+            Assert.IsFalse(axisLimits.IsLowerBoundSet());
+            Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 0.0);
+            Assert.IsFalse(axisLimits.IsUpperBoundSet());
+
+            // Reset min and max allowed values
+            axisLimits.ResetMaxAllowedValueForLowerBound();
+            axisLimits.ResetMinAllowedValueForUpperBound();
+
+            // Float array
+            float[] floatArray = new float[] { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+
+            // Set the bounds from the range
+            axisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(floatArray, 0, 6);
+            Assert.AreEqual(axisLimits.MaxAllowedValueForLowerBound, 1.0);
+            Assert.IsFalse(axisLimits.IsLowerBoundSet());
+            Assert.AreEqual(axisLimits.MinAllowedValueForUpperBound, 0.0);
+            Assert.IsFalse(axisLimits.IsUpperBoundSet());
         }
     }
 }

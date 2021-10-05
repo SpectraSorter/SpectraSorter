@@ -83,6 +83,10 @@ namespace spectra.plotting
             // Initialize axis limits
             this.YAxisLimits = new AxisLimits();
             this.XAxisLimits = new AxisLimits();
+
+            // Set the format of the ticks
+            this.mMainChart.AxisX.LabelStyle.Format = "0.00";
+            this.mMainChart.AxisY.LabelStyle.Format = "0.00";
         }
 
         /// <summary>
@@ -216,8 +220,7 @@ namespace spectra.plotting
         /// <param name="XData">X data array.</param>
         public void XAxisSetBoundsFromData(float[] XData)
         {
-            this.XAxisLimits.SetMaxAllowedValueForLowerBoundFromArray(XData);
-            this.XAxisLimits.SetMinAllowedValueForUpperBoundFromArray(XData);
+            this.XAxisLimits.SetMinMaxAllowedValuesForBoundsFromArray(XData);
             this.XAxisLimits.LowerBound = this.XAxisLimits.MinAllowedValueForUpperBound;
             this.XAxisLimits.UpperBound = this.XAxisLimits.MaxAllowedValueForLowerBound;
         }
@@ -228,8 +231,7 @@ namespace spectra.plotting
         /// <param name="XData">X data array.</param>
         public void XAxisSetBoundsFromData(double[] XData)
         {
-            this.XAxisLimits.SetMaxAllowedValueForLowerBoundFromArray(XData);
-            this.XAxisLimits.SetMinAllowedValueForUpperBoundFromArray(XData);
+            this.XAxisLimits.SetMinMaxAllowedValuesForBoundsFromArray(XData);
             this.XAxisLimits.LowerBound = this.XAxisLimits.MinAllowedValueForUpperBound;
             this.XAxisLimits.UpperBound = this.XAxisLimits.MaxAllowedValueForLowerBound;
         }
@@ -389,8 +391,7 @@ namespace spectra.plotting
         {
             int firstIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisLowerBound);
             int lastIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisUpperBound);
-            this.YAxisLimits.SetMaxAllowedValueForLowerBoundFromArrayAndRange(YData, firstIndex, lastIndex);
-            this.YAxisLimits.SetMinAllowedValueForUpperBoundFromArrayAndRange(YData, firstIndex, lastIndex);
+            this.YAxisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(YData, firstIndex, lastIndex);
             this.YAxisLimits.LowerBound = this.YAxisLimits.MinAllowedValueForUpperBound;
             this.YAxisLimits.UpperBound = this.YAxisLimits.MaxAllowedValueForLowerBound;
         }
@@ -404,8 +405,7 @@ namespace spectra.plotting
         {
             int firstIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisLowerBound);
             int lastIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisUpperBound);
-            this.YAxisLimits.SetMaxAllowedValueForLowerBoundFromArrayAndRange(YData, firstIndex, lastIndex);
-            this.YAxisLimits.SetMinAllowedValueForUpperBoundFromArrayAndRange(YData, firstIndex, lastIndex);
+            this.YAxisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(YData, firstIndex, lastIndex);
             this.YAxisLimits.LowerBound = this.YAxisLimits.MinAllowedValueForUpperBound;
             this.YAxisLimits.UpperBound = this.YAxisLimits.MaxAllowedValueForLowerBound;
         }
@@ -419,8 +419,7 @@ namespace spectra.plotting
         {
             int firstIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisLowerBound);
             int lastIndex = Utils.FindIndexOfClosestValueInSortedArray(XData, (float)this.XAxisUpperBound);
-            this.YAxisLimits.SetMaxAllowedValueForLowerBoundFromArrayAndRange(YData, firstIndex, lastIndex);
-            this.YAxisLimits.SetMinAllowedValueForUpperBoundFromArrayAndRange(YData, firstIndex, lastIndex);
+            this.YAxisLimits.SetMinMaxAllowedValuesForBoundsFromArrayAndRange(YData, firstIndex, lastIndex);
             this.YAxisLimits.LowerBound = this.YAxisLimits.MinAllowedValueForUpperBound;
             this.YAxisLimits.UpperBound = this.YAxisLimits.MaxAllowedValueForLowerBound;
         }

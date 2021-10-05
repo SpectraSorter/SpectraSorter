@@ -309,159 +309,12 @@ namespace spectra.plotting
         }
 
         /// <summary>
-        /// Extract the maximum allowed value for the lower bound from an array of floats.
+        /// Extract the minimum and maximum allowed values for the bounds from a subset of an array of floats.
         /// </summary>
-        /// <param name="array">Array from which to extract the maximum data point.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromArray(float[] array)
-        {
-            this.MaxAllowedValueForLowerBound = (double)array.Max();
-            return this.MaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the maximum allowed value for the lower bound from an array of doubles.
-        /// </summary>
-        /// <param name="array">Array from which to extract the maximum data point.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromArray(double[] array)
-        {
-            this.MaxAllowedValueForLowerBound = (double)array.Max();
-            return this.MaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the maximum allowed value for the lower bound from an array of unsigned shorts.
-        /// </summary>
-        /// <param name="array">Array from which to extract the maximum data point.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromArray(ushort[] array)
-        {
-            this.MaxAllowedValueForLowerBound = (double)array.Max();
-            return this.MaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the maximum allowed value for the lower bound from an array of floats.
-        /// </summary>
-        /// <param name="array">Array from which to extract the maximum data point.</param>
-        /// <param name="firstIndex">First index of the range of values from the array.</param>
-        /// <param name="lastIndex">Last index of the range of values from the array.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromArrayAndRange(float[] array, int firstIndex, int lastIndex)
-        {
-            if (firstIndex < 0)
-            {
-                firstIndex = 0;
-            }
-            if (lastIndex > (array.Length - 1))
-            {
-                lastIndex = (array.Length - 1);
-            }
-            float max = float.MinValue;
-            for (int i = firstIndex; i <= lastIndex; i++)
-            {
-                if (array[i] > max)
-                {
-                    max = array[i];
-                }
-            }
-
-            this.mMaxAllowedValueForLowerBound = (double)max;
-            return this.mMaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the maximum allowed value for the lower bound from an array of unsigned shorts.
-        /// </summary>
-        /// <param name="array">Array from which to extract the maximum data point.</param>
-        /// <param name="firstIndex">First index of the range of values from the array.</param>
-        /// <param name="lastIndex">Last index of the range of values from the array.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromArrayAndRange(ushort[] array, int firstIndex, int lastIndex)
-        {
-            if (firstIndex < 0)
-            {
-                firstIndex = 0;
-            }
-            if (lastIndex > (array.Length - 1))
-            {
-                lastIndex = (array.Length - 1);
-            }
-            ushort max = ushort.MinValue;
-            for (int i = firstIndex; i <= lastIndex; i++)
-            {
-                if (array[i] > max)
-                {
-                    max = array[i];
-                }
-            }
-
-            this.mMaxAllowedValueForLowerBound = (double)max;
-            return this.mMaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the maximum allowed value for the lower bound from a spectrum.
-        /// </summary>
-        /// <param name="spectrum">Spectrum from which to extract the maximum data point.</param>
-        /// <returns>The maximum allowed value for the lower bound.</returns>
-        public double SetMaxAllowedValueForLowerBoundFromSeries(RawSpectrumWithMetadataBuffer spectrum)
-        {
-            double max = Double.MinValue;
-            for (int i = 0; i < spectrum.NumPixels; i++)
-            {
-                if (spectrum.GetPixelFloat(i) > max)
-                {
-                    max = spectrum.GetPixelFloat(i);
-                }
-            }
-
-            this.mMaxAllowedValueForLowerBound = (double)max;
-            return this.mMaxAllowedValueForLowerBound;
-        }
-
-        /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from an array of floats.
-        /// </summary>
-        /// <param name="array">Array from which to extract the minimum data point.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromArray(float[] array)
-        {
-            this.MinAllowedValueForUpperBound = (double)array.Min();
-            return this.MinAllowedValueForUpperBound;
-        }
-
-        /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from an array of doubles.
-        /// </summary>
-        /// <param name="array">Array from which to extract the minimum data point.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromArray(double[] array)
-        {
-            this.MinAllowedValueForUpperBound = (double)array.Min();
-            return this.MinAllowedValueForUpperBound;
-        }
-
-        /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from an array of unsigned shorts.
-        /// </summary>
-        /// <param name="array">Array from which to extract the minimum data point.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromArray(ushort[] array)
-        {
-            this.MinAllowedValueForUpperBound = (double)array.Min();
-            return this.MinAllowedValueForUpperBound;
-        }
-
-        /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from an array of floats.
-        /// </summary>
-        /// <param name="array">Array from which to extract the minimum data point.</param>
-        /// <param name="firstIndex">First index of the range of values from the array.</param>
-        /// <param name="lastIndex">Last index of the range of values from the array.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromArrayAndRange(float[] array, int firstIndex, int lastIndex)
+        /// <param name="spectrum">Array from which to extract the minimum and maximum data points.</param>
+        /// <param name="firstIndex">First index of the array to consider.</param>
+        /// <param name="lastIndex">Last index of the array to consider.</param>
+        public void SetMinMaxAllowedValuesForBoundsFromArrayAndRange(float[] array, int firstIndex, int lastIndex)
         {
             if (firstIndex < 0)
             {
@@ -472,26 +325,38 @@ namespace spectra.plotting
                 lastIndex = (array.Length - 1);
             }
             float min = float.MaxValue;
+            float max = float.MinValue;
             for (int i = firstIndex; i <= lastIndex; i++)
             {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+
                 if (array[i] < min)
                 {
                     min = array[i];
                 }
+
             }
 
-            this.mMinAllowedValueForUpperBound = (double)min;
-            return this.mMinAllowedValueForUpperBound;
+            double newMin = (double)min;
+            double newMax = (double)max;
+            if (newMin >= newMax)
+            {
+                newMax = newMin + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = newMax;
+            this.mMinAllowedValueForUpperBound = newMin;
         }
 
         /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from an array of unsigned shorts.
+        /// Extract the minimum and maximum allowed values for the bounds from a subset of an array of shorts.
         /// </summary>
-        /// <param name="array">Array from which to extract the minimum data point.</param>
-        /// <param name="firstIndex">First index of the range of values from the array.</param>
-        /// <param name="lastIndex">Last index of the range of values from the array.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromArrayAndRange(ushort[] array, int firstIndex, int lastIndex)
+        /// <param name="spectrum">Array from which to extract the minimum and maximum data points.</param>
+        /// <param name="firstIndex">First index of the array to consider.</param>
+        /// <param name="lastIndex">Last index of the array to consider.</param>
+        public void SetMinMaxAllowedValuesForBoundsFromArrayAndRange(ushort[] array, int firstIndex, int lastIndex)
         {
             if (firstIndex < 0)
             {
@@ -502,36 +367,105 @@ namespace spectra.plotting
                 lastIndex = (array.Length - 1);
             }
             ushort min = ushort.MaxValue;
+            ushort max = ushort.MinValue;
             for (int i = firstIndex; i <= lastIndex; i++)
             {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+
                 if (array[i] < min)
                 {
                     min = array[i];
                 }
+
             }
 
-            this.mMinAllowedValueForUpperBound = (double)min;
-            return this.mMinAllowedValueForUpperBound;
+            double newMin = (double)min;
+            double newMax = (double)max;
+            if (newMin >= newMax)
+            {
+                newMax = newMin + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = newMax;
+            this.mMinAllowedValueForUpperBound = newMin;
         }
 
         /// <summary>
-        /// Extract the minimum allowed value for ther upper bound from aspectrum.
+        /// Extract the minimum and maximum allowed values for the bounds from a spectrum.
         /// </summary>
-        /// <param name="spectrum">Spectrum from which to extract the minimum data point.</param>
-        /// <returns>The minimum allowed value for the upper bound.</returns>
-        public double SetMinAllowedValueForUpperBoundFromSeries(RawSpectrumWithMetadataBuffer spectrum)
+        /// <param name="spectrum">Spectrum from which to extract the minimum and maximum data points.</param>
+        public void SetMinMaxAllowedValueForBoundsFromSeries(RawSpectrumWithMetadataBuffer spectrum)
         {
             double min = Double.MaxValue;
+            double max = Double.MinValue;
             for (int i = 0; i < spectrum.NumPixels; i++)
             {
-                if (spectrum.GetPixelFloat(i) < min)
+                if (spectrum.GetPixelFloat(i) > max)
+                {
+                    max = spectrum.GetPixelFloat(i);
+                }
+                if (spectrum.GetPixelFloat(i) < max)
                 {
                     min = spectrum.GetPixelFloat(i);
                 }
             }
 
-            this.mMinAllowedValueForUpperBound = (double)min;
-            return this.mMinAllowedValueForUpperBound;
+            if (min >= max)
+            {
+                max = min + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = max;
+            this.mMinAllowedValueForUpperBound = min;
+        }
+
+        /// <summary>
+        /// Extract the minimum and maximum allowed values for bounds from an array of floats.
+        /// </summary>
+        /// <param name="array">Array from which to extract the minimum and maximum data points.</param>
+        public void SetMinMaxAllowedValuesForBoundsFromArray(float[] array)
+        {
+            double min = (double)array.Min();
+            double max = (double)array.Max();
+            if (min >= max)
+            {
+                max = min + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = max;
+            this.mMinAllowedValueForUpperBound = min;
+        }
+
+        /// <summary>
+        /// Extract the minimum and maximum allowed values for bounds from an array of doubles.
+        /// </summary>
+        /// <param name="array">Array from which to extract the minimum and maximum data points.</param>
+        public void SetMinMaxAllowedValuesForBoundsFromArray(double[] array)
+        {
+            double min = (double)array.Min();
+            double max = (double)array.Max();
+            if (min >= max)
+            {
+                max = min + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = max;
+            this.mMinAllowedValueForUpperBound = min;
+        }
+
+        /// <summary>
+        /// Extract the minimum and maximum allowed values for bounds from an array of ushorts.
+        /// </summary>
+        /// <param name="array">Array from which to extract the minimum and maximum data points.</param>
+        public void SetMinMaxAllowedValuesForBoundsFromArray(ushort[] array)
+        {
+            double min = (double)array.Min();
+            double max = (double)array.Max();
+            if (min >= max)
+            {
+                max = min + 1.0;
+            }
+            this.mMaxAllowedValueForLowerBound = max;
+            this.mMinAllowedValueForUpperBound = min;
         }
 
         /// <summary>
