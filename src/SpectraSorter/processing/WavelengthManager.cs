@@ -186,7 +186,7 @@ namespace spectra.processing
         public void MapRequestedWavelengthsToSaveToIndices()
         {
             // Get the wavelengths used for plotting, sorted
-            List<Wavelength> wavelengthsForSaving = WavelengthManager.Instance.WavelengthsForSaving;
+            List<Wavelength> wavelengthsForSaving = WavelengthManager.Instance.Wavelengths;
 
             // Is there something to process?
             if (wavelengthsForSaving.Count == 0)
