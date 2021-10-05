@@ -95,9 +95,15 @@ namespace spectra.devices
             // Open the serial connection
             if (!serialPortObj.IsOpen)
             {
-                serialPortObj.Open();
-
-                connected = true;
+                try
+                {
+                    serialPortObj.Open();
+                    connected = true;
+                }
+                catch
+                {
+                    connected = false;
+                }
             }
 
             return connected;

@@ -722,6 +722,15 @@ namespace spectra.ui
                 });
             }
 
+            if (mOceanFX == null)
+            {
+                Invoke((MethodInvoker)delegate
+                {
+                    onUSBConnectFailed();  // Invoke on UI thread
+                });
+                return;
+            }
+
             if (!mOceanFX.IsConnected)
             {
                 Invoke((MethodInvoker)delegate
@@ -768,6 +777,13 @@ namespace spectra.ui
             TabPageCollection pages = tabControlAcquisition.TabPages;
             Debug.Assert(pages[4].Name.Equals("tabPageArduino", StringComparison.Ordinal));
             ((Control)pages[4]).Enabled = false;
+
+            // Inform
+            MessageBox.Show(
+                "Cannot connect to the USB device!\n\nMake use it is not already in use.",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
         }
 
         protected void onUSBConnected()
@@ -828,6 +844,14 @@ namespace spectra.ui
                 TabPageCollection pages = tabControlAcquisition.TabPages;
                 Debug.Assert(pages[4].Name.Equals("tabPageArduino", StringComparison.Ordinal));
                 ((Control)pages[4]).Enabled = false;
+
+                   // Inform
+                MessageBox.Show(
+                    "Cannot connect to the COM device!\n\nMake use it is not already in use.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
             }
         }
 
