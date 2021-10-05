@@ -431,10 +431,15 @@ namespace spectra.ui
                 int saveStartPixelCache = SettingsManager.SaveStartPixel;
                 int saveEndPixelCache = SettingsManager.SaveEndPixel;
 
-                // Cache a copy of the wavelength indices to save (it can be an empty list).
+                // Cache a copy of selected wavelengths that are also enabled for save (it can be an empty list).
                 // During the whole saving process we will work with this copy, so that changes
                 // to settings will be ignored.
-                List<Wavelength> wavelengthsToSaveCache = WavelengthManager.Clone(WavelengthManager.Instance.WavelengthsForSaving);
+                List<Wavelength> wavelengthsToSaveFilteredCache = WavelengthManager.Clone(WavelengthManager.Instance.WavelengthsForSaving);
+
+                // Cache a copy of selected wavelengths (it can be an empty list).
+                // During the whole saving process we will work with this copy, so that changes
+                // to settings will be ignored.
+                List<Wavelength> wavelengthsToSaveCache = WavelengthManager.Clone(WavelengthManager.Instance.Wavelengths);
 
                 // Cache the result spectrum type. During the whole saving process we will work with 
                 // this copy, so that changes to settings will be ignored.
@@ -443,7 +448,7 @@ namespace spectra.ui
                 // Do we save the whole spectrum or just a few selected wavelengths? Also perform 
                 // consistency check.
                 bool bSaveOnlySelectedWavelengths = SettingsManager.SaveWavelengthRange == false;
-                if (bSaveOnlySelectedWavelengths == true && wavelengthsToSaveCache.Count == 0)
+                if (bSaveOnlySelectedWavelengths == true && wavelengthsToSaveFilteredCache.Count == 0)
                 {
                     SettingsManager.SaveToFile = false;
                 }
@@ -545,7 +550,7 @@ namespace spectra.ui
                                         SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, convertedOutputArray, outFile, saveSpectrum.triggered);
 
                                         // Update the number of saved bytes
-                                        mTotalSavedBytes += (long)(sizeof(UInt16) * wavelengthsToSaveCache.Count);
+                                        mTotalSavedBytes += (long)(sizeof(UInt16) * wavelengthsToSaveFilteredCache.Count);
 
                                     }
                                     else
@@ -566,7 +571,7 @@ namespace spectra.ui
                                         SaveSpectrumSelectedWavelengthsOnly(sb, saveSpectrum.rawSpectrum, saveSpectrum.computedSpectrum, outFile, saveSpectrum.triggered);
 
                                         // Update the number of saved bytes
-                                        mTotalSavedBytes += (long)(sizeof(float) * wavelengthsToSaveCache.Count);
+                                        mTotalSavedBytes += (long)(sizeof(float) * wavelengthsToSaveFilteredCache.Count);
 
                                     }
                                     else

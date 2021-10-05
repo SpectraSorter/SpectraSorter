@@ -1775,13 +1775,21 @@ namespace spectra.ui
             sb.Append(triggered);
 
             // Cache the query
-            List<Wavelength> wavelengthsToSave = WavelengthManager.Instance.WavelengthsForSaving;
+            List<Wavelength> wavelengthsToSave = WavelengthManager.Instance.Wavelengths;
 
             // Write only data for threshold wavelengths
             for (int i = 0; i < wavelengthsToSave.Count; i++)
             {
-                int index = wavelengthsToSave[i].Index;
-                sb.Append(";").Append(curResult[index].ToString(CultureInfo.InvariantCulture));
+                if (wavelengthsToSave[i].IsToBeSaved)
+                {
+
+                    int index = wavelengthsToSave[i].Index;
+                    sb.Append(";").Append(curResult[index].ToString(CultureInfo.InvariantCulture));
+                }
+                else
+                {
+                    sb.Append(";").Append("NaN");
+                }
             }
 
             outFile.WriteLine(sb.ToString());
@@ -1803,7 +1811,7 @@ namespace spectra.ui
             // Write the data
             for (int i = SettingsManager.SaveStartPixel; i <= SettingsManager.SaveEndPixel; i+=wavelengthStep)
             {
-                sb.Append(";").Append(curResult[i]);
+                sb.Append(";").Append(curResult[i].ToString(CultureInfo.InvariantCulture));
             }
 
             outFile.WriteLine(sb.ToString());
@@ -1823,13 +1831,20 @@ namespace spectra.ui
             sb.Append(triggered);
 
             // Cache the query
-            List<Wavelength> wavelengthsToSave = WavelengthManager.Instance.WavelengthsForSaving;
+            List<Wavelength> wavelengthsToSave = WavelengthManager.Instance.Wavelengths;
 
-            // Write only data for threshold wavelengths
+            // Write only data for wavelengths to be flagged for saving
             for (int i = 0; i < wavelengthsToSave.Count; i++)
             {
-                int index = wavelengthsToSave[i].Index;
-                sb.Append(";").Append(curResult[index]);
+                if (wavelengthsToSave[i].IsToBeSaved)
+                {
+                    int index = wavelengthsToSave[i].Index;
+                    sb.Append(";").Append(curResult[index]);
+                }
+                else
+                {
+                    sb.Append(";").Append("NaN");
+                }
             }
 
             outFile.WriteLine(sb.ToString());
