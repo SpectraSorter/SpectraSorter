@@ -588,10 +588,15 @@ namespace spectra.utils
             foreach(KeyValuePair<string, CircularBuffer<int>> entry in mapSpectra)
             {
                 var spectrum = entry.Value;
-                int mn = spectrum.Min();
-                if (mn < min)
+
+                // If all values are 0.0, ignore
+                if (spectrum.Any(x => x != 0.0f))
                 {
-                    min = mn;
+                    int mn = spectrum.Min();
+                    if (mn < min)
+                    {
+                        min = mn;
+                    }
                 }
             }
 
@@ -609,10 +614,15 @@ namespace spectra.utils
             foreach (KeyValuePair<string, CircularBuffer<float>> entry in mapSpectra)
             {
                 var spectrum = entry.Value;
-                float mn = spectrum.Min();
-                if (mn < min)
+
+                // If all values are 0.0, ignore
+                if (spectrum.Any(x => x != 0.0f))
                 {
-                    min = mn;
+                    float mn = spectrum.Min();
+                    if (mn < min)
+                    {
+                        min = mn;
+                    }
                 }
             }
 
@@ -630,10 +640,15 @@ namespace spectra.utils
             foreach (KeyValuePair<string, CircularBuffer<int>> entry in mapSpectra)
             {
                 var spectrum = entry.Value;
-                int mx = spectrum.Max();
-                if (mx > max)
+
+                // If all values are 0.0, ignore
+                if (spectrum.Any(x => x != 0.0f))
                 {
-                    max = mx;
+                    int mx = spectrum.Max();
+                    if (mx > max)
+                    {
+                        max = mx;
+                    }
                 }
             }
 
@@ -651,10 +666,15 @@ namespace spectra.utils
             foreach (KeyValuePair<string, CircularBuffer<float>> entry in mapSpectra)
             {
                 var spectrum = entry.Value;
-                float mx = spectrum.Max();
-                if (mx > max)
+
+                // If all values are 0.0, ignore
+                if (spectrum.Any(x => x != 0.0f))
                 {
-                    max = mx;
+                    float mx = spectrum.Max();
+                    if (mx > max)
+                    {
+                        max = mx;
+                    }
                 }
             }
 
