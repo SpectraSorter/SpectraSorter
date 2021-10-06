@@ -493,7 +493,7 @@ namespace spectra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
         public int NumberOfSpectraForDynamicAccumulation {
             get {
                 return ((int)(this["NumberOfSpectraForDynamicAccumulation"]));
