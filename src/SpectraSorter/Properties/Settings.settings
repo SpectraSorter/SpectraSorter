@@ -135,7 +135,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="NumberOfTimePointsToStore" Type="System.UInt32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">500</Value>
     </Setting>
     <Setting Name="PlotTriggerPoints" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
