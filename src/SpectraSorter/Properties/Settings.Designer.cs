@@ -529,7 +529,7 @@ namespace spectra.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
         public uint IntervalForDynamicAccumulation {
             get {
                 return ((uint)(this["IntervalForDynamicAccumulation"]));
