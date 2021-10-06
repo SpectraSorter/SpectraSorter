@@ -448,23 +448,17 @@ namespace spectra.ui
                 // Do we save the whole spectrum or just a few selected wavelengths? Also perform 
                 // consistency check.
                 bool bSaveOnlySelectedWavelengths = SettingsManager.SaveWavelengthRange == false;
-                if (bSaveOnlySelectedWavelengths == true && wavelengthsToSaveFilteredCache.Count == 0)
-                {
-                    SettingsManager.SaveToFile = false;
-                }
 
                 // Reset the number of saved bytes and spectra
                 mTotalSavedBytes = 0;
                 mTotalSpectraSaved = 0;
 
-                // Whether saving is currently on or not, we open the file; since 
-                // saving could be enabled at any time during the acquisition.
-
                 // If the file exists append
                 bFileExists = File.Exists(saveFileNameCache);
                 bool bAppend = true;
 
-                // Open stream for writing
+                // Whether saving is currently on or not, we open the file; since 
+                // saving could be enabled at any time during the acquisition.
                 outFile = new StreamWriter(saveFileNameCache, bAppend);
 
                 if (outFile == null)
@@ -618,19 +612,6 @@ namespace spectra.ui
                 if (outFile != null)
                 {
                     outFile.Close();
-
-                    // If nothing has been written to the file, we delete it
-                    if (mTotalSavedBytes == 0)
-                    {
-                        try
-                        {
-                            File.Delete(saveFileNameCache);
-                        }
-                        catch (Exception)
-                        {
-                            // We silenty ignore this.
-                        }
-                    }
                 }
             }
 
