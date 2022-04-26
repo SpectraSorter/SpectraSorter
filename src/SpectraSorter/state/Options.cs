@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright © 2018-2021, ETH Zurich, D-BSSE, Aaron Ponti & Todd Duncombe
+    Copyright © 2018-2022, ETH Zurich, D-BSSE, Aaron Ponti & Todd Duncombe
     All rights reserved. This program and the accompanying materials
     are made available under the terms of the Apache-2.0 license
     which accompanies this distribution, and is available at
